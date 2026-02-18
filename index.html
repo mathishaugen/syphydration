@@ -424,4 +424,12 @@
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   const reveals = document.querySelectorAll(".reveal");
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add("vi
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add("visible"); });
+  }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
+  reveals.forEach(el => observer.observe(el));
+  window.addEventListener("scroll", () => {
+    document.querySelector("nav").style.boxShadow = window.scrollY > 50 ? "0 2px 20px rgba(0,0,0,0.06)" : "none";
+  });
+</script>
+</body>
+</html>
