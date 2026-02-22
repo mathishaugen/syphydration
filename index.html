@@ -468,4 +468,11 @@
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   const reveals = document.querySelectorAll(".reveal");
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add("vi
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add("viisible");
+    });
+  });
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
