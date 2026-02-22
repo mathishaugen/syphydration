@@ -161,7 +161,7 @@
     <p class="hero-sub" style="text-align:left;">syp turns any water bottle into a smart hydration system — measuring actual fluid intake in real time, not estimates. Built for elite athletes, collegiate programs, and professional sports teams.</p>
     <div class="hero-actions" style="justify-content:flex-start;">
       <a class="btn-primary" href="#waitlist">Join the Waitlist</a>
-      <a class="btn-secondary" href="mailto:mathis@syphydration.com?subject=SYP%20Investor%20Deck%20Request&body=Hi%20Mathis%2C%0A%0AI%27d%20like%20to%20request%20the%20SYP%20investor%20deck.%0A%0AName%3A%0AOrganization%3A" >Investor Deck &rarr;</a>
+      <a class="btn-secondary" href="/cdn-cgi/l/email-protection#0964687d61607a497a707961706d7b687d606667276a6664367a7c6b636c6a7d345a50592c3b3940677f6c7a7d667b2c3b394d6c6a622c3b395b6c787c6c7a7d2f6b666d703441602c3b3944687d61607a2c3b4a2c39482c3948402c3b3e6d2c3b396560626c2c3b397d662c3b397b6c787c6c7a7d2c3b397d616c2c3b395a50592c3b3960677f6c7a7d667b2c3b396d6c6a62272c39482c39484768646c2c3a482c3948467b6e68676073687d6066672c3a48">Investor Deck &rarr;</a>
     </div>
     <div class="hero-stats" style="justify-content:flex-start; margin-top:48px;">
       <div class="stat"><div class="stat-num">160<span style="color:var(--teal)">+</span></div><div class="stat-label">Athletes on waitlist</div></div>
@@ -262,8 +262,8 @@
     </div>
     <div class="steps reveal">
       <div class="step">
-        <div style="width:100%; height:200px; overflow:hidden; border-radius:10px; margin-bottom:20px;">
-          <img src="images/Bottle_w_3_sleeve.png" alt="Universal Attachment" style="width:100%; height:100%; object-fit:cover; object-position:center;" />
+        <div style="width:100%; border-radius:10px; margin-bottom:20px; overflow:hidden;">
+          <img src="images/website_bottle.png" alt="Universal Attachment" style="width:100%; height:auto; display:block;" />
         </div>
         <div class="step-num">01</div>
         <div class="step-tag">Hardware</div>
@@ -271,8 +271,8 @@
         <p>syp's patent-pending load cell sleeve attaches to any water bottle in seconds. Works with existing equipment. No sponsorship conflicts. Zero athlete resistance.</p>
       </div>
       <div class="step">
-        <div style="width:100%; height:200px; overflow:hidden; border-radius:10px; margin-bottom:20px;">
-          <img src="images/syp_app.jpg" alt="Real-Time Measurement" style="width:100%; height:100%; object-fit:cover; object-position:center;" />
+        <div style="width:100%; border-radius:10px; margin-bottom:20px; overflow:hidden;">
+          <img src="images/website_app.png" alt="Real-Time Measurement" style="width:100%; height:auto; display:block;" />
         </div>
         <div class="step-num">02</div>
         <div class="step-tag">Software</div>
@@ -280,8 +280,8 @@
         <p>Direct fluid intake measurement syncs automatically via Bluetooth. Personalized targets based on body metrics, activity, and climate — not sweat-based guesses.</p>
       </div>
       <div class="step">
-        <div style="width:100%; height:200px; overflow:hidden; border-radius:10px; margin-bottom:20px;">
-          <img src="images/syp_dashboard.jpg" alt="Team Visibility" style="width:100%; height:100%; object-fit:cover; object-position:center;" />
+        <div style="width:100%; border-radius:10px; margin-bottom:20px; overflow:hidden;">
+          <img src="images/website_dashboard.png" alt="Team Visibility" style="width:100%; height:auto; display:block;" />
         </div>
         <div class="step-num">03</div>
         <div class="step-tag">Intelligence</div>
@@ -398,7 +398,7 @@
     <p class="section-body reveal" style="margin-bottom:40px;">Monthly updates on traction, pilots, and the science of hydration intelligence.</p>
     <div class="reveal">
       <iframe data-tally-src="https://tally.so/embed/2EeZJM?alignLeft=0&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="180" frameborder="0" marginheight="0" marginwidth="0" title="SYP Newsletter"></iframe>
-      <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+      <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
     </div>
   </div>
 </section>
@@ -468,12 +468,4 @@
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   const reveals = document.querySelectorAll(".reveal");
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add("visible"); });
-  }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
-  reveals.forEach(el => observer.observe(el));
-  window.addEventListener("scroll", () => {
-    document.querySelector("nav").style.boxShadow = window.scrollY > 50 ? "0 2px 20px rgba(0,0,0,0.06)" : "none";
-  });
-</script>
-</body>
-</html>
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add("vi
