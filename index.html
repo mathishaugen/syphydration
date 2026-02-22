@@ -218,6 +218,52 @@
   </div>
 </section>
 
+<section style="background:#0a1628; padding:60px 0 0; overflow:hidden;">
+  <div style="max-width:900px; margin:0 auto 40px; text-align:center; padding:0 24px;">
+    <div class="section-label reveal" style="color:var(--teal); margin-bottom:16px;">Built for Real Life</div>
+    <h2 class="section-title reveal" style="color:white; margin-bottom:0;">Hydrate smarter,<br>wherever you are.</h2>
+  </div>
+  <div style="overflow:hidden; width:100%; padding-bottom:60px;">
+    <div id="carousel-track" style="display:flex; gap:16px; width:max-content; will-change:transform;">
+      <div style="width:480px; height:320px; border-radius:14px; overflow:hidden; flex-shrink:0;"><img src="images/syp_cafe.jpeg" style="width:100%; height:100%; object-fit:cover; object-position:center;" /></div>
+      <div style="width:480px; height:320px; border-radius:14px; overflow:hidden; flex-shrink:0;"><img src="images/syp_icebath.jpeg" style="width:100%; height:100%; object-fit:cover; object-position:center;" /></div>
+      <div style="width:480px; height:320px; border-radius:14px; overflow:hidden; flex-shrink:0;"><img src="images/syp_owala.jpeg" style="width:100%; height:100%; object-fit:cover; object-position:center;" /></div>
+      <div style="width:480px; height:320px; border-radius:14px; overflow:hidden; flex-shrink:0;"><img src="images/syp_running.jpeg" style="width:100%; height:100%; object-fit:cover; object-position:center;" /></div>
+      <div style="width:480px; height:320px; border-radius:14px; overflow:hidden; flex-shrink:0;"><img src="images/syp_sauna.jpeg" style="width:100%; height:100%; object-fit:cover; object-position:center;" /></div>
+      <div style="width:480px; height:320px; border-radius:14px; overflow:hidden; flex-shrink:0;"><img src="images/syp_stretch.jpeg" style="width:100%; height:100%; object-fit:cover; object-position:center;" /></div>
+      <div style="width:480px; height:320px; border-radius:14px; overflow:hidden; flex-shrink:0;"><img src="images/syp_urban.png" style="width:100%; height:100%; object-fit:cover; object-position:center;" /></div>
+      <!-- Duplicate set for seamless loop -->
+      <div style="width:480px; height:320px; border-radius:14px; overflow:hidden; flex-shrink:0;"><img src="images/syp_cafe.jpeg" style="width:100%; height:100%; object-fit:cover; object-position:center;" /></div>
+      <div style="width:480px; height:320px; border-radius:14px; overflow:hidden; flex-shrink:0;"><img src="images/syp_icebath.jpeg" style="width:100%; height:100%; object-fit:cover; object-position:center;" /></div>
+      <div style="width:480px; height:320px; border-radius:14px; overflow:hidden; flex-shrink:0;"><img src="images/syp_owala.jpeg" style="width:100%; height:100%; object-fit:cover; object-position:center;" /></div>
+      <div style="width:480px; height:320px; border-radius:14px; overflow:hidden; flex-shrink:0;"><img src="images/syp_running.jpeg" style="width:100%; height:100%; object-fit:cover; object-position:center;" /></div>
+      <div style="width:480px; height:320px; border-radius:14px; overflow:hidden; flex-shrink:0;"><img src="images/syp_sauna.jpeg" style="width:100%; height:100%; object-fit:cover; object-position:center;" /></div>
+      <div style="width:480px; height:320px; border-radius:14px; overflow:hidden; flex-shrink:0;"><img src="images/syp_stretch.jpeg" style="width:100%; height:100%; object-fit:cover; object-position:center;" /></div>
+      <div style="width:480px; height:320px; border-radius:14px; overflow:hidden; flex-shrink:0;"><img src="images/syp_urban.png" style="width:100%; height:100%; object-fit:cover; object-position:center;" /></div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function() {
+  const track = document.getElementById('carousel-track');
+  const totalWidth = 496 * 7; // (480px + 16px gap) * 7 images
+  let pos = 0;
+  let paused = false;
+  track.addEventListener('mouseenter', () => paused = true);
+  track.addEventListener('mouseleave', () => paused = false);
+  function tick() {
+    if (!paused) {
+      pos += 0.6;
+      if (pos >= totalWidth) pos = 0;
+      track.style.transform = 'translateX(-' + pos + 'px)';
+    }
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+})();
+</script>
+
 <section class="problem-section" id="problem">
   <div class="container">
     <div class="problem-grid">
