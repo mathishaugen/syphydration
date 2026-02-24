@@ -20,7 +20,7 @@
     .nav-links a:hover { color: var(--teal); }
     .nav-cta { background: var(--navy) !important; color: var(--white) !important; padding: 10px 22px; border-radius: 8px; }
     .nav-cta:hover { background: var(--teal) !important; }
-    .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 140px 24px 80px; position: relative; overflow: hidden; }
+    .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 140px 80px 80px; position: relative; overflow: hidden; max-width: 100%; }
     .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(62,201,197,0.10) 0%, transparent 70%); pointer-events: none; }
     .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(62,201,197,0.12); border: 1px solid rgba(62,201,197,0.3); color: var(--teal); font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 7px 16px; border-radius: 100px; margin-bottom: 28px; animation: fadeUp 0.8s ease both; }
     .hero-badge::before { content: ""; width: 6px; height: 6px; background: var(--teal); border-radius: 50%; animation: pulse 2s infinite; }
@@ -44,8 +44,8 @@
     .ticker-item { font-size: 11px; font-weight: 500; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.45); display: flex; align-items: center; gap: 16px; flex-shrink: 0; }
     .ticker-item strong { color: var(--teal); }
     @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-    section { padding: 100px 24px; }
-    .container { max-width: 1100px; margin: 0 auto; }
+    section { padding: 100px 80px; }
+    .container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
     .section-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--teal); margin-bottom: 16px; }
     .section-title { font-size: clamp(28px, 3.5vw, 46px); font-weight: 700; color: var(--navy); letter-spacing: -1px; line-height: 1.1; margin-bottom: 20px; }
     .section-body { font-size: 16px; font-weight: 300; color: var(--gray); line-height: 1.8; max-width: 560px; }
@@ -133,6 +133,20 @@
       footer { flex-direction: column; gap: 20px; text-align: center; }
     }
     @media (max-width: 600px) { .athlete-grid { grid-template-columns: repeat(2, 1fr); } }
+  
+    @media (min-width: 1600px) {
+      .container { max-width: 1600px; }
+      .hero { padding: 140px 120px 80px; }
+      section { padding: 100px 120px; }
+      h1 { font-size: 80px; }
+      .hero-sub { font-size: 20px; max-width: 640px; }
+    }
+    @media (min-width: 2000px) {
+      .container { max-width: 1800px; }
+      .hero { padding: 140px 160px 80px; }
+      section { padding: 100px 160px; }
+    }
+
   </style>
 </head>
 <body>
@@ -155,7 +169,7 @@
 
 <section class="hero" style="text-align:left; flex-direction:row; flex-wrap:wrap; gap:0; padding-top:120px; padding-bottom:80px; align-items:center; justify-content:center;">
   <div class="hero-bg"></div>
-  <div style="flex:1; min-width:300px; max-width:560px; z-index:1; padding:0 24px;">
+  <div style="flex:1; min-width:300px; max-width:640px; z-index:1; padding:0 40px;">
     <div class="hero-badge" style="margin-left:0;">Patent Pending</div>
     <h1 style="text-align:left;">Hydration<br><span>Intelligence.</span></h1>
     <p class="hero-sub" style="text-align:left;">syp turns any water bottle into a smart hydration system, measuring actual fluid intake in real time, not estimates. Built for elite athletes, collegiate programs, and professional sports teams.</p>
@@ -171,7 +185,7 @@
 
     </div>
   </div>
-  <div style="flex:1; min-width:280px; max-width:480px; z-index:1; display:flex; align-items:center; justify-content:center; padding:40px 24px 0;">
+  <div style="flex:1; min-width:280px; max-width:560px; z-index:1; display:flex; align-items:center; justify-content:center; padding:40px 24px 0;">
     <img src="images/syp_sleeve_w_glow.png" alt="SYP Device" style="width:100%; max-width:400px; filter:drop-shadow(0 30px 60px rgba(62,201,197,0.3));" />
   </div>
 </section>
@@ -217,7 +231,7 @@
 </section>
 
 <section style="background:#0a1628; padding:60px 0 0; overflow:hidden;">
-  <div style="max-width:900px; margin:0 auto 40px; text-align:center; padding:0 24px;">
+  <div style="max-width:1400px; margin:0 auto 40px; text-align:center; padding:0 24px;">
     <div class="section-label reveal" style="color:var(--teal); margin-bottom:16px;">Built for Real Life</div>
     <h2 class="section-title reveal" style="color:white; margin-bottom:0;">Hydrate smarter,<br>wherever you are.</h2>
   </div>
@@ -571,7 +585,7 @@ function toggleBio(id, btn) {
 
 
 <section style="background:#0a1628; padding:60px 24px; text-align:center;">
-  <div style="max-width:560px; margin:0 auto;">
+  <div style="max-width:680px; margin:0 auto;">
     <p style="color:rgba(255,255,255,0.5); font-size:13px; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:12px;">For Investors</p>
     <h2 style="color:white; font-size:26px; font-weight:700; margin-bottom:12px;">Interested in syp?</h2>
     <p style="color:rgba(255,255,255,0.6); font-size:16px; margin-bottom:28px;">We are selectively partnering with operators and investors who have built in sports, hardware, or enterprise. Request our deck to learn more.</p>
@@ -580,7 +594,7 @@ function toggleBio(id, btn) {
 </section>
 
 <section style="background:#f8fafb; padding:80px 24px; text-align:center;">
-  <div style="max-width:600px; margin:0 auto;">
+  <div style="max-width:700px; margin:0 auto;">
     <div class="section-label reveal" style="color:var(--teal); margin-bottom:16px;">Newsletter</div>
     <h2 class="section-title reveal" style="color:var(--navy); margin-bottom:16px;">Stay in the loop.</h2>
     <p class="section-body reveal" style="margin-bottom:40px;">Monthly updates on traction, pilots, and the science of hydration intelligence.</p>
@@ -595,7 +609,7 @@ function toggleBio(id, btn) {
 
 
 <section style="background:#0a1628; padding:60px 24px; text-align:center;">
-  <div style="max-width:600px; margin:0 auto;">
+  <div style="max-width:700px; margin:0 auto;">
     <div class="section-label reveal" style="color:var(--teal); margin-bottom:16px;">Follow Along</div>
     <h2 class="section-title reveal" style="color:white; margin-bottom:12px;">Stay connected.</h2>
     <p class="section-body reveal" style="color:rgba(255,255,255,0.6); margin-bottom:40px;">Follow our journey as we build the global standard for hydration intelligence.</p>
