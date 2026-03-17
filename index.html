@@ -131,16 +131,90 @@
     .footer-links a:hover { color: var(--teal); }
     .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
+    /* ── Hamburger menu ── */
+    .nav-hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; cursor: pointer; background: none; border: none; padding: 8px; z-index: 200; }
+    .nav-hamburger span { display: block; width: 24px; height: 2px; background: var(--navy); border-radius: 2px; transition: transform 0.3s, opacity 0.3s; }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255,255,255,0.98); backdrop-filter: blur(20px); z-index: 99; flex-direction: column; align-items: center; justify-content: center; gap: 28px; list-style: none; }
+    .nav-mobile-menu.open { display: flex; }
+    .nav-mobile-menu a { font-size: 22px; font-weight: 700; color: var(--navy); text-decoration: none; transition: color 0.2s; }
+    .nav-mobile-menu a:hover { color: var(--teal); }
+    .nav-mobile-menu .nav-cta-mobile { background: var(--navy); color: var(--white) !important; padding: 16px 48px; border-radius: 10px; font-size: 16px; }
+
+    /* ── Carousel item ── */
+    .carousel-item { width: 480px; height: 320px; border-radius: 14px; overflow: hidden; flex-shrink: 0; }
+    .carousel-item img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+
+    /* ── md: 768px breakpoint ── */
     @media (max-width: 900px) { .athlete-grid { grid-template-columns: repeat(3, 1fr); } }
     @media (max-width: 768px) {
-      nav { padding: 16px 24px; } .nav-links { display: none; }
-      .problem-grid, .team-grid, .investor-grid { grid-template-columns: 1fr; gap: 24px; }
-      .steps { grid-template-columns: 1fr; } .traction-grid { grid-template-columns: repeat(2, 1fr); }
-      .advisor-row { grid-template-columns: repeat(2, 1fr); } .hero-stats { gap: 20px; }
-      footer { flex-direction: column; gap: 20px; text-align: center; }
+      nav { padding: 14px 20px; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+
+      section { padding: 60px 20px; }
+      .container { padding: 0 20px; }
+
+      .hero { padding: 90px 20px 60px !important; flex-direction: column !important; align-items: flex-start !important; }
+      .hero-text-col { padding: 0 !important; max-width: 100% !important; min-width: 0 !important; }
+      .hero-img-col { padding: 28px 0 0 !important; max-width: 100% !important; min-width: 0 !important; width: 100% !important; justify-content: flex-start !important; }
+      .hero-img-col img { max-width: 260px !important; }
+
+      h1 { font-size: clamp(32px, 9vw, 52px); letter-spacing: -1px; }
+      .hero-sub { font-size: 15px; max-width: 100%; }
+      .hero-stats { gap: 16px; margin-top: 40px; }
+      .stat-num { font-size: 24px; }
+
+      .hero-actions { flex-direction: column; width: 100%; }
+      .btn-primary, .btn-secondary { width: 100%; text-align: center; justify-content: center; }
+      .btn-teal { width: 100%; text-align: center; display: block; }
+
+      .problem-grid, .investor-grid { grid-template-columns: 1fr; gap: 24px; }
+      .steps { grid-template-columns: 1fr; }
+      .traction-grid { grid-template-columns: repeat(2, 1fr); }
+      .advisor-row { grid-template-columns: repeat(2, 1fr); }
+      .team-grid { grid-template-columns: 1fr; gap: 24px; }
+
+      .stat-highlight { padding: 28px 24px; }
+      .stat-highlight .big-stat { font-size: 52px; }
+
+      .team-card { flex-direction: column; }
+
+      footer { flex-direction: column; gap: 20px; text-align: center; padding: 32px 20px; }
+      .footer-links { justify-content: center; }
+
+      .carousel-item { width: 260px; height: 180px; }
+
+      .investor-section { padding: 60px 20px; }
+      .waitlist-section { padding: 60px 20px; }
+      .team-section section, section.team-section { padding: 60px 20px; }
     }
-    @media (max-width: 600px) { .athlete-grid { grid-template-columns: repeat(2, 1fr); } }
-  
+
+    /* ── sm: 480px breakpoint ── */
+    @media (max-width: 480px) {
+      section { padding: 48px 16px; }
+      .container { padding: 0 16px; }
+      .waitlist-section { padding: 48px 16px; }
+      .investor-section { padding: 48px 16px; }
+
+      .athlete-grid { grid-template-columns: repeat(2, 1fr); }
+      .traction-grid { grid-template-columns: repeat(2, 1fr); }
+      .advisor-row { grid-template-columns: 1fr; }
+
+      .hero { padding: 80px 16px 48px !important; }
+      .hero-badge { font-size: 9px; padding: 6px 12px; }
+      .hero-stats { flex-wrap: wrap; justify-content: center; gap: 12px; }
+      .stat-divider { display: none; }
+
+      .step { padding: 28px 20px; }
+      .step-num { font-size: 48px; }
+
+      .terms-card { padding: 24px 20px; }
+      .carousel-item { width: 220px; height: 160px; }
+    }
+
     @media (min-width: 1600px) {
       .container { max-width: 1600px; }
       .hero { padding: 140px 120px 80px; }
@@ -170,11 +244,23 @@
     <li><a href="#team">Team</a></li>
     <li><a class="nav-cta" href="#waitlist">Get Early Access</a></li>
   </ul>
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- Mobile nav overlay -->
+<ul class="nav-mobile-menu" id="nav-mobile-menu" role="menu">
+  <li><a href="#demo">Product</a></li>
+  <li><a href="#how">How It Works</a></li>
+  <li><a href="#athletes">Athletes</a></li>
+  <li><a href="#team">Team</a></li>
+  <li><a class="nav-cta-mobile" href="#waitlist">Get Early Access</a></li>
+</ul>
 
 <section class="hero" style="text-align:left; flex-direction:row; flex-wrap:wrap; gap:0; padding-top:120px; padding-bottom:80px; align-items:center; justify-content:center;">
   <div class="hero-bg"></div>
-  <div style="flex:1; min-width:300px; max-width:640px; z-index:1; padding:0 40px;">
+  <div class="hero-text-col" style="flex:1; min-width:300px; max-width:640px; z-index:1; padding:0 40px;">
     <div class="hero-badge" style="margin-left:0;">Coming Soon</div>
     <h1 style="text-align:left;">Never guess<br><span>hydration again.</span></h1>
     <p class="hero-sub" style="text-align:left;">syp clips onto any water bottle and measures every sip in real time. Personalized targets. Instant feedback. No new bottle, no behavior change — just data that's actually yours.</p>
@@ -183,7 +269,7 @@
       <a class="btn-secondary" href="#demo">See How It Works</a>
     </div>
   </div>
-  <div style="flex:1; min-width:280px; max-width:560px; z-index:1; display:flex; align-items:center; justify-content:center; padding:40px 24px 0;">
+  <div class="hero-img-col" style="flex:1; min-width:280px; max-width:560px; z-index:1; display:flex; align-items:center; justify-content:center; padding:40px 24px 0;">
     <img src="images/syp_sleeve_w_glow.png" alt="SYP Device" style="width:100%; max-width:400px; filter:drop-shadow(0 30px 60px rgba(62,201,197,0.3));" />
   </div>
 </section>
@@ -213,7 +299,7 @@
   </div>
 </div>
 
-<section id="demo" style="background:#0a1628; padding:80px 24px; text-align:center;">
+<section id="demo" style="background:#0a1628; padding:clamp(48px,8vw,80px) clamp(16px,4vw,24px); text-align:center;">
   <div style="max-width:900px; margin:0 auto;">
     <div class="section-label reveal" style="color:var(--teal); margin-bottom:16px;">See It In Action</div>
     <h2 class="section-title reveal" style="color:white; margin-bottom:40px;">From any bottle.<br>To real-time data.</h2>
@@ -228,28 +314,28 @@
   </div>
 </section>
 
-<section style="background:#0a1628; padding:60px 0 0; overflow:hidden;">
+<section style="background:#0a1628; padding:clamp(40px,6vw,60px) 0 0; overflow:hidden;">
   <div style="max-width:1400px; margin:0 auto 40px; text-align:center; padding:0 24px;">
     <div class="section-label reveal" style="color:var(--teal); margin-bottom:16px;">Built for Real Life</div>
     <h2 class="section-title reveal" style="color:white; margin-bottom:0;">Hydrate smarter,<br>wherever you are.</h2>
   </div>
   <div style="overflow:hidden; width:100%; padding-bottom:60px;">
     <div id="carousel-track" style="display:flex; gap:16px; width:max-content; will-change:transform;">
-      <div style="width:480px; height:320px; border-radius:14px; overflow:hidden; flex-shrink:0;"><img src="images/syp_cafe.jpeg" style="width:100%; height:100%; object-fit:cover; object-position:center;" /></div>
-      <div style="width:480px; height:320px; border-radius:14px; overflow:hidden; flex-shrink:0;"><img src="images/syp_icebath.jpeg" style="width:100%; height:100%; object-fit:cover; object-position:center;" /></div>
-      <div style="width:480px; height:320px; border-radius:14px; overflow:hidden; flex-shrink:0;"><img src="images/syp_owala.jpeg" style="width:100%; height:100%; object-fit:cover; object-position:center;" /></div>
-      <div style="width:480px; height:320px; border-radius:14px; overflow:hidden; flex-shrink:0;"><img src="images/syp_running.jpeg" style="width:100%; height:100%; object-fit:cover; object-position:center;" /></div>
-      <div style="width:480px; height:320px; border-radius:14px; overflow:hidden; flex-shrink:0;"><img src="images/syp_sauna.jpeg" style="width:100%; height:100%; object-fit:cover; object-position:center;" /></div>
-      <div style="width:480px; height:320px; border-radius:14px; overflow:hidden; flex-shrink:0;"><img src="images/syp_stretch.jpeg" style="width:100%; height:100%; object-fit:cover; object-position:center;" /></div>
-      <div style="width:480px; height:320px; border-radius:14px; overflow:hidden; flex-shrink:0;"><img src="images/syp_urban.png" style="width:100%; height:100%; object-fit:cover; object-position:center;" /></div>
+      <div class="carousel-item"><img src="images/syp_cafe.jpeg" alt="syp at cafe" /></div>
+      <div class="carousel-item"><img src="images/syp_icebath.jpeg" alt="syp ice bath" /></div>
+      <div class="carousel-item"><img src="images/syp_owala.jpeg" alt="syp on owala bottle" /></div>
+      <div class="carousel-item"><img src="images/syp_running.jpeg" alt="syp while running" /></div>
+      <div class="carousel-item"><img src="images/syp_sauna.jpeg" alt="syp in sauna" /></div>
+      <div class="carousel-item"><img src="images/syp_stretch.jpeg" alt="syp while stretching" /></div>
+      <div class="carousel-item"><img src="images/syp_urban.png" alt="syp urban" /></div>
       <!-- Duplicate set for seamless loop -->
-      <div style="width:480px; height:320px; border-radius:14px; overflow:hidden; flex-shrink:0;"><img src="images/syp_cafe.jpeg" style="width:100%; height:100%; object-fit:cover; object-position:center;" /></div>
-      <div style="width:480px; height:320px; border-radius:14px; overflow:hidden; flex-shrink:0;"><img src="images/syp_icebath.jpeg" style="width:100%; height:100%; object-fit:cover; object-position:center;" /></div>
-      <div style="width:480px; height:320px; border-radius:14px; overflow:hidden; flex-shrink:0;"><img src="images/syp_owala.jpeg" style="width:100%; height:100%; object-fit:cover; object-position:center;" /></div>
-      <div style="width:480px; height:320px; border-radius:14px; overflow:hidden; flex-shrink:0;"><img src="images/syp_running.jpeg" style="width:100%; height:100%; object-fit:cover; object-position:center;" /></div>
-      <div style="width:480px; height:320px; border-radius:14px; overflow:hidden; flex-shrink:0;"><img src="images/syp_sauna.jpeg" style="width:100%; height:100%; object-fit:cover; object-position:center;" /></div>
-      <div style="width:480px; height:320px; border-radius:14px; overflow:hidden; flex-shrink:0;"><img src="images/syp_stretch.jpeg" style="width:100%; height:100%; object-fit:cover; object-position:center;" /></div>
-      <div style="width:480px; height:320px; border-radius:14px; overflow:hidden; flex-shrink:0;"><img src="images/syp_urban.png" style="width:100%; height:100%; object-fit:cover; object-position:center;" /></div>
+      <div class="carousel-item"><img src="images/syp_cafe.jpeg" alt="syp at cafe" /></div>
+      <div class="carousel-item"><img src="images/syp_icebath.jpeg" alt="syp ice bath" /></div>
+      <div class="carousel-item"><img src="images/syp_owala.jpeg" alt="syp on owala bottle" /></div>
+      <div class="carousel-item"><img src="images/syp_running.jpeg" alt="syp while running" /></div>
+      <div class="carousel-item"><img src="images/syp_sauna.jpeg" alt="syp in sauna" /></div>
+      <div class="carousel-item"><img src="images/syp_stretch.jpeg" alt="syp while stretching" /></div>
+      <div class="carousel-item"><img src="images/syp_urban.png" alt="syp urban" /></div>
     </div>
   </div>
 </section>
@@ -402,7 +488,7 @@
   </div>
 </section>
 
-<section style="background:var(--navy); padding:80px 24px; text-align:center;">
+<section style="background:var(--navy); padding:clamp(48px,8vw,80px) clamp(16px,4vw,24px); text-align:center;">
   <div style="max-width:600px; margin:0 auto;">
     <div class="section-label reveal" style="color:var(--teal); margin-bottom:16px;">Early Access</div>
     <h2 class="section-title reveal" style="color:var(--white); margin-bottom:16px;">Ready to stop<br><span style="color:var(--teal);">guessing?</span></h2>
@@ -581,7 +667,7 @@ function toggleBio(id, btn) {
 
 
 
-<section style="background:#f8fafb; padding:80px 24px; text-align:center;">
+<section style="background:#f8fafb; padding:clamp(48px,8vw,80px) clamp(16px,4vw,24px); text-align:center;">
   <div style="max-width:700px; margin:0 auto;">
     <div class="section-label reveal" style="color:var(--teal); margin-bottom:16px;">Newsletter</div>
     <h2 class="section-title reveal" style="color:var(--navy); margin-bottom:16px;">Stay in the loop.</h2>
@@ -596,7 +682,7 @@ function toggleBio(id, btn) {
 
 
 
-<section style="background:#0a1628; padding:60px 24px; text-align:center;">
+<section style="background:#0a1628; padding:clamp(40px,6vw,60px) clamp(16px,4vw,24px); text-align:center;">
   <div style="max-width:700px; margin:0 auto;">
     <div class="section-label reveal" style="color:var(--teal); margin-bottom:16px;">Follow Along</div>
     <h2 class="section-title reveal" style="color:white; margin-bottom:12px;">Stay connected.</h2>
@@ -650,6 +736,28 @@ function toggleBio(id, btn) {
     <a href="#waitlist">Waitlist</a>
   </div>
 </footer>
+
+<script>
+(function() {
+  var btn = document.getElementById('nav-hamburger');
+  var menu = document.getElementById('nav-mobile-menu');
+  if (!btn || !menu) return;
+  btn.addEventListener('click', function() {
+    var isOpen = menu.classList.toggle('open');
+    btn.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+  menu.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      menu.classList.remove('open');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  });
+})();
+</script>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   const reveals = document.querySelectorAll(".reveal");
