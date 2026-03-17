@@ -21,12 +21,19 @@
     .nav-cta { background: var(--navy) !important; color: var(--white) !important; padding: 10px 22px; border-radius: 8px; }
     .nav-cta:hover { background: var(--teal) !important; }
     .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 140px 80px 80px; position: relative; overflow: hidden; max-width: 100%; }
-    .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(62,201,197,0.10) 0%, transparent 70%); pointer-events: none; }
+    .hero-bg { position: absolute; inset: 0; pointer-events: none; }
+    .hero-bg::before { content: ""; position: absolute; width: 700px; height: 700px; border-radius: 50%; background: radial-gradient(circle, rgba(62,201,197,0.11) 0%, transparent 65%); top: -180px; right: -80px; animation: heroOrb1 10s ease-in-out infinite alternate; }
+    .hero-bg::after { content: ""; position: absolute; width: 480px; height: 480px; border-radius: 50%; background: radial-gradient(circle, rgba(27,45,107,0.09) 0%, transparent 65%); bottom: -60px; left: -60px; animation: heroOrb2 14s ease-in-out infinite alternate; }
     .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(62,201,197,0.12); border: 1px solid rgba(62,201,197,0.3); color: var(--teal); font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 7px 16px; border-radius: 100px; margin-bottom: 28px; animation: fadeUp 0.8s ease both; }
     .hero-badge::before { content: ""; width: 6px; height: 6px; background: var(--teal); border-radius: 50%; animation: pulse 2s infinite; }
     @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.3); } }
+    @keyframes heroOrb1 { from { transform: translate(0,0) scale(1); } to { transform: translate(-60px,70px) scale(1.15); } }
+    @keyframes heroOrb2 { from { transform: translate(0,0) scale(1); } to { transform: translate(55px,-50px) scale(1.12); } }
+    @media (prefers-reduced-motion: reduce) { .hero-bg::before, .hero-bg::after { animation: none; } }
+    .hero-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--teal); margin-bottom: 16px; animation: fadeUp 0.8s ease both; display: flex; align-items: center; gap: 12px; }
+    .hero-eyebrow::before { content: ""; display: block; width: 28px; height: 2px; background: var(--teal); border-radius: 2px; flex-shrink: 0; }
     h1 { font-size: clamp(44px, 6.5vw, 80px); font-weight: 700; line-height: 1.05; letter-spacing: -2px; color: var(--navy); max-width: 820px; margin-bottom: 24px; animation: fadeUp 0.8s 0.1s ease both; }
-    h1 span { background: linear-gradient(135deg, var(--teal) 0%, #1B8ECA 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    h1 span { background: linear-gradient(135deg, var(--teal) 0%, #1B8ECA 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-size: 1.08em; filter: drop-shadow(0 2px 20px rgba(62,201,197,0.30)); }
     .hero-sub { font-size: 17px; font-weight: 300; color: var(--gray); max-width: 520px; line-height: 1.75; margin-bottom: 44px; animation: fadeUp 0.8s 0.2s ease both; }
     .hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; justify-content: center; animation: fadeUp 0.8s 0.3s ease both; }
     .btn-primary { background: var(--navy); color: var(--white); font-size: 13px; font-weight: 700; padding: 16px 32px; border-radius: 10px; border: none; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s; box-shadow: 0 4px 20px rgba(27,45,107,0.2); display: inline-block; }
@@ -157,32 +164,23 @@
     <span class="logo-text">syp</span>
   </a>
   <ul class="nav-links">
-    <li><a href="#demo">Demo</a></li>
-    <li><a href="#problem">Problem</a></li>
+    <li><a href="#demo">Product</a></li>
     <li><a href="#how">How It Works</a></li>
-    <li><a href="#traction">Traction</a></li>
+    <li><a href="#athletes">Athletes</a></li>
     <li><a href="#team">Team</a></li>
-    <li><a href="#" onclick="window.location.href='mai'+'lto:mathis@syphydration.com?subject=SYP Investor Deck Request';return false;" style="color:var(--teal); font-weight:600;">Investor Deck</a></li>
-    <li><a class="nav-cta" href="#waitlist">Join Waitlist</a></li>
+    <li><a class="nav-cta" href="#waitlist">Get Early Access</a></li>
   </ul>
 </nav>
 
 <section class="hero" style="text-align:left; flex-direction:row; flex-wrap:wrap; gap:0; padding-top:120px; padding-bottom:80px; align-items:center; justify-content:center;">
   <div class="hero-bg"></div>
   <div style="flex:1; min-width:300px; max-width:640px; z-index:1; padding:0 40px;">
-    <div class="hero-badge" style="margin-left:0;">Patent Pending</div>
-    <h1 style="text-align:left;">Hydration<br><span>Intelligence.</span></h1>
-    <p class="hero-sub" style="text-align:left;">syp turns any water bottle into a smart hydration system, measuring actual fluid intake in real time, not estimates. Built for elite athletes, collegiate programs, and professional sports teams.</p>
+    <div class="hero-badge" style="margin-left:0;">Coming Soon</div>
+    <h1 style="text-align:left;">Never guess<br><span>hydration again.</span></h1>
+    <p class="hero-sub" style="text-align:left;">syp clips onto any water bottle and measures every sip in real time. Personalized targets. Instant feedback. No new bottle, no behavior change — just data that's actually yours.</p>
     <div class="hero-actions" style="justify-content:flex-start;">
-      <a class="btn-primary" href="#waitlist">Join the Waitlist</a>
-    </div>
-    <div class="hero-stats" style="justify-content:flex-start; margin-top:48px;">
-      <div class="stat"><div class="stat-num">160<span style="color:var(--teal)">+</span></div><div class="stat-label">Athletes on waitlist</div></div>
-      <div class="stat-divider"></div>
-      <div class="stat"><div class="stat-num">5</div><div class="stat-label">D1 teams committed</div></div>
-      <div class="stat-divider"></div>
-      <div class="stat"><div class="stat-num">$0</div><div class="stat-label">Paid marketing spent</div></div>
-
+      <a class="btn-primary" href="#waitlist">Get Early Access</a>
+      <a class="btn-secondary" href="#demo">See How It Works</a>
     </div>
   </div>
   <div style="flex:1; min-width:280px; max-width:560px; z-index:1; display:flex; align-items:center; justify-content:center; padding:40px 24px 0;">
@@ -192,25 +190,25 @@
 
 <div class="ticker-wrap">
   <div class="ticker-track">
-    <span class="ticker-item"><strong>53%</strong> of NCAA athletes start practice dehydrated</span>
+    <span class="ticker-item">Works with <strong>any bottle</strong></span>
     <span class="ticker-item">///</span>
-    <span class="ticker-item"><strong>3-5x</strong> higher injury risk from chronic dehydration</span>
+    <span class="ticker-item"><strong>Real-time</strong> measurement — not estimates</span>
     <span class="ticker-item">///</span>
-    <span class="ticker-item"><strong>$500K-2M</strong> avg negligence settlement</span>
+    <span class="ticker-item">Personalized to <strong>your body</strong></span>
     <span class="ticker-item">///</span>
-    <span class="ticker-item"><strong>Patent Pending</strong> · App No. 63/821,813</span>
+    <span class="ticker-item">Know before <strong>thirst tells you</strong></span>
     <span class="ticker-item">///</span>
-    <span class="ticker-item"><strong>USF</strong> IRB-approved study · Feb 2026</span>
+    <span class="ticker-item">No behavior change <strong>required</strong></span>
     <span class="ticker-item">///</span>
-    <span class="ticker-item"><strong>53%</strong> of NCAA athletes start practice dehydrated</span>
+    <span class="ticker-item">Works with <strong>any bottle</strong></span>
     <span class="ticker-item">///</span>
-    <span class="ticker-item"><strong>3-5x</strong> higher injury risk from chronic dehydration</span>
+    <span class="ticker-item"><strong>Real-time</strong> measurement — not estimates</span>
     <span class="ticker-item">///</span>
-    <span class="ticker-item"><strong>$500K-2M</strong> avg negligence settlement</span>
+    <span class="ticker-item">Personalized to <strong>your body</strong></span>
     <span class="ticker-item">///</span>
-    <span class="ticker-item"><strong>Patent Pending</strong> · App No. 63/821,813</span>
+    <span class="ticker-item">Know before <strong>thirst tells you</strong></span>
     <span class="ticker-item">///</span>
-    <span class="ticker-item"><strong>USF</strong> IRB-approved study · Feb 2026</span>
+    <span class="ticker-item">No behavior change <strong>required</strong></span>
     <span class="ticker-item">///</span>
   </div>
 </div>
@@ -280,32 +278,31 @@
   <div class="container">
     <div class="problem-grid">
       <div>
-        <div class="section-label reveal">The Problem</div>
-        <h2 class="section-title reveal">Dehydration is invisible ,<br>until it's too late.</h2>
-        <p class="section-body reveal">Current tools either replace equipment athletes love, violate sponsorship deals, or infer hydration from sweat. None measure actual fluid intake. Coaches operate completely blind.</p>
+        <div class="section-label reveal">Why syp</div>
+        <h2 class="section-title reveal">You've been drinking<br>on instinct.</h2>
+        <p class="section-body reveal">Every device you own estimates hydration from sweat. syp is the first that actually measures what you drink — in real time, personalized to you.</p>
         <div class="problem-cards" style="margin-top:32px">
           <div class="problem-card reveal">
             <div class="problem-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3EC9C5" stroke-width="2"><path d="M8 2h8l1 4H7L8 2z"/><path d="M7 6v13a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V6"/><line x1="9" y1="11" x2="15" y2="11"/></svg></div>
-            <div><h3>Smart Bottles Don't Work</h3><p>Athletes have their bottle. Smart bottles violate Gatorade/Powerade sponsorships and create adoption friction no program wants.</p></div>
+            <div><h3>Keep your bottle</h3><p>No replacement required. syp attaches in seconds to any bottle you already love — and disappears when you don't need it.</p></div>
           </div>
           <div class="problem-card reveal">
             <div class="problem-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3EC9C5" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-            <div><h3>Wearables Only Guess</h3><p>WHOOP, Garmin, Oura, all infer hydration from sweat. No direct measurement. No real-time intervention capability.</p></div>
+            <div><h3>Actual measurement</h3><p>Other devices estimate. syp measures directly. Every sip counted, synced to your phone, in real time — not after the fact.</p></div>
           </div>
           <div class="problem-card reveal">
             <div class="problem-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3EC9C5" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
-            <div><h3>Manual Tracking Fails</h3><p>Compliance is near zero. Coaches see only lagging indicators, after the damage is done and the injury has happened.</p></div>
+            <div><h3>Know before it costs you</h3><p>A 10–20% performance drop happens before you even feel thirsty. syp tells you you're falling behind before your body does.</p></div>
           </div>
         </div>
       </div>
       <div class="stat-highlight reveal">
-        <div class="big-stat">53%</div>
-        <p>of NCAA Division I athletes begin practice already hypohydrated, before they've even broken a sweat.</p>
+        <div class="big-stat">10–20%</div>
+        <p>performance you leave on the table every time dehydration goes unchecked — and it happens before you feel thirsty.</p>
         <div style="margin-top:24px; padding-top:24px; border-top:1px solid rgba(255,255,255,0.1)">
-          <div style="font-size:40px; font-weight:700; color:var(--teal); letter-spacing:-2px">10-20%</div>
-          <p>performance degradation from dehydration alone. More than most injuries.</p>
+          <div style="font-size:40px; font-weight:700; color:var(--teal); letter-spacing:-2px">0 sips</div>
+          <p>go untracked with syp. Every milliliter, measured and yours.</p>
         </div>
-        <p class="cite">Wardenaar et al., 2016 &middot; Deloitte, 2024</p>
       </div>
     </div>
   </div>
@@ -316,7 +313,7 @@
     <div class="how-header">
       <div class="section-label reveal">How It Works</div>
       <h2 class="section-title reveal">Attach. Drink. Know.</h2>
-      <p class="section-body reveal">No behavior change. No bottle replacement. syp clips onto any water bottle and gives you, and your entire team, real-time, verified hydration data.</p>
+      <p class="section-body reveal">No new bottle. No manual logging. syp clips onto what you already use and gives you real-time data that's actually yours.</p>
     </div>
     <div class="steps reveal">
       <div class="step">
@@ -326,7 +323,7 @@
         <div class="step-num">01</div>
         <div class="step-tag">Hardware</div>
         <h3>Universal Attachment</h3>
-        <p>syp's patent-pending load cell sleeve attaches to any water bottle in seconds. Works with existing equipment. No sponsorship conflicts. Zero athlete resistance.</p>
+        <p>syp's patent-pending sleeve attaches to any water bottle in seconds. Your favorite bottle stays your favorite bottle — nothing changes except what you know.</p>
       </div>
       <div class="step">
         <div style="width:100%; height:260px; border-radius:10px; margin-bottom:20px; overflow:hidden;">
@@ -335,7 +332,7 @@
         <div class="step-num">02</div>
         <div class="step-tag">Software</div>
         <h3>Real-Time Measurement</h3>
-        <p>Direct fluid intake measurement syncs automatically via Bluetooth. Personalized targets based on body metrics, activity, and climate, not sweat-based guesses.</p>
+        <p>Every sip is measured and synced to your phone instantly. Targets built around your body, your activity, and the conditions you're performing in — not generic averages.</p>
       </div>
       <div class="step">
         <div style="width:100%; height:260px; border-radius:10px; margin-bottom:20px; overflow:hidden;">
@@ -344,26 +341,18 @@
         <div class="step-num">03</div>
         <div class="step-tag">Intelligence</div>
         <h3>Team Visibility</h3>
-        <p>Coaches see the full team on a live dashboard. At-risk alerts fire before performance degrades. Real data. Real decisions. Zero guesswork.</p>
+        <p>See exactly where you stand — and so can your coach. Live dashboard, real-time alerts, and a full picture of your hydration before it becomes a problem.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="traction">
+<section id="athletes">
   <div class="container">
-    <div class="section-label reveal">Traction</div>
-    <h2 class="section-title reveal">Momentum built on<br>zero paid marketing.</h2>
-    <p class="section-body reveal">Every metric here is organic. We haven't spent a dollar on advertising.</p>
-    <div class="traction-grid reveal">
-      <div class="traction-card"><div class="traction-num">160<span>+</span></div><div class="traction-label">Athletes on<br>waitlist</div></div>
-      <div class="traction-card"><div class="traction-num">5</div><div class="traction-label">D1 teams committed<br>for Fall 2026</div></div>
-      <div class="traction-card"><div class="traction-num">5</div><div class="traction-label">Founding athletes<br>testing prototype</div></div>
-      <div class="traction-card"><div class="traction-num">1</div><div class="traction-label">IRB-approved<br>USF study active</div></div>
-    </div>
-    <div style="margin-top:60px;" class="reveal">
-      <div class="section-label" style="margin-bottom:28px">Founding Athletes</div>
-      <div class="athlete-grid">
+    <div class="section-label reveal">Athletes</div>
+    <h2 class="section-title reveal">Training with syp.</h2>
+    <p class="section-body reveal" style="margin-bottom:52px;">Some of the world's top athletes are already putting syp to the test.</p>
+    <div class="athlete-grid">
         <a href="https://www.instagram.com/hugo__car" target="_blank" class="athlete-card">
           <div class="athlete-photo" style="background:#1a3a5c;"><img src="images/hugo.jpeg" style="object-position:center top;" alt="Hugo Car"/></div>
           <div class="athlete-info">
@@ -410,7 +399,15 @@
           </div>
         </a>
       </div>
-    </div>
+  </div>
+</section>
+
+<section style="background:var(--navy); padding:80px 24px; text-align:center;">
+  <div style="max-width:600px; margin:0 auto;">
+    <div class="section-label reveal" style="color:var(--teal); margin-bottom:16px;">Early Access</div>
+    <h2 class="section-title reveal" style="color:var(--white); margin-bottom:16px;">Ready to stop<br><span style="color:var(--teal);">guessing?</span></h2>
+    <p class="reveal" style="color:rgba(255,255,255,0.65); font-size:16px; line-height:1.7; margin-bottom:32px;">Join 160+ athletes already on the waitlist. Be first to train with data that's actually yours.</p>
+    <a class="btn-teal reveal" href="#waitlist">Get Early Access</a>
   </div>
 </section>
 
@@ -584,20 +581,11 @@ function toggleBio(id, btn) {
 
 
 
-<section style="background:#0a1628; padding:60px 24px; text-align:center;">
-  <div style="max-width:680px; margin:0 auto;">
-    <p style="color:rgba(255,255,255,0.5); font-size:13px; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:12px;">For Investors</p>
-    <h2 style="color:white; font-size:26px; font-weight:700; margin-bottom:12px;">Interested in syp?</h2>
-    <p style="color:rgba(255,255,255,0.6); font-size:16px; margin-bottom:28px;">We are selectively partnering with operators and investors who have built in sports, hardware, or enterprise. Request our deck to learn more.</p>
-    <a href="#" onclick="window.location.href='mai'+'lto:mathis@syphydration.com?subject=SYP Investor Deck Request';return false;" style="display:inline-block; background:transparent; border:1.5px solid rgba(255,255,255,0.3); color:white; padding:14px 32px; border-radius:8px; font-weight:600; font-size:15px; text-decoration:none; transition:all 0.2s;" onmouseover="this.style.borderColor='var(--teal)';this.style.color='var(--teal)';" onmouseout="this.style.borderColor='rgba(255,255,255,0.3)';this.style.color='white';">Request Investor Deck</a>
-  </div>
-</section>
-
 <section style="background:#f8fafb; padding:80px 24px; text-align:center;">
   <div style="max-width:700px; margin:0 auto;">
     <div class="section-label reveal" style="color:var(--teal); margin-bottom:16px;">Newsletter</div>
     <h2 class="section-title reveal" style="color:var(--navy); margin-bottom:16px;">Stay in the loop.</h2>
-    <p class="section-body reveal" style="margin-bottom:40px;">Monthly updates on traction, pilots, and the science of hydration intelligence.</p>
+    <p class="section-body reveal" style="margin-bottom:40px;">Performance tips, hydration science, and early access updates — straight to your inbox.</p>
     <div class="reveal">
       <iframe data-tally-src="https://tally.so/embed/2EeZJM?alignLeft=0&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="180" frameborder="0" marginheight="0" marginwidth="0" title="SYP Newsletter"></iframe>
       <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
@@ -636,17 +624,17 @@ function toggleBio(id, btn) {
 
 <section class="waitlist-section" id="waitlist">
   <div class="waitlist-inner">
-    <div class="section-label reveal">Join the Movement</div>
-    <h2 class="section-title reveal">Be first to<br>hydrate smarter.</h2>
-    <p class="section-body reveal" style="max-width:100%; margin:16px auto 20px;">Whether you're an athlete, coach, program director, or investor, get early access and updates as we launch.</p>
+    <div class="section-label reveal">Early Access</div>
+    <h2 class="section-title reveal">Train with data<br>that's yours.</h2>
+    <p class="section-body reveal" style="max-width:100%; margin:16px auto 20px;">Be among the first athletes to train with real hydration data. Join the waitlist and get early access when we launch.</p>
     <div class="reveal" style="width:100%; max-width:480px; margin:0 auto;">
       <iframe data-tally-src="https://tally.so/embed/VL0lL6?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="180" frameborder="0" marginheight="0" marginwidth="0" title="SYP Waitlist"></iframe>
       <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')===null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
     </div>
     <div class="waitlist-tags reveal" style="margin-top:16px;">
-      <div class="wtag">160+ already joined</div>
+      <div class="wtag">160+ athletes already joined</div>
       <div class="wtag">No spam, ever</div>
-      <div class="wtag">Early access priority</div>
+      <div class="wtag">First access when we launch</div>
     </div>
   </div>
 </section>
@@ -658,7 +646,7 @@ function toggleBio(id, btn) {
   </a>
   <p>&copy; 2026 Hauzi LLC &middot; Patent Pending &middot; App No. 63/821,813</p>
   <div class="footer-links">
-    <a href="#" onclick="window.location.href='mai'+'lto:mathis@syphydration.com?subject=SYP Investor Deck Request';return false;">Contact</a>
+    <a href="#" onclick="window.location.href='mai'+'lto:mathis@syphydration.com';return false;">Contact</a>
     <a href="#waitlist">Waitlist</a>
   </div>
 </footer>
