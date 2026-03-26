@@ -553,7 +553,6 @@ function toggleBio(id, btn) {
     <p class="section-body reveal" style="margin-bottom:40px;">Performance tips, hydration science, and early access updates -- straight to your inbox.</p>
     <div class="reveal">
       <iframe data-tally-src="https://tally.so/embed/2EeZJM?alignLeft=0&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="180" frameborder="0" marginheight="0" marginwidth="0" title="SYP Newsletter"></iframe>
-      <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}<\/script>
     </div>
   </div>
 </section>
@@ -583,7 +582,6 @@ function toggleBio(id, btn) {
     <p class="section-body reveal" style="max-width:100%; margin:16px auto 20px;">Be among the first athletes to train with real hydration data. Join the waitlist and get early access when we launch.</p>
     <div class="reveal" style="width:100%; max-width:480px; margin:0 auto;">
       <iframe data-tally-src="https://tally.so/embed/VL0lL6?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="180" frameborder="0" marginheight="0" marginwidth="0" title="SYP Waitlist"></iframe>
-      <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')===null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}<\/script>
     </div>
     <div class="waitlist-tags reveal" style="margin-top:16px;">
       <div class="wtag">160+ athletes already joined</div>
@@ -630,6 +628,20 @@ function toggleBio(id, btn) {
     entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add("visible"); });
   });
   reveals.forEach(el => observer.observe(el));
+</script>
+
+<script>
+  (function() {
+    var w = "https://tally.so/widgets/embed.js";
+    var v = function() {
+      if (typeof Tally !== "undefined") { Tally.loadEmbeds(); }
+      else { document.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function(e) { e.src = e.dataset.tallySrc; }); }
+    };
+    if (typeof Tally !== "undefined") { v(); }
+    else if (!document.querySelector('script[src="' + w + '"]')) {
+      var s = document.createElement("script"); s.src = w; s.onload = v; s.onerror = v; document.body.appendChild(s);
+    }
+  })();
 </script>
 
 </body>
