@@ -618,20 +618,15 @@ h2.section-h2 em {
   border: 1px solid var(--border-light);
   margin-bottom: 48px;
   cursor: col-resize;
-  aspect-ratio: 16/7;
+  aspect-ratio: 16/9;
   background: #F5F5F3;
 }
 .slider-after, .slider-before {
   position: absolute;
   inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
 }
 .slider-after { background: var(--white); }
 .slider-before {
-  background: var(--off-white);
   clip-path: inset(0 50% 0 0);
   transition: clip-path 0s;
 }
@@ -1450,21 +1445,81 @@ footer {
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
-  nav { padding: 0 24px; }
-  .nav-links { display: none; }
-  .section-inner { padding: 72px 24px; }
-  .problem-grid { grid-template-columns: 1fr; gap: 40px; }
-  .cards-grid { grid-template-columns: 1fr; }
-  .stats-grid { grid-template-columns: repeat(2, 1fr); }
-  .steps-grid { grid-template-columns: 1fr; }
-  .testimonials-grid { grid-template-columns: 1fr; }
-  .testimonial-card.featured { grid-column: span 1; flex-direction: column; }
-  .athletes-grid { grid-template-columns: repeat(2, 1fr); }
-  .faq-grid { grid-template-columns: 1fr; }
-  .faq-right { position: static; }
+  /* NAV */
+  nav { padding: 0 20px; }
+  .nav-left { display: none; }
+  .nav-right li:not(:last-child) { display: none; }
+
+  /* HERO — text centered on top, image behind */
+  .hero {
+    min-height: 100svh;
+    padding: 80px 24px 60px;
+    align-items: center;
+    text-align: center;
+  }
+  .hero-bg-img { background-position: center center; }
+  .hero-overlay {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.65) 100%);
+  }
+  .hero-content {
+    align-items: center;
+    text-align: center;
+    max-width: 100%;
+  }
+  .hero h1 { font-size: clamp(32px, 8vw, 52px); max-width: 100%; }
+  .hero-eyebrow { font-size: 11px; }
+
+  /* PRESS STRIP */
+  .press-strip { padding: 20px 0; }
+
+  /* SECTIONS */
+  .section-inner { padding: 64px 24px; }
+  .section-h2 { font-size: clamp(28px, 7vw, 40px); }
+
+  /* PROBLEM */
+  .problem-grid { grid-template-columns: 1fr; gap: 36px; }
+  .problem-text h2 { font-size: clamp(26px, 6vw, 36px); }
+
+  /* WHY IT MATTERS */
+  .cards-grid { grid-template-columns: 1fr; gap: 16px; }
+
+  /* WHAT SETS US APART */
   .sets-statements { grid-template-columns: 1fr; }
-  .footer-inner { grid-template-columns: 1fr 1fr; }
+  .slider-container { aspect-ratio: 4/3; }
+
+  /* TRUSTED STATS */
+  .trusted-stats-grid { grid-template-columns: 1fr; gap: 32px; }
+  .trusted-stat-cell { padding: 0; border-left: none !important; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .trusted-stat-cell:last-child { border-bottom: none; padding-bottom: 0; }
+  .trusted-stats-inner { padding: 60px 24px; }
+  .trusted-stats-headline { font-size: clamp(32px, 7vw, 48px); }
+
+  /* HOW IT WORKS */
+  .steps-grid { grid-template-columns: 1fr; gap: 16px; }
+  .how-header { margin-bottom: 36px; }
+
+  /* TESTIMONIALS */
+  .testimonials-grid { grid-template-columns: 1fr; gap: 16px; }
+  .testimonial-card.featured { grid-column: span 1; flex-direction: column; }
+
+  /* ATHLETES */
+  .athletes-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+
+  /* FAQ */
+  .faq-grid { grid-template-columns: 1fr; gap: 40px; }
+  .faq-right { position: static; }
+
+  /* WAITLIST */
   .waitlist-inner { padding: 80px 24px; }
+
+  /* PROMO VIDEO */
+  .promo-video-inner { padding: 0 24px; }
+
+  /* FOOTER */
+  .footer-top { grid-template-columns: 1fr; gap: 48px; padding: 56px 24px 40px; }
+  .footer-links { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  footer { padding: 0 0 32px; }
+  .footer-bottom-bar { padding: 24px 24px 0; }
 }
 </style>
 </head>
@@ -1479,7 +1534,6 @@ footer {
 <nav>
   <!-- LEFT LINKS -->
   <ul class="nav-left">
-    <li><a href="#waitlist">waitlist</a></li>
     <li><a href="#why-syp">why syp</a></li>
     <li><a href="#how-it-works">how it works</a></li>
     <li class="nav-dropdown">
@@ -1500,10 +1554,10 @@ footer {
 
   <!-- CENTER LOGO -->
   <div class="nav-logo-center">
-    <!-- If you have the logo file ready, replace the text below with: -->
-    <!-- <img src="images/syp-logo-white.png" alt="syp"> -->
-    <!-- IMAGE FILE: images/syp-logo-white.png — white syp logo for dark nav background -->
-    <a href="/" class="nav-logo-text">syp</a>
+    <a href="/" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+      <img src="images/syp-logo.png" alt="syp logo" style="height:32px;width:auto;filter:invert(1);opacity:0.9;">
+      <span class="nav-logo-text">syp</span>
+    </a>
   </div>
 
   <!-- RIGHT LINKS -->
@@ -1525,13 +1579,20 @@ footer {
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg-img"></div>
-  <!-- IMAGE FILE: images/hero-athlete.jpg -->
-  <!-- Photo: athlete holding syp bottle up celebrating. Dark cinematic background. Teal sleeve visible on bottle. Portrait or landscape both work. -->
+  <!-- HERO VIDEO BACKGROUND -->
+  <video
+    autoplay
+    muted
+    loop
+    playsinline
+    poster="images/hero-athlete.jpg"
+    style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;">
+    <source src="images/hero-video.mp4" type="video/mp4">
+  </video>
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <p class="hero-eyebrow">the wearable for your hydration.</p>
-    <h1>the bottle didn't change.<br><em>what you know about it did.</em></h1>
+    <h1>the bottle didn't change.<br><em>what it tells you did.</em></h1>
     <a href="#waitlist" class="hero-cta">join the waitlist</a>
     <p class="hero-trust">400+ people on the waitlist.</p>
   </div>
@@ -1688,68 +1749,10 @@ footer {
     <!-- BEFORE/AFTER SLIDER -->
     <div class="slider-container" id="bottleSlider">
       <div class="slider-after">
-        <div class="bottle-row">
-          <!-- IMAGE FILES: images/bottle-stanley-syp.png, bottle-owala-syp.png, bottle-powerade-syp.png, bottle-gatorade-syp.png -->
-          <!-- White background product shots of each bottle WITH syp sleeve attached -->
-          <div class="bottle-item">
-            <div class="bottle-img-wrap" style="background:#F0F0EE;">
-              <span style="font-size:11px;color:#AAA;letter-spacing:.08em;text-transform:uppercase;">Stanley</span>
-              <div class="syp-badge">syp</div>
-            </div>
-            <span class="bottle-label">Stanley</span>
-          </div>
-          <div class="bottle-item">
-            <div class="bottle-img-wrap" style="background:#F0F0EE;">
-              <span style="font-size:11px;color:#AAA;letter-spacing:.08em;text-transform:uppercase;">Owala</span>
-              <div class="syp-badge">syp</div>
-            </div>
-            <span class="bottle-label">Owala</span>
-          </div>
-          <div class="bottle-item">
-            <div class="bottle-img-wrap" style="background:#F0F0EE;">
-              <span style="font-size:11px;color:#AAA;letter-spacing:.08em;text-transform:uppercase;">Powerade</span>
-              <div class="syp-badge">syp</div>
-            </div>
-            <span class="bottle-label">Powerade</span>
-          </div>
-          <div class="bottle-item">
-            <div class="bottle-img-wrap" style="background:#F0F0EE;">
-              <span style="font-size:11px;color:#AAA;letter-spacing:.08em;text-transform:uppercase;">Gatorade</span>
-              <div class="syp-badge">syp</div>
-            </div>
-            <span class="bottle-label">Gatorade</span>
-          </div>
-        </div>
+        <img src="images/bottles-with-syp.jpg" alt="bottles with syp" style="width:100%;height:100%;object-fit:cover;display:block;">
       </div>
       <div class="slider-before" id="sliderBefore">
-        <div class="bottle-row">
-          <!-- IMAGE FILES: images/bottle-stanley.png, bottle-owala.png, bottle-powerade.png, bottle-gatorade.png -->
-          <!-- Same bottles WITHOUT syp sleeve — clean white background product shots -->
-          <div class="bottle-item">
-            <div class="bottle-img-wrap" style="background:#EBEBEB;">
-              <span style="font-size:11px;color:#AAA;letter-spacing:.08em;text-transform:uppercase;">Stanley</span>
-            </div>
-            <span class="bottle-label">Stanley</span>
-          </div>
-          <div class="bottle-item">
-            <div class="bottle-img-wrap" style="background:#EBEBEB;">
-              <span style="font-size:11px;color:#AAA;letter-spacing:.08em;text-transform:uppercase;">Owala</span>
-            </div>
-            <span class="bottle-label">Owala</span>
-          </div>
-          <div class="bottle-item">
-            <div class="bottle-img-wrap" style="background:#EBEBEB;">
-              <span style="font-size:11px;color:#AAA;letter-spacing:.08em;text-transform:uppercase;">Powerade</span>
-            </div>
-            <span class="bottle-label">Powerade</span>
-          </div>
-          <div class="bottle-item">
-            <div class="bottle-img-wrap" style="background:#EBEBEB;">
-              <span style="font-size:11px;color:#AAA;letter-spacing:.08em;text-transform:uppercase;">Gatorade</span>
-            </div>
-            <span class="bottle-label">Gatorade</span>
-          </div>
-        </div>
+        <img src="images/bottles-without-syp.jpg" alt="bottles without syp" style="width:100%;height:100%;object-fit:cover;display:block;">
       </div>
       <div class="slider-handle" id="sliderHandle">
         <div class="slider-handle-circle">
