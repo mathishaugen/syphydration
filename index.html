@@ -325,22 +325,15 @@ nav {
   100% { transform: translateX(-25%); }
 }
 .press-logo {
-  font-family: var(--font-body);
-  font-size: 14px;
-  font-weight: 600;
-  color: #C0C0C0;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  white-space: nowrap;
-  transition: color 0.2s;
-  user-select: none;
-}
-.press-logo img {
-  height: 20px;
+  height: 22px;
   width: auto;
-  opacity: 0.3;
+  opacity: 0.35;
   filter: grayscale(100%);
+  display: block;
+  flex-shrink: 0;
+  transition: opacity 0.2s;
 }
+.press-logo:hover { opacity: 0.6; }
 
 /* PROMO VIDEO SECTION */
 .promo-video-section {
@@ -1555,7 +1548,7 @@ footer {
   <!-- CENTER LOGO -->
   <div class="nav-logo-center">
     <a href="/" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
-      <img src="images/syp-logo.png" alt="syp logo" style="height:32px;width:auto;filter:invert(1);opacity:0.9;">
+      <img src="images/syp-logo.png" alt="syp logo" style="height:32px;width:auto;filter:brightness(0) invert(1);opacity:0.9;">
       <span class="nav-logo-text">syp</span>
     </a>
   </div>
@@ -1602,32 +1595,32 @@ footer {
 <div class="press-strip">
   <div class="press-marquee">
     <div class="press-marquee-inner">
-      <span class="press-logo">WFLA</span>
-      <span class="press-logo">Tampa Bay Business Journal</span>
-      <span class="press-logo">Embargo Collective</span>
-      <span class="press-logo">Web Summit</span>
-      <span class="press-logo">USF</span>
+      <img class="press-logo" src="images/press-wfla.png" alt="WFLA">
+      <img class="press-logo" src="images/press-tbj.png" alt="Tampa Bay Business Journal">
+      <img class="press-logo" src="images/press-embargo.png" alt="Embargo Collective">
+      <img class="press-logo" src="images/press-websummit.png" alt="Web Summit">
+      <img class="press-logo" src="images/press-usf.png" alt="USF">
     </div>
     <div class="press-marquee-inner">
-      <span class="press-logo">WFLA</span>
-      <span class="press-logo">Tampa Bay Business Journal</span>
-      <span class="press-logo">Embargo Collective</span>
-      <span class="press-logo">Web Summit</span>
-      <span class="press-logo">USF</span>
+      <img class="press-logo" src="images/press-wfla.png" alt="WFLA">
+      <img class="press-logo" src="images/press-tbj.png" alt="Tampa Bay Business Journal">
+      <img class="press-logo" src="images/press-embargo.png" alt="Embargo Collective">
+      <img class="press-logo" src="images/press-websummit.png" alt="Web Summit">
+      <img class="press-logo" src="images/press-usf.png" alt="USF">
     </div>
     <div class="press-marquee-inner">
-      <span class="press-logo">WFLA</span>
-      <span class="press-logo">Tampa Bay Business Journal</span>
-      <span class="press-logo">Embargo Collective</span>
-      <span class="press-logo">Web Summit</span>
-      <span class="press-logo">USF</span>
+      <img class="press-logo" src="images/press-wfla.png" alt="WFLA">
+      <img class="press-logo" src="images/press-tbj.png" alt="Tampa Bay Business Journal">
+      <img class="press-logo" src="images/press-embargo.png" alt="Embargo Collective">
+      <img class="press-logo" src="images/press-websummit.png" alt="Web Summit">
+      <img class="press-logo" src="images/press-usf.png" alt="USF">
     </div>
     <div class="press-marquee-inner">
-      <span class="press-logo">WFLA</span>
-      <span class="press-logo">Tampa Bay Business Journal</span>
-      <span class="press-logo">Embargo Collective</span>
-      <span class="press-logo">Web Summit</span>
-      <span class="press-logo">USF</span>
+      <img class="press-logo" src="images/press-wfla.png" alt="WFLA">
+      <img class="press-logo" src="images/press-tbj.png" alt="Tampa Bay Business Journal">
+      <img class="press-logo" src="images/press-embargo.png" alt="Embargo Collective">
+      <img class="press-logo" src="images/press-websummit.png" alt="Web Summit">
+      <img class="press-logo" src="images/press-usf.png" alt="USF">
     </div>
   </div>
 </div>
@@ -1749,10 +1742,10 @@ footer {
     <!-- BEFORE/AFTER SLIDER -->
     <div class="slider-container" id="bottleSlider">
       <div class="slider-after">
-        <img src="images/bottles-with-syp.jpg" alt="bottles with syp" style="width:100%;height:100%;object-fit:cover;display:block;">
+        <img src="images/bottles-with-syp.jpeg" alt="bottles with syp" style="width:100%;height:100%;object-fit:cover;display:block;">
       </div>
       <div class="slider-before" id="sliderBefore">
-        <img src="images/bottles-without-syp.jpg" alt="bottles without syp" style="width:100%;height:100%;object-fit:cover;display:block;">
+        <img src="images/bottles-without-syp.jpeg" alt="bottles without syp" style="width:100%;height:100%;object-fit:cover;display:block;">
       </div>
       <div class="slider-handle" id="sliderHandle">
         <div class="slider-handle-circle">
