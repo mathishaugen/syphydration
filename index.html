@@ -1650,31 +1650,9 @@ footer {
         <span class="section-label">the problem</span>
         <h2>7 in 10 collegiate athletes start practice <em>dehydrated.</em> do you?</h2>
         <p>Most athletes track sleep, nutrition, and recovery. Water intake stays a guess. syp fixes that.</p>
-        <a href="#how-it-works" class="check-hydration-btn">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
-            <circle cx="8" cy="8" r="7"/>
-            <path d="M8 5v3l2 2"/>
-          </svg>
-          check your hydration
-        </a>
       </div>
       <div class="problem-visual fade-up fade-up-delay-1">
-        <!-- IMAGE FILE: images/problem-thumbnail.jpg -->
-        <!-- Thumbnail for dehydration awareness video. Can be urine color chart graphic or athlete training shot. -->
-        <div style="width:100%;height:100%;background:#F0F0EE;display:flex;align-items:center;justify-content:center;">
-          <span style="font-size:11px;color:#AAAAAA;letter-spacing:0.12em;text-transform:uppercase;">video thumbnail placeholder</span>
-        </div>
-        <div class="play-btn">
-          <div class="play-circle">
-            <svg viewBox="0 0 24 24" fill="var(--black)">
-              <path d="M8 5v14l11-7z"/>
-            </svg>
-          </div>
-        </div>
-        <span class="video-placeholder-label">
-          <!-- VIDEO FILE: videos/dehydration-check.mp4 -->
-          are you dehydrated?
-        </span>
+        <img src="images/problem-thumbnail.jpg" alt="Athletes on field" style="width:100%;height:100%;object-fit:cover;display:block;border-radius:16px;">
       </div>
     </div>
   </div>
@@ -2180,7 +2158,7 @@ footer {
       <div class="faq-right">
         <div class="faq-cta-card">
           <h3>still have<br><em>questions?</em></h3>
-          <p>reach out directly. mathis reads every message.</p>
+          <p>reach out directly. we read every message.</p>
           <a href="mailto:mathis@syphydration.com" class="faq-cta-btn">get in touch</a>
         </div>
       </div>
@@ -2194,34 +2172,19 @@ footer {
     <span class="section-label">join the hydration revolution</span>
     <h2>founding members shape what <em>syp</em> becomes.</h2>
     <p>the first athletes on the waitlist get early access, founding-member pricing, and a direct line to the team building this.</p>
-    <form class="waitlist-form" onsubmit="handleWaitlist(event)">
-      <input class="waitlist-input" type="text" placeholder="your name" required>
-      <input class="waitlist-input" type="email" placeholder="your email" required>
-      <select class="waitlist-select">
-        <option value="" disabled selected>your sport</option>
-        <option>Soccer</option>
-        <option>Tennis</option>
-        <option>Track & Field</option>
-        <option>Basketball</option>
-        <option>Swimming</option>
-        <option>Cycling</option>
-        <option>Running / Endurance</option>
-        <option>HYROX / Functional Fitness</option>
-        <option>Triathlon / Ironman</option>
-        <option>Other</option>
-      </select>
-      <select class="waitlist-select">
-        <option value="" disabled selected>your level</option>
-        <option>D1 Collegiate</option>
-        <option>D2 / D3 Collegiate</option>
-        <option>Professional</option>
-        <option>Semi-Professional</option>
-        <option>Amateur / Club</option>
-        <option>Weekend Warrior</option>
-      </select>
-      <button type="submit" class="waitlist-submit">join the waitlist</button>
-    </form>
-    <p class="waitlist-note">no spam. real updates only.</p>
+    <iframe
+      data-tally-src="https://tally.so/embed/ob51PO?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+      loading="lazy"
+      width="100%"
+      height="400"
+      frameborder="0"
+      marginheight="0"
+      marginwidth="0"
+      title="syp waitlist"
+      style="margin-top:32px;border-radius:8px;">
+    </iframe>
+    <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+    <p class="waitlist-note"></p>
   </div>
 </section>
 
