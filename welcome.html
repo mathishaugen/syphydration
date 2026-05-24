@@ -12,29 +12,38 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html, body {
   height: 100%;
+  width: 100%;
   font-family: 'Inter', sans-serif;
   background: #0A0A0A;
   color: #FFFFFF;
   -webkit-font-smoothing: antialiased;
-}
-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 40px 24px;
-  position: relative;
   overflow: hidden;
 }
 
-/* Background glow */
-.bg-glow {
+/* Full screen video */
+.video-bg {
   position: fixed;
   inset: 0;
-  background: radial-gradient(ellipse 60% 50% at 50% 60%, rgba(29,203,168,0.07) 0%, transparent 70%);
-  pointer-events: none;
   z-index: 0;
+}
+.video-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.35) 0%,
+    rgba(0,0,0,0.25) 40%,
+    rgba(0,0,0,0.65) 100%
+  );
+  z-index: 1;
 }
 
 /* Nav */
@@ -43,15 +52,12 @@ nav {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;
+  z-index: 10;
   padding: 0 32px;
   height: 64px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(10,10,10,0.8);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 .nav-logo {
   display: flex;
@@ -71,47 +77,49 @@ nav {
 }
 .nav-back {
   font-size: 13px;
-  color: rgba(255,255,255,0.45);
+  color: rgba(255,255,255,0.6);
   text-decoration: none;
   display: flex;
   align-items: center;
   gap: 6px;
   transition: color 0.2s;
 }
-.nav-back:hover { color: rgba(255,255,255,0.8); }
+.nav-back:hover { color: #FFFFFF; }
 .nav-back svg { width: 14px; height: 14px; }
 
-/* Main content */
+/* Content */
 .content {
-  position: relative;
-  z-index: 1;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  padding: 0 64px 56px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  max-width: 680px;
-  width: 100%;
-  animation: fadeUp 0.7s ease both;
+  align-items: flex-start;
+  animation: fadeUp 0.8s ease both;
 }
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
+  from { opacity: 0; transform: translateY(24px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Confirmation badge */
+/* Badge */
 .badge {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  background: rgba(29,203,168,0.12);
-  border: 1px solid rgba(29,203,168,0.25);
+  background: rgba(29,203,168,0.15);
+  border: 1px solid rgba(29,203,168,0.3);
   border-radius: 20px;
-  padding: 6px 16px;
-  font-size: 12px;
+  padding: 5px 14px;
+  font-size: 11px;
   font-weight: 500;
   color: #1DCBA8;
-  letter-spacing: 0.04em;
-  margin-bottom: 24px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
 }
 .badge-dot {
   width: 6px;
@@ -120,86 +128,49 @@ nav {
   border-radius: 50%;
 }
 
-/* Headline */
 h1 {
-  font-size: clamp(36px, 6vw, 64px);
+  font-size: clamp(40px, 6vw, 72px);
   font-weight: 800;
   line-height: 1.04;
   letter-spacing: -0.03em;
   color: #FFFFFF;
-  margin-bottom: 16px;
+  margin-bottom: 28px;
 }
 h1 em {
   font-style: normal;
   color: #1DCBA8;
 }
 
-.subhead {
-  font-size: 16px;
-  font-weight: 300;
-  color: rgba(255,255,255,0.45);
-  line-height: 1.65;
-  max-width: 440px;
-  margin-bottom: 44px;
-}
-
-/* Video container */
-.video-wrap {
-  width: 100%;
-  max-width: 600px;
-  border-radius: 20px;
-  overflow: hidden;
-  position: relative;
-  background: #111;
-  box-shadow: 0 32px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(29,203,168,0.15);
-  margin-bottom: 40px;
-  animation: fadeUp 0.7s ease 0.2s both;
-}
-.video-wrap video {
-  width: 100%;
-  display: block;
-  border-radius: 20px;
-}
-
-/* Caption */
-.caption {
-  font-size: 14px;
-  color: rgba(255,255,255,0.35);
-  margin-bottom: 44px;
-  letter-spacing: 0.02em;
-  animation: fadeUp 0.7s ease 0.35s both;
-}
-
-/* CTA */
-.cta-group {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
-  animation: fadeUp 0.7s ease 0.45s both;
-}
-.btn-primary {
-  background: #FFFFFF;
-  color: #0A0A0A;
-  border: none;
-  padding: 15px 40px;
-  border-radius: 8px;
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
-  transition: background 0.2s, transform 0.15s;
-  letter-spacing: 0.01em;
-}
-.btn-primary:hover { background: #E8E8E8; transform: translateY(-1px); }
+/* Social links */
 .social-links {
   display: flex;
-  gap: 20px;
+  gap: 16px;
   align-items: center;
 }
 .social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 9px 18px;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+}
+.social-link:hover {
+  background: rgba(255,255,255,0.15);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+.social-link svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+.back-link {
+  margin-top: 20px;
   font-size: 12px;
   color: rgba(255,255,255,0.35);
   text-decoration: none;
@@ -208,18 +179,29 @@ h1 em {
   align-items: center;
   gap: 5px;
 }
-.social-link:hover { color: rgba(255,255,255,0.7); }
-.social-link svg { width: 14px; height: 14px; }
+.back-link:hover { color: rgba(255,255,255,0.65); }
 
 @media (max-width: 600px) {
   nav { padding: 0 20px; }
-  body { padding: 80px 20px 40px; }
+  .content { padding: 0 24px 48px; }
+  h1 { font-size: clamp(32px, 10vw, 52px); }
+  .social-links { flex-wrap: wrap; gap: 10px; }
 }
 </style>
 </head>
 <body>
 
-<div class="bg-glow"></div>
+<!-- FULL SCREEN VIDEO -->
+<div class="video-bg">
+  <video autoplay muted loop playsinline poster="images/welcome-thumbnail.jpg">
+    <!-- VIDEO FILE: images/welcome-video.mp4 -->
+    <!-- Rima and Luana putting bottles together -->
+    <source src="images/welcome-video.mp4" type="video/mp4">
+  </video>
+</div>
+
+<!-- OVERLAY -->
+<div class="overlay"></div>
 
 <!-- NAV -->
 <nav>
@@ -235,9 +217,8 @@ h1 em {
   </a>
 </nav>
 
-<!-- CONTENT -->
+<!-- CONTENT OVERLAY -->
 <div class="content">
-
   <div class="badge">
     <span class="badge-dot"></span>
     waitlist confirmed
@@ -245,40 +226,28 @@ h1 em {
 
   <h1>you're in.<br><em>welcome to syp.</em></h1>
 
-  <!-- VIDEO -->
-  <div class="video-wrap">
-    <video
-      autoplay
-      muted
-      playsinline
-      controls
-      poster="images/welcome-thumbnail.jpg">
-      <!-- VIDEO FILE: images/welcome-video.mp4 -->
-      <!-- Rima and Luana putting bottles together, caption "you're in. welcome to syp" -->
-      <source src="images/welcome-video.mp4" type="video/mp4">
-    </video>
+  <div class="social-links">
+    <a href="https://www.instagram.com/syphydration/" target="_blank" rel="noopener" class="social-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      instagram
+    </a>
+    <a href="https://www.tiktok.com/@syp_hydration" target="_blank" rel="noopener" class="social-link">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.77a4.85 4.85 0 01-1.01-.08z"/></svg>
+      tiktok
+    </a>
+    <a href="https://www.youtube.com/@syphydration" target="_blank" rel="noopener" class="social-link">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
+      youtube
+    </a>
+    <a href="https://www.linkedin.com/company/syphydration" target="_blank" rel="noopener" class="social-link">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+      linkedin
+    </a>
   </div>
 
-  <p class="caption">rima & luana — syp team</p>
-
-  <div class="cta-group">
-    <a href="/" class="btn-primary">back to syphydration.com</a>
-    <div class="social-links">
-      <a href="https://www.instagram.com/syphydration/" target="_blank" rel="noopener" class="social-link">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-        instagram
-      </a>
-      <a href="https://www.tiktok.com/@syp_hydration" target="_blank" rel="noopener" class="social-link">
-        <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.77a4.85 4.85 0 01-1.01-.08z"/></svg>
-        tiktok
-      </a>
-      <a href="https://www.youtube.com/@syphydration" target="_blank" rel="noopener" class="social-link">
-        <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg>
-        youtube
-      </a>
-    </div>
-  </div>
-
+  <a href="/" class="back-link">
+    ← back to syphydration.com
+  </a>
 </div>
 
 </body>
