@@ -1,230 +1,329 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy — syp</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — syp</title>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --teal: #1DCBA8;
+  --black: #0A0A0A;
+  --dark: #111111;
+  --white: #FFFFFF;
+  --off-white: #F7F7F5;
+  --gray-text: #6B6B6B;
+  --border-dark: rgba(255,255,255,0.08);
+  --border-light: rgba(0,0,0,0.08);
+  --font: 'Inter', sans-serif;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  font-family: var(--font);
+  background: var(--dark);
+  color: var(--white);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.7;
+}
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: #F4F7FA;
-      color: #0F1720;
-      line-height: 1.7;
-      padding: 40px 20px 80px;
-    }
+/* NAV */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: rgba(10,10,10,0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-dark);
+  padding: 0 48px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.nav-logo img { height:28px; width:auto; }
+.nav-logo span {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: -0.04em;
+}
+.nav-back {
+  font-size: 13px;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s;
+}
+.nav-back:hover { color: var(--white); }
+.nav-back svg { width:14px; height:14px; }
 
-    .container {
-      max-width: 680px;
-      margin: 0 auto;
-    }
+/* HERO STRIP */
+.page-hero {
+  background: var(--black);
+  border-bottom: 1px solid var(--border-dark);
+  padding: 80px 48px 72px;
+}
+.page-hero-inner { max-width: 720px; margin: 0 auto; }
+.page-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--teal);
+  display: block;
+  margin-bottom: 16px;
+}
+.page-hero h1 {
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.06;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+.page-updated {
+  font-size: 13px;
+  color: rgba(255,255,255,0.3);
+  letter-spacing: 0.02em;
+}
 
-    .logo {
-      font-size: 28px;
-      font-weight: 900;
-      letter-spacing: -1px;
-      color: #1FAAAC;
-      margin-bottom: 8px;
-    }
+/* CONTENT */
+.content-wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 72px 48px 120px;
+}
+.content-wrap p {
+  font-size: 15px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+.content-wrap ul {
+  margin: 0 0 20px 20px;
+}
+.content-wrap ul li {
+  font-size: 15px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.8;
+  margin-bottom: 8px;
+}
+.content-wrap strong {
+  color: rgba(255,255,255,0.85);
+  font-weight: 600;
+}
+.content-wrap a {
+  color: var(--teal);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(29,203,168,0.3);
+  padding-bottom: 1px;
+  transition: border-color 0.2s;
+}
+.content-wrap a:hover { border-color: var(--teal); }
 
-    .tagline {
-      font-size: 13px;
-      color: rgba(15,23,32,0.5);
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      margin-bottom: 48px;
-    }
+h2.policy-section {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-top: 52px;
+  margin-bottom: 16px;
+  display: block;
+}
+.divider {
+  border: none;
+  border-top: 1px solid var(--border-dark);
+  margin: 52px 0;
+}
+.contact-box {
+  background: rgba(29,203,168,0.06);
+  border: 1px solid rgba(29,203,168,0.15);
+  border-radius: 16px;
+  padding: 32px;
+  margin-top: 40px;
+}
+.contact-box p { margin-bottom: 0; }
+.contact-box p + p { margin-top: 16px; }
+.footer-note {
+  font-size: 12px;
+  color: rgba(255,255,255,0.2);
+  text-align: center;
+  margin-top: 52px;
+}
 
-    h1 {
-      font-size: 32px;
-      font-weight: 900;
-      letter-spacing: -0.5px;
-      margin-bottom: 8px;
-    }
+/* FOOTER */
+footer {
+  background: var(--black);
+  border-top: 1px solid var(--border-dark);
+  padding: 32px 48px;
+}
+.footer-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.footer-copy { font-size:12px; color:rgba(255,255,255,0.2); }
+.footer-links { display:flex; gap:20px; }
+.footer-links a {
+  font-size:12px;
+  color:rgba(255,255,255,0.35);
+  text-decoration:none;
+  transition:color 0.2s;
+}
+.footer-links a:hover { color:var(--white); }
 
-    .updated {
-      font-size: 13px;
-      color: rgba(15,23,32,0.5);
-      margin-bottom: 40px;
-    }
-
-    h2 {
-      font-size: 15px;
-      font-weight: 900;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      color: #1FAAAC;
-      margin-top: 40px;
-      margin-bottom: 12px;
-    }
-
-    p {
-      font-size: 15px;
-      color: rgba(15,23,32,0.8);
-      margin-bottom: 16px;
-    }
-
-    ul {
-      margin: 0 0 16px 20px;
-    }
-
-    ul li {
-      font-size: 15px;
-      color: rgba(15,23,32,0.8);
-      margin-bottom: 8px;
-    }
-
-    a {
-      color: #1FAAAC;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .divider {
-      height: 1px;
-      background: rgba(15,23,32,0.08);
-      margin: 40px 0;
-    }
-
-    .contact-box {
-      border-radius: 16px;
-      border: 1px solid rgba(31,170,172,0.20);
-      background: rgba(31,170,172,0.05);
-      padding: 24px;
-      margin-top: 40px;
-    }
-
-    .contact-box p {
-      margin-bottom: 0;
-    }
-  </style>
+@media (max-width: 600px) {
+  nav { padding:0 20px; }
+  .page-hero { padding:60px 24px 52px; }
+  .content-wrap { padding:52px 24px 80px; }
+  footer { padding:28px 24px; }
+}
+</style>
 </head>
 <body>
-  <div class="container">
 
-    <div class="logo">syp</div>
-    <div class="tagline">hydration intelligence</div>
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="images/syp-logo.png" alt="syp">
+    <span>syp</span>
+  </a>
+  <a href="/" class="nav-back">
+    <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M13 7H1M6 2L1 7l5 5"/>
+    </svg>
+    back to home
+  </a>
+</nav>
 
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <span class="page-label">legal</span>
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: July 13, 2026</p>
-
-    <p>syp ("we," "our," or "us") is a hydration intelligence system developed by Hauzi LLC. This Privacy Policy explains how we collect, use, store, and protect your information when you use the syp mobile application.</p>
-
-    <p>By using syp, you agree to the collection and use of information in accordance with this policy.</p>
-
-    <h2>1. Information We Collect</h2>
-
-    <p>We collect the following categories of information:</p>
-
-    <p><strong>Account information</strong></p>
-    <ul>
-      <li>Email address (used for authentication)</li>
-      <li>First name (provided during onboarding)</li>
-      <li>Profile photo (optional, uploaded by you)</li>
-    </ul>
-
-    <p><strong>Health and body data</strong></p>
-    <ul>
-      <li>Body weight</li>
-      <li>Height</li>
-      <li>Age</li>
-      <li>Biological sex</li>
-      <li>Sport and training frequency</li>
-      <li>Daily fluid intake logs</li>
-    </ul>
-
-    <p><strong>Usage and configuration data</strong></p>
-    <ul>
-      <li>Hydration window settings (start and end time)</li>
-      <li>Environment preferences (Normal or Heat)</li>
-      <li>App usage patterns</li>
-    </ul>
-
-    <p>We do not collect location data, contacts, or any information unrelated to hydration performance.</p>
-
-    <h2>2. How We Use Your Information</h2>
-
-    <p>We use your information solely to provide and improve the syp experience:</p>
-
-    <ul>
-      <li>To calculate your personalized daily hydration target</li>
-      <li>To evaluate your hydration behavior against pacing, timing, and consistency metrics</li>
-      <li>To generate insights and recommendations within the app</li>
-      <li>To authenticate your account and maintain session security</li>
-      <li>To improve the accuracy of our hydration intelligence models</li>
-    </ul>
-
-    <p>We do not use your data for advertising, and we do not sell your data to third parties.</p>
-
-    <h2>3. Data Storage and Security</h2>
-
-    <p>Your data is stored securely using Supabase, a cloud database provider with industry-standard encryption in transit and at rest. Authentication is handled via Supabase Auth.</p>
-
-    <p>Personal data stored locally on your device uses AsyncStorage and is protected by your device's built-in security features.</p>
-
-    <p>We implement appropriate technical safeguards to protect your information, but no system is completely secure. We encourage you to use a strong password and keep your account credentials private.</p>
-
-    <h2>4. Data Sharing</h2>
-
-    <p>We do not sell, rent, or trade your personal information. We may share data only in the following limited circumstances:</p>
-
-    <ul>
-      <li><strong>Service providers:</strong> We use Supabase to store and manage data. They process data on our behalf and are bound by confidentiality obligations.</li>
-      <li><strong>Team features (future):</strong> If you are part of a team or organization using syp, authorized coaches or administrators may have access to your aggregated hydration data. You will be informed before this feature is enabled.</li>
-      <li><strong>Legal requirements:</strong> We may disclose information if required by law or to protect the rights and safety of our users.</li>
-    </ul>
-
-    <h2>5. Health Data</h2>
-
-    <p>syp collects body composition and hydration data to personalize your experience. This data is used only within the app to calculate targets and generate insights. It is not shared with health insurance providers, employers, or any third party for purposes beyond app functionality.</p>
-
-    <p>syp does not currently integrate with Apple Health, Google Fit, or any other health platform. If this changes, you will be asked for explicit permission.</p>
-
-    <h2>6. Children's Privacy</h2>
-
-    <p>syp is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe a child has provided us with personal information, please contact us and we will delete it promptly.</p>
-
-    <h2>7. Your Rights</h2>
-
-    <p>You have the right to:</p>
-
-    <ul>
-      <li><strong>Access</strong> the personal data we hold about you</li>
-      <li><strong>Correct</strong> inaccurate data through the app's Profile settings</li>
-      <li><strong>Delete</strong> your account and all associated data by contacting us</li>
-      <li><strong>Export</strong> your data upon request</li>
-    </ul>
-
-    <p>To exercise any of these rights, contact us at the email address below.</p>
-
-    <h2>8. Data Retention</h2>
-
-    <p>We retain your data for as long as your account is active. If you delete your account, we will delete your personal data within 30 days, except where retention is required by law.</p>
-
-    <h2>9. Changes to This Policy</h2>
-
-    <p>We may update this Privacy Policy from time to time. When we do, we will update the "Last updated" date at the top of this page. We encourage you to review this policy periodically. Continued use of syp after changes constitutes acceptance of the updated policy.</p>
-
-    <h2>10. Contact Us</h2>
-
-    <div class="contact-box">
-      <p>If you have any questions about this Privacy Policy or how we handle your data, please contact us at:</p>
-      <br />
-      <p><strong>Hauzi LLC</strong><br />
-      Email: <a href="mailto:rima@syphydration.com">rima@syphydration.com</a><br />
-      Website: <a href="https://syphydration.com">syphydration.com</a></p>
-    </div>
-
-    <div class="divider"></div>
-
-    <p style="font-size: 13px; color: rgba(15,23,32,0.4); text-align: center;">
-      © 2026 Hauzi LLC. All rights reserved.
-    </p>
-
+    <p class="page-updated">Last updated: July 13, 2026</p>
   </div>
+</div>
+
+<!-- CONTENT -->
+<div class="content-wrap">
+
+  <p>syp ("we," "our," or "us") is a hydration intelligence system developed by Hauzi LLC. This Privacy Policy explains how we collect, use, store, and protect your information when you use the syp mobile application.</p>
+  <p>By using syp, you agree to the collection and use of information in accordance with this policy.</p>
+
+  <h2 class="policy-section">1. Information We Collect</h2>
+  <p>We collect the following categories of information:</p>
+  <p><strong>Account information</strong></p>
+  <ul>
+    <li>Email address (used for authentication)</li>
+    <li>First name (provided during onboarding)</li>
+    <li>Profile photo (optional, uploaded by you)</li>
+  </ul>
+  <p><strong>Health and body data</strong></p>
+  <ul>
+    <li>Body weight</li>
+    <li>Height</li>
+    <li>Age</li>
+    <li>Biological sex</li>
+    <li>Sport and training frequency</li>
+    <li>Daily fluid intake logs</li>
+  </ul>
+  <p><strong>Usage and configuration data</strong></p>
+  <ul>
+    <li>Hydration window settings (start and end time)</li>
+    <li>Environment preferences (Normal or Heat)</li>
+    <li>App usage patterns</li>
+  </ul>
+  <p>We do not collect location data, contacts, or any information unrelated to hydration performance.</p>
+
+  <h2 class="policy-section">2. How We Use Your Information</h2>
+  <p>We use your information solely to provide and improve the syp experience:</p>
+  <ul>
+    <li>To calculate your personalized daily hydration target</li>
+    <li>To evaluate your hydration behavior against pacing, timing, and consistency metrics</li>
+    <li>To generate insights and recommendations within the app</li>
+    <li>To authenticate your account and maintain session security</li>
+    <li>To improve the accuracy of our hydration intelligence models</li>
+  </ul>
+  <p>We do not use your data for advertising, and we do not sell your data to third parties.</p>
+
+  <h2 class="policy-section">3. Data Storage and Security</h2>
+  <p>Your data is stored securely using Supabase, a cloud database provider with industry-standard encryption in transit and at rest. Authentication is handled via Supabase Auth.</p>
+  <p>Personal data stored locally on your device uses AsyncStorage and is protected by your device's built-in security features.</p>
+  <p>We implement appropriate technical safeguards to protect your information, but no system is completely secure. We encourage you to use a strong password and keep your account credentials private.</p>
+
+  <h2 class="policy-section">4. Data Sharing</h2>
+  <p>We do not sell, rent, or trade your personal information. We may share data only in the following limited circumstances:</p>
+  <ul>
+    <li><strong>Service providers:</strong> We use Supabase to store and manage data. They process data on our behalf and are bound by confidentiality obligations.</li>
+    <li><strong>Team features (future):</strong> If you are part of a team or organization using syp, authorized coaches or administrators may have access to your aggregated hydration data. You will be informed before this feature is enabled.</li>
+    <li><strong>Legal requirements:</strong> We may disclose information if required by law or to protect the rights and safety of our users.</li>
+  </ul>
+
+  <h2 class="policy-section">5. Health Data</h2>
+  <p>syp collects body composition and hydration data to personalize your experience. This data is used only within the app to calculate targets and generate insights. It is not shared with health insurance providers, employers, or any third party for purposes beyond app functionality.</p>
+  <p>syp does not currently integrate with Apple Health, Google Fit, or any other health platform. If this changes, you will be asked for explicit permission.</p>
+
+  <h2 class="policy-section">6. Children's Privacy</h2>
+  <p>syp is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe a child has provided us with personal information, please contact us and we will delete it promptly.</p>
+
+  <h2 class="policy-section">7. Your Rights</h2>
+  <p>You have the right to:</p>
+  <ul>
+    <li><strong>Access</strong> the personal data we hold about you</li>
+    <li><strong>Correct</strong> inaccurate data through the app's Profile settings</li>
+    <li><strong>Delete</strong> your account and all associated data by contacting us</li>
+    <li><strong>Export</strong> your data upon request</li>
+  </ul>
+  <p>To exercise any of these rights, contact us at the email address below.</p>
+
+  <h2 class="policy-section">8. Data Retention</h2>
+  <p>We retain your data for as long as your account is active. If you delete your account, we will delete your personal data within 30 days, except where retention is required by law.</p>
+
+  <h2 class="policy-section">9. Changes to This Policy</h2>
+  <p>We may update this Privacy Policy from time to time. When we do, we will update the "Last updated" date at the top of this page. We encourage you to review this policy periodically. Continued use of syp after changes constitutes acceptance of the updated policy.</p>
+
+  <h2 class="policy-section">10. Contact Us</h2>
+  <div class="contact-box">
+    <p>If you have any questions about this Privacy Policy or how we handle your data, please contact us at:</p>
+    <p><strong>Hauzi LLC</strong><br>
+    Email: <a href="mailto:rima@syphydration.com">rima@syphydration.com</a><br>
+    Website: <a href="https://syphydration.com">syphydration.com</a></p>
+  </div>
+
+  <hr class="divider">
+  <p class="footer-note">© 2026 Hauzi LLC. All rights reserved.</p>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <p class="footer-copy">© 2026 syp. hauzi llc.</p>
+    <div class="footer-links">
+      <a href="/">home</a>
+      <a href="/b2b">for businesses</a>
+      <a href="mailto:mathis@syphydration.com">contact</a>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
