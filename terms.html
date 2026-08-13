@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>terms of service — syp</title>
+<meta name="description" content="the terms governing your use of syp hardware, app, dashboard, and services. operated by Hauzi LLC.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="terms of service — syp">
+<meta property="og:description" content="the terms governing your use of syp hardware, app, dashboard, and services.">
+<meta property="og:url" content="https://syphydration.com/terms">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --teal: #1DCBA8;
+  --black: #0A0A0A;
+  --dark: #111111;
+  --white: #FFFFFF;
+  --border-dark: rgba(255,255,255,0.08);
+  --font: 'Inter', sans-serif;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  font-family: var(--font);
+  background: var(--dark);
+  color: var(--white);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.7;
+}
+nav {
+  position: sticky; top: 0; z-index: 200;
+  background: rgba(10,10,10,0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-dark);
+  padding: 0 48px; height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo { display:flex; align-items:center; gap:10px; text-decoration:none; }
+.nav-logo img { height:28px; width:auto; }
+.nav-logo span { font-size:20px; font-weight:800; color:var(--white); letter-spacing:-0.04em; }
+.nav-back {
+  font-size:13px; color:rgba(255,255,255,0.45); text-decoration:none;
+  display:flex; align-items:center; gap:6px; transition:color 0.2s;
+}
+.nav-back:hover { color: var(--white); }
+.nav-back svg { width:14px; height:14px; }
+
+.page-hero {
+  background: var(--black);
+  border-bottom: 1px solid var(--border-dark);
+  padding: 80px 48px 72px;
+}
+.page-hero-inner { max-width:760px; margin:0 auto; }
+.page-label {
+  font-size:11px; font-weight:600; letter-spacing:0.18em;
+  text-transform:uppercase; color:var(--teal);
+  display:block; margin-bottom:16px;
+}
+.page-hero h1 {
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 800; letter-spacing:-0.03em; line-height:1.06;
+  color: var(--white); margin-bottom: 12px;
+}
+.page-updated { font-size:13px; color:rgba(255,255,255,0.3); letter-spacing:0.02em; }
+
+.content-wrap { max-width:760px; margin:0 auto; padding:64px 48px 110px; }
+.content-wrap p {
+  font-size:15px; color:rgba(255,255,255,0.6);
+  line-height:1.85; margin-bottom:18px;
+}
+.content-wrap ul { margin:0 0 20px 20px; }
+.content-wrap ul li {
+  font-size:15px; color:rgba(255,255,255,0.6);
+  line-height:1.85; margin-bottom:9px;
+}
+.content-wrap strong { color:rgba(255,255,255,0.88); font-weight:600; }
+.content-wrap a {
+  color:var(--teal); text-decoration:none;
+  border-bottom:1px solid rgba(29,203,168,0.3);
+  padding-bottom:1px; transition:border-color 0.2s;
+}
+.content-wrap a:hover { border-color:var(--teal); }
+
+h2.tos-section {
+  font-size:11px; font-weight:600; letter-spacing:0.18em;
+  text-transform:uppercase; color:var(--teal);
+  margin-top:56px; margin-bottom:18px; display:block;
+}
+h3.tos-sub {
+  font-size:15px; font-weight:600; color:var(--white);
+  margin-top:28px; margin-bottom:10px; letter-spacing:-0.01em;
+}
+.callout {
+  background:rgba(226,75,74,0.06);
+  border:1px solid rgba(226,75,74,0.22);
+  border-radius:14px; padding:28px; margin:28px 0;
+}
+.callout p:last-child { margin-bottom:0; }
+.callout .callout-label {
+  font-size:11px; font-weight:700; letter-spacing:0.14em;
+  text-transform:uppercase; color:#E24B4A;
+  display:block; margin-bottom:14px;
+}
+.contact-box {
+  background:rgba(29,203,168,0.06);
+  border:1px solid rgba(29,203,168,0.15);
+  border-radius:16px; padding:32px; margin-top:32px;
+}
+.contact-box p { margin-bottom:0; }
+.contact-box p + p { margin-top:14px; }
+.divider { border:none; border-top:1px solid var(--border-dark); margin:52px 0; }
+.footer-note { font-size:12px; color:rgba(255,255,255,0.2); text-align:center; margin-top:44px; }
+
+footer { background:var(--black); border-top:1px solid var(--border-dark); padding:32px 48px; }
+.footer-inner {
+  max-width:760px; margin:0 auto;
+  display:flex; justify-content:space-between; align-items:center;
+  flex-wrap:wrap; gap:12px;
+}
+.footer-copy { font-size:12px; color:rgba(255,255,255,0.2); }
+.footer-links { display:flex; gap:20px; flex-wrap:wrap; }
+.footer-links a {
+  font-size:12px; color:rgba(255,255,255,0.35);
+  text-decoration:none; transition:color 0.2s;
+}
+.footer-links a:hover { color:var(--white); }
+
+@media (max-width:600px) {
+  nav { padding:0 20px; }
+  .page-hero { padding:56px 24px 48px; }
+  .content-wrap { padding:48px 24px 80px; }
+  footer { padding:28px 24px; }
+  .footer-inner { flex-direction:column; align-items:flex-start; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <img src="images/syp-logo.png" alt="syp">
+    <span>syp</span>
+  </a>
+  <a href="/" class="nav-back">
+    <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 7H1M6 2L1 7l5 5"/></svg>
+    back to home
+  </a>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <span class="page-label">legal</span>
+    <h1>terms of service</h1>
+    <p class="page-updated">effective august 13, 2026 · last updated august 13, 2026</p>
+  </div>
+</div>
+
+<div class="content-wrap">
+
+<h2 class="tos-section">1. agreement to these terms</h2>
+<p>These Terms of Service ("Terms") are a binding agreement between you and Hauzi LLC, a Florida limited liability company doing business as "syp" ("syp," "we," "us," or "our").</p>
+<p>These Terms govern your access to and use of:</p>
+<ul>
+<li>the website located at <a href="https://syphydration.com/">https://syphydration.com/</a> and any related pages we operate (the "Site");</li>
+<li>the syp mobile application (the "App");</li>
+<li>the syp coach and team dashboard (the "Dashboard");</li>
+<li>the software, firmware, and cloud services that operate our hydration sensing hardware (together with the Site, App, and Dashboard, the "Services").</li>
+</ul>
+<p>By accessing the Site, creating an account, joining a waitlist, or using any part of the Services, you agree to these Terms. If you do not agree, do not use the Services.</p>
+<p>Your use of the Services is also governed by our <a href="/privacy-policy">Privacy Policy</a>, which is incorporated into these Terms by reference.</p>
+<p>If you are entering into these Terms on behalf of a school, athletic program, employer, or other organization, you represent that you have authority to bind that organization, and "you" refers to that organization. Where your organization has signed a separate written agreement with us, that agreement controls if it conflicts with these Terms.</p>
+
+<h2 class="tos-section">2. who may use the services</h2>
+<p>You may use the Services only if you are at least 18 years old, or at least 13 years old with the consent and supervision of a parent, legal guardian, or authorized school official.</p>
+<p>We do not knowingly collect personal information from anyone under 13. If we learn that we have collected personal information from a child under 13, we will delete it. If you believe a child under 13 has provided us information, contact us at <a href="mailto:mathis@syphydration.com">mathis@syphydration.com</a>.</p>
+<p>You may not use the Services if we have previously suspended or removed your access.</p>
+
+<h2 class="tos-section">3. accounts</h2>
+<p>To use certain features you must create an account. You agree to:</p>
+<ul>
+<li>provide accurate and complete information and keep it current;</li>
+<li>keep your login credentials confidential;</li>
+<li>accept responsibility for all activity that occurs under your account;</li>
+<li>notify us promptly at <a href="mailto:mathis@syphydration.com">mathis@syphydration.com</a> if you suspect unauthorized use of your account.</li>
+</ul>
+<p>We may suspend or terminate an account at any time if we reasonably believe these Terms have been violated, or if continued access poses a risk to us, to other users, or to the integrity of the Services.</p>
+
+<h2 class="tos-section">4. the syp device and software</h2>
+<h3 class="tos-sub">4.1 What the device does</h3>
+<p>syp hardware measures changes in the mass of a bottle to estimate fluid intake and transmits that data over Bluetooth Low Energy to the App, which may sync it to our cloud services and, where applicable, to a Dashboard operated by your team or organization.</p>
+<h3 class="tos-sub">4.2 Accuracy limitations</h3>
+<p>Intake measurements are estimates. Accuracy depends on proper fitting of the sleeve, bottle geometry, calibration, device orientation, movement, temperature, battery state, and connectivity. Readings may be incomplete, delayed, or incorrect. You should not treat any reading, target, alert, or absence of an alert as an authoritative statement about your hydration status.</p>
+<h3 class="tos-sub">4.3 Updates and changes</h3>
+<p>We may issue firmware and software updates automatically. Updates may add, change, or remove features. We may modify, suspend, or discontinue any part of the Services, including cloud sync, the Dashboard, or specific App features, at any time. Where a change would materially reduce core functionality of hardware you have purchased, we will give reasonable advance notice by email or in-App where practicable.</p>
+<h3 class="tos-sub">4.4 Connectivity and third-party dependencies</h3>
+<p>The Services depend on your device, operating system, Bluetooth, and internet connectivity, and on third-party platforms we do not control. We are not responsible for failures caused by those dependencies.</p>
+
+<h2 class="tos-section">5. health and safety</h2>
+<div class="callout">
+<span class="callout-label">read this section carefully</span>
+<p><strong>syp is a general wellness product. It is not a medical device.</strong> It is not intended to diagnose, treat, cure, mitigate, or prevent any disease or medical condition, including dehydration, heat illness, heat stroke, hyponatremia, kidney injury, or any other condition.</p>
+<p>The Services do not provide medical advice. Hydration targets, recommendations, compliance scores, and alerts are informational only and are generated from estimates and generalized models. They are not a substitute for the judgment of a physician, athletic trainer, or other qualified professional.</p>
+<p><strong>Never delay, disregard, or alter medical care, hydration practices, or return-to-play decisions based on the Services.</strong> If you are experiencing symptoms of heat illness or any medical emergency, seek immediate medical attention.</p>
+<p><strong>Drinking too much water can be dangerous.</strong> Do not consume fluid volumes beyond what is appropriate for you as an individual, and consult a qualified professional before making significant changes to your fluid intake.</p>
+<p>You are solely responsible for your own health decisions. If you are an organization using the Dashboard, you remain solely responsible for the health, safety, and supervision of your athletes and personnel, and you agree that syp is not a participant in, and bears no responsibility for, your medical, training, or return-to-play decisions.</p>
+</div>
+
+<h2 class="tos-section">6. acceptable use</h2>
+<p>You agree not to:</p>
+<ul>
+<li>use the Services for any unlawful purpose or in violation of any applicable law or regulation;</li>
+<li>reverse engineer, decompile, disassemble, or attempt to derive the source code or firmware of any part of the Services, except to the extent this restriction is prohibited by law;</li>
+<li>interfere with, disrupt, probe, or attempt to gain unauthorized access to the Services or any related systems or networks;</li>
+<li>scrape, crawl, harvest, or use automated means to extract data from the Services;</li>
+<li>falsify, spoof, tamper with, or otherwise manipulate intake data, sensor readings, or compliance records;</li>
+<li>resell, sublicense, or commercially exploit the Services without our prior written consent;</li>
+<li>upload or transmit malware or any code intended to damage or impair the Services;</li>
+<li>use the Services to develop a competing product or service, or to benchmark for a competitor;</li>
+<li>remove, obscure, or alter any proprietary notice, marking, or label on our hardware or in our software;</li>
+<li>upload content that is unlawful, infringing, defamatory, harassing, or that you do not have the right to share.</li>
+</ul>
+
+<h2 class="tos-section">7. intellectual property</h2>
+<h3 class="tos-sub">7.1 Our rights</h3>
+<p>The Services, including all hardware designs, firmware, software, algorithms, verification and calibration methods, text, graphics, user interfaces, logos, and the syp name and marks, are owned by Hauzi LLC or its licensors and are protected by United States and international intellectual property laws. We reserve all rights not expressly granted in these Terms.</p>
+<h3 class="tos-sub">7.2 Your license</h3>
+<p>Subject to your compliance with these Terms, we grant you a limited, revocable, non-exclusive, non-transferable, non-sublicensable license to use the App, Dashboard, and firmware solely for their intended purpose in connection with syp hardware you have lawfully obtained. This is a license, not a sale, of software. Purchasing hardware does not transfer any rights in the software or in our intellectual property.</p>
+<h3 class="tos-sub">7.3 Feedback</h3>
+<p>If you send us suggestions, ideas, or feedback about the Services, you grant us a perpetual, irrevocable, worldwide, royalty-free license to use, modify, and commercialize that feedback for any purpose, without compensation or attribution to you. We are not obligated to keep feedback confidential.</p>
+<h3 class="tos-sub">7.4 Your content</h3>
+<p>You retain ownership of content you submit through the Services. You grant us a worldwide, non-exclusive, royalty-free license to host, store, reproduce, and display that content solely as needed to operate, secure, and improve the Services.</p>
+<h3 class="tos-sub">7.5 Data</h3>
+<p>Our handling of hydration data and personal information is described in our <a href="/privacy-policy">Privacy Policy</a>. We may create and use aggregated and de-identified data that does not identify you or any individual, including for research, product development, and benchmarking, and we may retain and use that aggregated and de-identified data indefinitely.</p>
+<h3 class="tos-sub">7.6 Patents</h3>
+<p>Elements of the syp system are the subject of one or more pending United States patent applications.</p>
+
+<h2 class="tos-section">8. third-party services</h2>
+<p>The Services may integrate with third-party platforms such as Apple Health, Google Fit, wearable devices, or team management software. Your use of those services is governed by their own terms and privacy policies. We do not control and are not responsible for third-party services, their availability, or their handling of your data. Enabling an integration authorizes the exchange of data described at the time you enable it.</p>
+<p>The Site may contain links to third-party websites. We do not endorse and are not responsible for their content.</p>
+
+<h2 class="tos-section">9. purchases, pre-orders, and shipping</h2>
+<h3 class="tos-sub">9.1 Orders</h3>
+<p>All orders are offers to purchase and are subject to our acceptance. We may refuse or cancel any order, including for suspected fraud, pricing errors, or insufficient inventory. If we cancel an order you have already paid for, we will refund you in full.</p>
+<h3 class="tos-sub">9.2 Pricing and errors</h3>
+<p>Prices are shown in United States dollars and exclude taxes, duties, and shipping unless stated otherwise. We may correct pricing or product description errors at any time, including after an order is placed. If a corrected price is higher, you may cancel for a full refund.</p>
+<h3 class="tos-sub">9.3 Pre-orders</h3>
+<p>Pre-order items are not yet in production. Estimated ship dates are estimates only and are not guaranteed. Product specifications, appearance, and features may change before shipment. You may cancel a pre-order for a full refund at any time before it ships by emailing <a href="mailto:mathis@syphydration.com">mathis@syphydration.com</a>.</p>
+<h3 class="tos-sub">9.4 Shipping and risk of loss</h3>
+<p>We ship to the United States. Title and risk of loss pass to you upon delivery to the carrier. We are not responsible for carrier delays.</p>
+<h3 class="tos-sub">9.5 Returns</h3>
+<p>You may return unused hardware in its original packaging within 30 days of delivery for a refund of the purchase price, less shipping. To start a return, email <a href="mailto:mathis@syphydration.com">mathis@syphydration.com</a>.</p>
+<h3 class="tos-sub">9.6 Subscriptions</h3>
+<p>If you purchase a subscription, it renews automatically at the then-current price until cancelled. You may cancel at any time through your account settings or by emailing <a href="mailto:mathis@syphydration.com">mathis@syphydration.com</a>; cancellation takes effect at the end of the current billing period.</p>
+
+<h2 class="tos-section">10. warranty</h2>
+<p>We warrant that syp hardware will be free from defects in materials and workmanship under normal use for one year from the date of delivery. Our sole obligation under this warranty is, at our option, to repair the hardware, replace it, or refund the purchase price.</p>
+<p>This warranty does not cover damage from misuse, abuse, accident, unauthorized modification, unauthorized repair, exposure to conditions beyond the stated specifications, normal wear, or consumable components including batteries.</p>
+<p>Any implied warranties, including any implied warranty of merchantability or fitness for a particular purpose, are limited in duration to the period of this written warranty, to the maximum extent permitted by law. Some states do not allow limitations on how long an implied warranty lasts, so this limitation may not apply to you.</p>
+
+<h2 class="tos-section">11. disclaimer of warranties</h2>
+<p>Except for the express written warranty in Section 10, and to the maximum extent permitted by law:</p>
+<ul>
+<li>The Services are provided "as is" and "as available," without warranties of any kind, express or implied. We disclaim all implied warranties, including merchantability, fitness for a particular purpose, title, and non-infringement.</li>
+<li>We do not warrant that the Services will be uninterrupted, secure, error-free, or that data will be accurate, complete, or preserved. We do not warrant that hydration estimates, targets, alerts, or analytics will be accurate or suitable for any particular purpose.</li>
+</ul>
+<p>Some jurisdictions do not allow the exclusion of certain warranties, so some of these exclusions may not apply to you.</p>
+
+<h2 class="tos-section">12. limitation of liability</h2>
+<p>To the maximum extent permitted by law:</p>
+<ul>
+<li>We are not liable for any indirect, incidental, special, consequential, exemplary, or punitive damages, or for lost profits, lost revenue, lost data, or business interruption, arising out of or relating to the Services, regardless of the legal theory and even if we were advised of the possibility of those damages.</li>
+<li>Our total aggregate liability for all claims arising out of or relating to the Services will not exceed the greater of (a) the amount you paid us in the twelve months before the event giving rise to the claim, or (b) one hundred United States dollars ($100).</li>
+</ul>
+<p>Nothing in these Terms limits liability that cannot be limited under applicable law, including liability for gross negligence, willful misconduct, fraud, or personal injury caused by our own negligence where such limitation is prohibited.</p>
+<p>Some jurisdictions do not allow the exclusion or limitation of certain damages, so some of these limits may not apply to you.</p>
+
+<h2 class="tos-section">13. indemnification</h2>
+<p>You agree to defend, indemnify, and hold harmless Hauzi LLC and its members, officers, employees, contractors, and agents from any claims, damages, liabilities, losses, and expenses, including reasonable attorneys' fees, arising out of or related to: (a) your use of the Services; (b) your violation of these Terms; (c) your violation of any law or the rights of any third party; or (d) if you are an organization, your collection, use, or disclosure of data about your athletes or personnel through the Services.</p>
+
+<h2 class="tos-section">14. termination</h2>
+<p>You may stop using the Services at any time and may delete your account by emailing <a href="mailto:mathis@syphydration.com">mathis@syphydration.com</a>.</p>
+<p>We may suspend or terminate your access to the Services at any time, with or without notice, if you violate these Terms or if we discontinue the Services.</p>
+<p>Sections 5, 7, 11, 12, 13, 15, and 16 survive termination.</p>
+
+<h2 class="tos-section">15. governing law and dispute resolution</h2>
+<h3 class="tos-sub">15.1 Governing law</h3>
+<p>These Terms are governed by the laws of the State of Florida, without regard to its conflict of laws rules.</p>
+<h3 class="tos-sub">15.2 Informal resolution first</h3>
+<p>Before filing any claim, you agree to contact us at <a href="mailto:mathis@syphydration.com">mathis@syphydration.com</a> and attempt to resolve the dispute informally for at least sixty (60) days.</p>
+<h3 class="tos-sub">15.3 Binding arbitration</h3>
+<p>If informal resolution does not resolve the dispute within sixty (60) days, any dispute, claim, or controversy arising out of or relating to these Terms or the Services, including their formation, interpretation, breach, enforcement, or termination, will be resolved by binding individual arbitration rather than in court.</p>
+<p>The arbitration will be administered by the American Arbitration Association ("AAA") under its Consumer Arbitration Rules if you are an individual using the Services for personal, family, or household purposes, or under its Commercial Arbitration Rules if you are an organization or using the Services for business purposes. The rules are available at <a href="https://www.adr.org" target="_blank" rel="noopener">www.adr.org</a>. The Federal Arbitration Act governs the interpretation and enforcement of this Section.</p>
+<p>A single arbitrator will decide the dispute and will issue a written decision explaining the essential findings and conclusions. The arbitrator may award any relief that would be available to you individually in court, and may not award relief to or against any person who is not a party to the arbitration.</p>
+<p><strong>Fees.</strong> syp will pay all AAA administrative and arbitrator fees that exceed the amount you would have paid to file the same claim in the state court serving your county of residence, unless the arbitrator determines that your claim was frivolous or brought for an improper purpose.</p>
+<p><strong>Location.</strong> Arbitration will be conducted on written submissions or by videoconference by default. If you request an in-person hearing, it will be held in the county where you reside or at another location the parties agree to in writing.</p>
+<p><strong>Arbitrability.</strong> The arbitrator has authority to decide all issues of arbitrability, except that a court, and not an arbitrator, will decide any dispute about the enforceability, scope, or validity of the class action waiver in Section 15.4.</p>
+<h3 class="tos-sub">15.4 Class action waiver</h3>
+<p>You and syp each agree to bring claims only in an individual capacity, and not as a plaintiff or class member in any class, collective, consolidated, or representative proceeding. The arbitrator may not consolidate claims or preside over any form of representative proceeding. If this waiver is found unenforceable as to a particular claim, that claim will proceed in court and the remainder of Section 15 continues to apply to all other claims.</p>
+<h3 class="tos-sub">15.5 Small claims and injunctive relief</h3>
+<p>Either party may bring an individual claim in small claims court if it qualifies. Either party may seek injunctive relief in court to protect intellectual property rights or address unauthorized access to the Services.</p>
+<h3 class="tos-sub">15.6 Your right to opt out of arbitration</h3>
+<p>You may opt out of Sections 15.3 and 15.4 by emailing <a href="mailto:mathis@syphydration.com">mathis@syphydration.com</a> with your name and the email associated with your account within thirty (30) days of first accepting these Terms. Opting out does not affect any other part of these Terms.</p>
+<h3 class="tos-sub">15.7 If arbitration does not apply</h3>
+<p>If Section 15.3 is found not to apply to a claim, or if you opt out under Section 15.6, that claim will be brought exclusively in the state courts located in Hillsborough County, Florida, or in the United States District Court for the Middle District of Florida, Tampa Division. You and syp each consent to personal jurisdiction and venue in those courts and waive any objection based on inconvenient forum. To the extent permitted by law, each party waives any right to a trial by jury.</p>
+
+<h2 class="tos-section">16. general</h2>
+<p><strong>Changes to these Terms.</strong> We may update these Terms. We will post the updated version with a revised "Last Updated" date. For material changes, we will provide notice by email or in-App at least 30 days before the change takes effect where practicable. Continuing to use the Services after the effective date means you accept the updated Terms.</p>
+<p><strong>Entire agreement.</strong> These Terms and the Privacy Policy are the entire agreement between you and syp regarding the Services and supersede any prior agreements on that subject, except for any separate written agreement signed by both parties.</p>
+<p><strong>Severability.</strong> If any provision is found unenforceable, it will be modified to the minimum extent necessary and the remaining provisions stay in effect.</p>
+<p><strong>No waiver.</strong> Our failure to enforce any provision is not a waiver of our right to enforce it later.</p>
+<p><strong>Assignment.</strong> You may not assign these Terms without our written consent. We may assign these Terms in connection with a merger, acquisition, reorganization, entity conversion, or sale of assets.</p>
+<p><strong>Force majeure.</strong> We are not liable for delays or failures caused by events beyond our reasonable control, including natural disasters, supply chain disruption, labor disputes, network or utility failures, and government action.</p>
+<p><strong>Export and sanctions.</strong> You represent that you are not located in, and are not a national or resident of, any country subject to United States embargo, and that you are not on any United States government restricted party list.</p>
+<p><strong>Notices.</strong> We may send notices to the email associated with your account. Legal notices to us must be sent to the address in Section 17.</p>
+
+<h2 class="tos-section">17. contact</h2>
+<div class="contact-box">
+<p><strong>Hauzi LLC</strong> (d/b/a syp)<br>
+4968 Cadiz Ct<br>
+Brooksville, FL 34604<br>
+Email: <a href="mailto:mathis@syphydration.com">mathis@syphydration.com</a></p>
+</div>
+
+<h2 class="tos-section">appendix a: app store terms</h2>
+<p>If you download the App from the Apple App Store, the following applies:</p>
+<ul>
+<li>These Terms are between you and syp only, not with Apple. syp, not Apple, is solely responsible for the App and its content.</li>
+<li>Your license to use the App is limited to use on Apple-branded devices you own or control, as permitted by the App Store Terms of Service.</li>
+<li>Apple has no obligation to provide maintenance or support for the App.</li>
+<li>If the App fails to conform to any applicable warranty, you may notify Apple and Apple will refund the purchase price, if any. Apple has no other warranty obligation with respect to the App.</li>
+<li>syp, not Apple, is responsible for addressing any claims relating to the App, including product liability, legal or regulatory non-compliance, and consumer protection claims.</li>
+<li>syp, not Apple, is responsible for investigating and defending any third-party claim that the App infringes intellectual property rights.</li>
+<li>You represent that you are not located in a country subject to a United States embargo or designated as a terrorist supporting country, and are not on any United States restricted party list.</li>
+<li>Apple and its subsidiaries are third-party beneficiaries of these Terms and may enforce them against you.</li>
+</ul>
+
+<hr class="divider">
+<p class="footer-note">© 2026 Hauzi LLC. All rights reserved.</p>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <p class="footer-copy">© 2026 syp. hauzi llc.</p>
+    <div class="footer-links">
+      <a href="/">home</a>
+      <a href="/about">about</a>
+      <a href="/b2b">for businesses</a>
+      <a href="/privacy-policy">privacy policy</a>
+      <a href="mailto:mathis@syphydration.com">contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
