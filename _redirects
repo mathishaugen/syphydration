@@ -1,0 +1,7 @@
+# Legacy Shopify-era URLs
+/pages/about-drypp    /        301
+/pages/about-syp      /about   301
+/pages/about          /about   301
+/pages/*              /        301
+/collections/*        /        301
+/products/*           /        301
