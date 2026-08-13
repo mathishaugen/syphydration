@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>about syp — hydration intelligence</title>
+<meta name="description" content="syp was founded in April 2025 after a dehydration-related injury ended a D1 season. we build hydration intelligence for athletes who want real data, not guesses.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="about syp — hydration intelligence">
+<meta property="og:description" content="founded April 2025 after a dehydration-related injury ended a D1 season. meet the team building hydration intelligence.">
+<meta property="og:url" content="https://syphydration.com/about">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --teal: #1DCBA8;
+  --teal-dark: #17A98C;
+  --black: #0A0A0A;
+  --dark: #111111;
+  --dark-2: #161616;
+  --white: #FFFFFF;
+  --off-white: #F7F7F5;
+  --gray-text: #6B6B6B;
+  --border-dark: rgba(255,255,255,0.08);
+  --border-light: rgba(0,0,0,0.08);
+  --font: 'Inter', sans-serif;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.6;
+  background: var(--dark);
+  color: var(--white);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: rgba(10,10,10,0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-dark);
+  padding: 0 48px;
+  height: 64px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+.nav-left { display:flex; align-items:center; gap:28px; list-style:none; }
+.nav-left a {
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  font-size: 13.5px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-left a:hover { color: var(--white); }
+.nav-logo-center { display:flex; justify-content:center; align-items:center; }
+.nav-logo-center a { display:flex; align-items:center; gap:10px; text-decoration:none; }
+.nav-logo-center img { height:32px; width:auto; opacity:0.9; }
+.nav-logo-text {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: -0.04em;
+}
+.nav-right { display:flex; align-items:center; gap:20px; justify-content:flex-end; list-style:none; }
+.nav-right a {
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  font-size: 13.5px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-right a:hover { color: var(--white); }
+.nav-cta {
+  background: var(--white);
+  color: var(--black);
+  border: none;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.2s, transform 0.15s;
+}
+.nav-cta:hover { background:#E8E8E8; transform:translateY(-1px); }
+
+/* PAGE HERO */
+.page-hero {
+  background: var(--black);
+  border-bottom: 1px solid var(--border-dark);
+  padding: 100px 48px 88px;
+  position: relative;
+  overflow: hidden;
+}
+.page-hero::before {
+  content:'';
+  position:absolute;
+  inset:0;
+  background: radial-gradient(ellipse 50% 60% at 20% 50%, rgba(29,203,168,0.06) 0%, transparent 70%);
+  pointer-events:none;
+}
+.page-hero-inner { max-width:1160px; margin:0 auto; position:relative; z-index:1; }
+.page-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--teal);
+  display: block;
+  margin-bottom: 18px;
+}
+.page-hero h1 {
+  font-size: clamp(40px, 5.5vw, 68px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.04;
+  color: var(--white);
+  max-width: 780px;
+  margin-bottom: 20px;
+}
+.page-hero h1 em { font-style:normal; color: var(--teal); }
+.page-hero-sub {
+  font-size: 17px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.7;
+  max-width: 560px;
+}
+
+/* SHARED SECTION */
+.section-inner { max-width:1160px; margin:0 auto; padding:96px 48px; }
+.section-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--teal);
+  display: block;
+  margin-bottom: 16px;
+}
+h2.section-h2 {
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.028em;
+  margin-bottom: 20px;
+}
+h2.section-h2 em { font-style:normal; color: var(--teal); }
+
+/* STORY */
+.story-section { background: var(--dark); }
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.story-text p {
+  font-size: 16px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.85;
+  margin-bottom: 22px;
+}
+.story-text p strong { color: rgba(255,255,255,0.9); font-weight:500; }
+.story-pullquote {
+  border-left: 2px solid var(--teal);
+  padding: 4px 0 4px 24px;
+  margin: 32px 0;
+}
+.story-pullquote p {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--white);
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+.story-visual {
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 4/5;
+  background: var(--dark-2);
+  border: 1px solid var(--border-dark);
+  position: sticky;
+  top: 100px;
+}
+.story-visual img { width:100%; height:100%; object-fit:cover; display:block; }
+.founded-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(29,203,168,0.1);
+  border: 1px solid rgba(29,203,168,0.22);
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--teal);
+  letter-spacing: 0.03em;
+  margin-bottom: 28px;
+}
+
+/* TEAM */
+.team-section { background: var(--black); border-top:1px solid var(--border-dark); }
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 56px;
+}
+.team-card {
+  background: var(--dark-2);
+  border: 1px solid var(--border-dark);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: border-color 0.3s, transform 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+.team-card:hover { border-color: rgba(29,203,168,0.25); transform: translateY(-4px); }
+.team-img-wrap {
+  width: 100%;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  background: #1A1A1A;
+  position: relative;
+}
+.team-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.4s;
+}
+.team-card:hover .team-img-wrap img { transform: scale(1.03); }
+.team-body { padding: 26px 24px 28px; flex:1; display:flex; flex-direction:column; }
+.team-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+.team-role {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--teal);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  display: block;
+}
+.team-bio {
+  font-size: 14px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.75;
+  margin-bottom: 20px;
+  flex: 1;
+}
+.team-linkedin {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  border: 1px solid var(--border-dark);
+  border-radius: 6px;
+  padding: 8px 14px;
+  transition: color 0.2s, border-color 0.2s;
+  align-self: flex-start;
+}
+.team-linkedin:hover { color: var(--white); border-color: rgba(255,255,255,0.25); }
+.team-linkedin svg { width:14px; height:14px; }
+
+/* VALUES */
+.values-section { background: var(--dark); border-top:1px solid var(--border-dark); }
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  background: var(--border-dark);
+  border: 1px solid var(--border-dark);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-top: 52px;
+}
+.value-cell {
+  background: var(--dark);
+  padding: 36px 32px;
+}
+.value-num {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--teal);
+  letter-spacing: 0.1em;
+  display: block;
+  margin-bottom: 14px;
+}
+.value-cell h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -0.02em;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+.value-cell p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.75;
+}
+
+/* CTA */
+.cta-section { background: var(--black); border-top:1px solid var(--border-dark); position:relative; overflow:hidden; }
+.cta-section::before {
+  content:'';
+  position:absolute;
+  inset:0;
+  background: radial-gradient(ellipse 60% 50% at 50% 60%, rgba(29,203,168,0.07) 0%, transparent 70%);
+  pointer-events:none;
+}
+.cta-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 110px 48px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.cta-inner h2 {
+  font-size: clamp(32px, 4.5vw, 52px);
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: -0.03em;
+  line-height: 1.06;
+  margin-bottom: 18px;
+}
+.cta-inner h2 em { font-style:normal; color: var(--teal); }
+.cta-inner p {
+  font-size: 16px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+.cta-buttons { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+.btn-white {
+  background: var(--white);
+  color: var(--black);
+  border: none;
+  padding: 16px 36px;
+  border-radius: 8px;
+  font-family: var(--font);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-white:hover { background:#E8E8E8; transform:translateY(-2px); }
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 16px 36px;
+  border-radius: 8px;
+  font-family: var(--font);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: border-color 0.2s;
+}
+.btn-outline:hover { border-color: rgba(255,255,255,0.5); }
+
+/* FOOTER */
+footer { background: var(--black); border-top:1px solid var(--border-dark); padding:36px 48px; }
+.footer-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.footer-logo { display:flex; align-items:center; gap:10px; text-decoration:none; }
+.footer-logo img { height:24px; width:auto; opacity:0.85; }
+.footer-logo span { font-size:18px; font-weight:800; color:var(--white); letter-spacing:-0.04em; }
+.footer-links { display:flex; gap:22px; flex-wrap:wrap; }
+.footer-links a {
+  font-size: 13px;
+  color: rgba(255,255,255,0.35);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--white); }
+.footer-copy { font-size:12px; color:rgba(255,255,255,0.2); }
+
+/* FADE */
+.fade-up { opacity:0; transform:translateY(24px); transition:opacity 0.6s ease, transform 0.6s ease; }
+.fade-up.visible { opacity:1; transform:translateY(0); }
+.fade-up-delay-1 { transition-delay:0.1s; }
+.fade-up-delay-2 { transition-delay:0.2s; }
+
+@media (max-width: 900px) {
+  nav { padding:0 20px; }
+  .nav-left { display:none; }
+  .nav-right li:not(:last-child) { display:none; }
+  .page-hero { padding:64px 24px 56px; }
+  .section-inner { padding:64px 24px; }
+  .story-grid { grid-template-columns:1fr; gap:40px; }
+  .story-visual { position:static; aspect-ratio:16/10; }
+  .team-grid { grid-template-columns:1fr; gap:16px; }
+  .values-grid { grid-template-columns:1fr; }
+  .cta-inner { padding:80px 24px; }
+  footer { padding:28px 24px; }
+  .footer-inner { flex-direction:column; align-items:flex-start; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <ul class="nav-left">
+    <li><a href="/">for athletes</a></li>
+    <li><a href="/b2b">for businesses</a></li>
+    <li><a href="/#how-it-works">how it works</a></li>
+  </ul>
+  <div class="nav-logo-center">
+    <a href="/">
+      <img src="images/syp-logo.png" alt="syp">
+      <span class="nav-logo-text">syp</span>
+    </a>
+  </div>
+  <ul class="nav-right">
+    <li><a href="mailto:mathis@syphydration.com">contact</a></li>
+    <li><a href="/#waitlist" class="nav-cta">join waitlist</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <span class="page-label">about</span>
+    <h1>we're building the hydration layer<br><em>athletes never had.</em></h1>
+    <p class="page-hero-sub">syp measures what athletes actually drink, in real time, on the bottle they already use. no estimates. no self-reporting. no behavior change.</p>
+  </div>
+</div>
+
+<!-- STORY -->
+<section class="story-section">
+  <div class="section-inner">
+    <div class="story-grid">
+      <div class="story-text">
+        <span class="founded-badge">founded April 9, 2025</span>
+        <span class="section-label">the story</span>
+        <h2 class="section-h2">it started with an injury<br>nobody saw coming.</h2>
+
+        <p>Freshman year at the University of South Florida. Division I soccer. A season-ending groin injury that took months to explain.</p>
+
+        <p>The answer wasn't a bad tackle or a training error. It was <strong>chronic dehydration that had been building quietly for months</strong> — and nobody caught it, because there was no way to see it.</p>
+
+        <p>The staff weren't wrong. They had the tools everyone else had. Sweat-rate estimates. Body-weight checks. Athletes logging water in an app after practice. All of it either guesswork or self-reported, which in a live training environment means it isn't reliable.</p>
+
+        <div class="story-pullquote">
+          <p>Every other performance metric was tracked to the decimal. Hydration was a guess.</p>
+        </div>
+
+        <p>syp exists to close that gap. A universal sleeve that clips onto any bottle, measures every sip through a load cell, and turns raw intake into something an athlete and a trainer can actually act on.</p>
+
+        <p>Since April 2025 we've built working prototypes, secured a manufacturing partnership, filed for patent protection, run an IRB-approved research study with USF Athletics, and signed <strong>five D1 programs</strong> for our Fall 2026 pilot.</p>
+
+        <p>We're still early. We're pre-revenue and pre-ship, and we say that plainly. But the problem is real, the science is settled, and the athletes who've lived it understand immediately why this matters.</p>
+      </div>
+      <div class="story-visual">
+        <!-- IMAGE FILE: images/about-story.jpg -->
+        <!-- Suggested: the night-game soccer photo, or a training/field shot -->
+        <img src="images/problem-thumbnail.jpg" alt="D1 soccer at USF" loading="lazy" decoding="async">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team-section" id="team">
+  <div class="section-inner">
+    <span class="section-label">the team</span>
+    <h2 class="section-h2">built by people who<br><em>lived the problem.</em></h2>
+
+    <div class="team-grid">
+
+      <!-- MATHIS -->
+      <div class="team-card fade-up">
+        <div class="team-img-wrap">
+          <!-- IMAGE FILE: images/team-mathis.jpg -->
+          <img src="images/team-mathis.jpg" alt="Mathis Fürst Haugen" loading="lazy" decoding="async">
+        </div>
+        <div class="team-body">
+          <p class="team-name">Mathis Fürst Haugen</p>
+          <span class="team-role">CEO &amp; Co-Founder</span>
+          <p class="team-bio">Norwegian-born, Mathis captained Division I soccer at the University of South Florida while studying Environmental Engineering. The injury that ended his freshman season became the reason syp exists. He leads hardware development, fundraising, and commercial partnerships, and has represented syp at the Florida Venture Forum and Web Summit in Lisbon. He didn't just build syp. He needed it.</p>
+          <a href="https://linkedin.com/in/mathis-haugen" target="_blank" rel="noopener noreferrer" class="team-linkedin">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            linkedin
+          </a>
+        </div>
+      </div>
+
+      <!-- RIMA -->
+      <div class="team-card fade-up fade-up-delay-1">
+        <div class="team-img-wrap">
+          <!-- IMAGE FILE: images/team-rima.jpg -->
+          <img src="images/team-rima.jpg" alt="Rima El Brouzi" loading="lazy" decoding="async">
+        </div>
+        <div class="team-body">
+          <p class="team-name">Rima El Brouzi</p>
+          <span class="team-role">CTO &amp; Co-Founder</span>
+          <p class="team-bio">Moroccan-born computer scientist completing her Master's in Computer Science at USF with a concentration in AI and medical engineering. She has conducted AI research at USF's Machine Learning and Human Reasoning Lab and interned as a machine learning engineer at Fater AI in Paris. As a graduate assistant for USF Men's Soccer, she saw the hydration problem up close. She leads all software, AI research, and the data infrastructure behind syp.</p>
+          <a href="https://linkedin.com/in/rimaelbrouzi/" target="_blank" rel="noopener noreferrer" class="team-linkedin">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            linkedin
+          </a>
+        </div>
+      </div>
+
+      <!-- NICOLAS -->
+      <div class="team-card fade-up fade-up-delay-2">
+        <div class="team-img-wrap">
+          <!-- IMAGE FILE: images/team-nicolas.jpg -->
+          <img src="images/team-nicolas.jpg" alt="Nicolas Scargle" loading="lazy" decoding="async">
+        </div>
+        <div class="team-body">
+          <p class="team-name">Nicolas Scargle</p>
+          <span class="team-role">Managing Partner</span>
+          <!-- BIO PLACEHOLDER — replace with Nicolas's approved bio -->
+          <p class="team-bio">Nicolas leads manufacturing, go-to-market, and commercial growth at syp. He owns the founding athlete program, drives pilot and sales conversations with Division I programs, and manages brand building, media, and financial planning. He is the connective tissue between what syp builds and the programs and athletes who use it.</p>
+          <a href="https://www.linkedin.com/in/nicolas-scargle/" target="_blank" rel="noopener noreferrer" class="team-linkedin">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            linkedin
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="values-section">
+  <div class="section-inner">
+    <span class="section-label">what we believe</span>
+    <h2 class="section-h2">four things that<br><em>shape how we build.</em></h2>
+
+    <div class="values-grid">
+      <div class="value-cell">
+        <span class="value-num">01</span>
+        <h3>show up. evolve. become.</h3>
+        <p>progress isn't loud, it's lived. we honor the hidden work — the early starts, the extra reps, the discipline to refine when no one is watching. mastery is rhythm, not rush.</p>
+      </div>
+      <div class="value-cell">
+        <span class="value-num">02</span>
+        <h3>disrupt with grace. honor the truth.</h3>
+        <p>refined disruption, not loud disruption. we build what doesn't yet exist and reject "good enough" as an insult. no ego, no hype, no shortcuts.</p>
+      </div>
+      <div class="value-cell">
+        <span class="value-num">03</span>
+        <h3>build with intention. measure with precision.</h3>
+        <p>every detail is a promise. we question everything — sensors, algorithms, data, claims. syp is not another tracker. it listens to the body's whispers before they become screams.</p>
+      </div>
+      <div class="value-cell">
+        <span class="value-num">04</span>
+        <h3>move as one. win with alignment.</h3>
+        <p>teams are not families. they are alliances of belief, clarity, and shared battles. leadership is earned through calm intensity, reliability, and impact — not titles.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <span class="section-label">get involved</span>
+    <h2>we're just <em>getting started.</em></h2>
+    <p>whether you're an athlete, a program, or someone who wants to help build this — we'd like to hear from you.</p>
+    <div class="cta-buttons">
+      <a href="/#waitlist" class="btn-white">join the waitlist</a>
+      <a href="/b2b" class="btn-outline">for programs</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <a href="/" class="footer-logo">
+      <img src="images/syp-logo.png" alt="syp">
+      <span>syp</span>
+    </a>
+    <div class="footer-links">
+      <a href="/">for athletes</a>
+      <a href="/b2b">for businesses</a>
+      <a href="/about">about</a>
+      <a href="mailto:mathis@syphydration.com">contact</a>
+      <a href="mailto:mathis@syphydration.com">investors</a>
+      <a href="/privacy-policy">privacy policy</a>
+    </div>
+    <p class="footer-copy">© 2026 syp. hauzi llc.</p>
+  </div>
+</footer>
+
+<script>
+const fadeEls = document.querySelectorAll('.fade-up');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.1 });
+fadeEls.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
