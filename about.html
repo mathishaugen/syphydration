@@ -3,16 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>syp for programs — hydration intelligence for athletic departments</title>
-<meta name="description" content="syp gives athletic trainers and coaches real-time hydration data across their entire roster. no behavior change, no new bottles. built for D1 programs.">
+<title>about syp — hydration intelligence</title>
+<meta name="description" content="syp was founded in April 2025 after a dehydration-related injury ended a D1 season. we build hydration intelligence for athletes who want real data, not guesses.">
 <meta name="robots" content="index, follow">
-<meta property="og:title" content="syp for programs — hydration intelligence for athletic departments">
-<meta property="og:description" content="real-time hydration data across your entire roster. see every athlete's status in one dashboard. built for athletic trainers and coaches.">
-<meta property="og:url" content="https://syphydration.com/b2b">
+<meta property="og:title" content="about syp — hydration intelligence">
+<meta property="og:description" content="founded April 2025 after a dehydration-related injury ended a D1 season. meet the team building hydration intelligence.">
+<meta property="og:url" content="https://syphydration.com/about">
 <meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="syp for programs — hydration intelligence">
-<meta name="twitter:description" content="real-time hydration data across your entire roster. built for athletic trainers and coaches.">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,7 +23,6 @@
   --dark-2: #161616;
   --white: #FFFFFF;
   --off-white: #F7F7F5;
-  --gray-bg: #F0F0EE;
   --gray-text: #6B6B6B;
   --border-dark: rgba(255,255,255,0.08);
   --border-light: rgba(0,0,0,0.08);
@@ -38,8 +34,8 @@ body {
   font-family: var(--font);
   font-size: 16px;
   line-height: 1.6;
-  color: var(--black);
-  background: var(--white);
+  background: var(--dark);
+  color: var(--white);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
@@ -67,18 +63,9 @@ nav {
   transition: color 0.2s;
 }
 .nav-left a:hover { color: var(--white); }
-.nav-logo-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.nav-logo-center a {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-}
-.nav-logo-center img { height:28px; width:auto; }
+.nav-logo-center { display:flex; justify-content:center; align-items:center; }
+.nav-logo-center a { display:flex; align-items:center; gap:10px; text-decoration:none; }
+.nav-logo-center img { height:32px; width:auto; opacity:0.9; }
 .nav-logo-text {
   font-size: 20px;
   font-weight: 800;
@@ -95,7 +82,7 @@ nav {
 }
 .nav-right a:hover { color: var(--white); }
 .nav-cta {
-  background: var(--teal);
+  background: var(--white);
   color: var(--black);
   border: none;
   padding: 10px 22px;
@@ -108,20 +95,20 @@ nav {
   display: inline-block;
   transition: background 0.2s, transform 0.15s;
 }
-.nav-cta:hover { background: var(--teal-dark); transform: translateY(-1px); }
+.nav-cta:hover { background:#E8E8E8; transform:translateY(-1px); }
 
-/* HERO */
-.hero {
+/* PAGE HERO */
+.page-hero {
+  background: var(--black);
+  border-bottom: 1px solid var(--border-dark);
+  padding: 140px 48px 120px;
   position: relative;
-  min-height: 95vh;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 100px 80px 120px;
   overflow: hidden;
+  min-height: 62vh;
+  display: flex;
+  align-items: center;
 }
-.hero video {
+.page-hero video {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -129,82 +116,42 @@ nav {
   object-fit: cover;
   z-index: 0;
 }
-.hero-overlay {
+.page-hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.1) 100%);
+  background: linear-gradient(to right, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.6) 55%, rgba(0,0,0,0.3) 100%);
   z-index: 1;
 }
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 620px;
-}
-.hero-eyebrow {
+.page-hero-inner { max-width:1160px; margin:0 auto; position:relative; z-index:2; width:100%; }
+.page-label {
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--teal);
-  margin-bottom: 20px;
   display: block;
+  margin-bottom: 18px;
 }
-.hero h1 {
-  font-size: clamp(40px, 5.5vw, 72px);
+.page-hero h1 {
+  font-size: clamp(40px, 5.5vw, 68px);
   font-weight: 800;
-  line-height: 1.04;
   letter-spacing: -0.03em;
+  line-height: 1.04;
   color: var(--white);
-  margin-bottom: 24px;
+  max-width: 780px;
+  margin-bottom: 20px;
 }
-.hero h1 em { font-style:normal; color: var(--teal); }
-.hero-sub {
+.page-hero h1 em { font-style:normal; color: var(--teal); }
+.page-hero-sub {
   font-size: 17px;
   font-weight: 300;
-  color: rgba(255,255,255,0.6);
-  line-height: 1.65;
-  margin-bottom: 40px;
-  max-width: 480px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.7;
+  max-width: 560px;
 }
-.hero-cta-group { display:flex; gap:14px; align-items:center; margin-bottom:20px; }
-.btn-primary {
-  background: var(--teal);
-  color: var(--black);
-  border: none;
-  padding: 16px 36px;
-  border-radius: 8px;
-  font-family: var(--font);
-  font-size: 15px;
-  font-weight: 700;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
-  transition: background 0.2s, transform 0.15s;
-}
-.btn-primary:hover { background: var(--teal-dark); transform: translateY(-2px); }
-.btn-secondary {
-  background: transparent;
-  color: var(--white);
-  border: 1px solid rgba(255,255,255,0.3);
-  padding: 16px 36px;
-  border-radius: 8px;
-  font-family: var(--font);
-  font-size: 15px;
-  font-weight: 500;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-block;
-  transition: border-color 0.2s;
-}
-.btn-secondary:hover { border-color: rgba(255,255,255,0.6); }
-.hero-trust {
-  font-size: 13px;
-  color: rgba(255,255,255,0.4);
-}
-.hero-trust span { color: var(--teal); font-weight:500; }
 
-/* SHARED */
-.section-inner { max-width:1160px; margin:0 auto; padding:100px 48px; }
+/* SHARED SECTION */
+.section-inner { max-width:1160px; margin:0 auto; padding:96px 48px; }
 .section-label {
   font-size: 11px;
   font-weight: 600;
@@ -215,448 +162,287 @@ nav {
   margin-bottom: 16px;
 }
 h2.section-h2 {
-  font-size: clamp(32px, 4vw, 52px);
+  font-size: clamp(32px, 4vw, 48px);
   font-weight: 800;
-  line-height: 1.06;
+  line-height: 1.08;
   letter-spacing: -0.028em;
-  margin-bottom: 16px;
-}
-h2.section-h2 em { font-style:italic; color: var(--teal); }
-.section-sub {
-  font-size: 17px;
-  line-height: 1.65;
-  color: var(--gray-text);
-  max-width: 580px;
-  margin-bottom: 56px;
-}
-
-/* PAIN POINTS */
-.pain-section { background: var(--white); border-top: 1px solid var(--border-light); }
-.pain-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
-.pain-card {
-  background: var(--off-white);
-  border-radius: 16px;
-  padding: 36px 32px;
-  border: 1px solid var(--border-light);
-  transition: transform 0.2s;
-}
-.pain-card:hover { transform: translateY(-3px); }
-.pain-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 10px;
-  background: rgba(29,203,168,0.12);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin-bottom: 20px;
 }
-.pain-icon svg { width:22px; height:22px; color: var(--teal); }
-.pain-card h3 {
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--black);
-  letter-spacing: -0.02em;
-  margin-bottom: 10px;
-  line-height: 1.2;
-}
-.pain-card p { font-size:14px; color: var(--gray-text); line-height:1.7; }
-.pain-stat {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--teal);
-  margin-top: 16px;
-  display: block;
-}
+h2.section-h2 em { font-style:normal; color: var(--teal); }
 
-/* DASHBOARD */
-.dashboard-section { background: var(--dark); }
-.dashboard-section h2 { color: var(--white); }
-.dashboard-section .section-sub { color: rgba(255,255,255,0.5); }
-.dashboard-wrap {
-  border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid var(--border-dark);
-  box-shadow: 0 32px 80px rgba(0,0,0,0.4);
-}
-
-/* HOW IT WORKS FOR PROGRAMS */
-.how-programs { background: var(--off-white); border-top: 1px solid var(--border-light); }
-.steps-horizontal {
+/* STORY */
+.story-section { background: var(--dark); }
+.story-grid {
   display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap: 2px;
-  background: var(--border-light);
-  border: 1px solid var(--border-light);
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.story-text p {
+  font-size: 16px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.85;
+  margin-bottom: 22px;
+}
+.story-text p strong { color: rgba(255,255,255,0.9); font-weight:500; }
+.story-pullquote {
+  border-left: 2px solid var(--teal);
+  padding: 4px 0 4px 24px;
+  margin: 32px 0;
+}
+.story-pullquote p {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--white);
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+.story-visual {
   border-radius: 16px;
   overflow: hidden;
+  aspect-ratio: 3/4;
+  background: var(--dark-2);
+  border: 1px solid var(--border-dark);
+  position: sticky;
+  top: 100px;
 }
-.step-h {
-  background: var(--white);
-  padding: 32px 28px;
+.story-visual img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
+.founded-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(29,203,168,0.1);
+  border: 1px solid rgba(29,203,168,0.22);
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--teal);
+  letter-spacing: 0.03em;
+  margin-bottom: 28px;
+}
+
+/* TEAM */
+.team-section { background: var(--black); border-top:1px solid var(--border-dark); }
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 56px;
+}
+.team-card {
+  background: var(--dark-2);
+  border: 1px solid var(--border-dark);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: border-color 0.3s, transform 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+.team-card:hover { border-color: rgba(29,203,168,0.25); transform: translateY(-4px); }
+.team-img-wrap {
+  width: 100%;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  background: #1A1A1A;
   position: relative;
 }
-.step-h-num {
+.team-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.4s;
+}
+.team-card:hover .team-img-wrap img { transform: scale(1.03); }
+.team-body { padding: 26px 24px 28px; flex:1; display:flex; flex-direction:column; }
+.team-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+.team-role {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--teal);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  display: block;
+}
+.team-bio {
+  font-size: 14px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.75;
+  margin-bottom: 20px;
+  flex: 1;
+}
+.team-linkedin {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  border: 1px solid var(--border-dark);
+  border-radius: 6px;
+  padding: 8px 14px;
+  transition: color 0.2s, border-color 0.2s;
+  align-self: flex-start;
+}
+.team-linkedin:hover { color: var(--white); border-color: rgba(255,255,255,0.25); }
+.team-linkedin svg { width:14px; height:14px; }
+
+/* VALUES */
+.values-section { background: var(--dark); border-top:1px solid var(--border-dark); }
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  background: var(--border-dark);
+  border: 1px solid var(--border-dark);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-top: 52px;
+}
+.value-cell {
+  background: var(--dark);
+  padding: 36px 32px;
+}
+.value-num {
   font-size: 11px;
   font-weight: 700;
   color: var(--teal);
   letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-bottom: 16px;
   display: block;
+  margin-bottom: 14px;
 }
-.step-h h3 {
-  font-size: 18px;
+.value-cell h3 {
+  font-size: 20px;
   font-weight: 700;
-  color: var(--black);
+  color: var(--white);
   letter-spacing: -0.02em;
   margin-bottom: 10px;
   line-height: 1.2;
 }
-.step-h p { font-size:13px; color: var(--gray-text); line-height:1.65; }
-.step-arrow {
-  position: absolute;
-  right: -12px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 24px;
-  height: 24px;
-  background: var(--teal);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
-}
-.step-arrow svg { width:10px; height:10px; color: var(--black); }
-
-/* TRUSTED BY PROGRAMS */
-.trusted-programs {
-  position: relative;
-  overflow: hidden;
-  min-height: 460px;
-  display: flex;
-  align-items: flex-end;
-}
-.trusted-programs-bg {
-  position: absolute;
-  inset: 0;
-  background-image: url('images/trusted-bg.jpg');
-  background-size: cover;
-  background-position: center;
-  z-index: 0;
-}
-.trusted-programs-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.78) 100%);
-  z-index: 1;
-}
-.trusted-programs-inner {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 1160px;
-  margin: 0 auto;
-  padding: 72px 48px;
-}
-.trusted-programs-inner .section-label { color: var(--teal); }
-.trusted-programs-inner h2 { color: var(--white); margin-bottom: 48px; }
-.trust-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
-.trust-card {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 14px;
-  padding: 28px 24px;
-  backdrop-filter: blur(10px);
-}
-.trust-card-num {
-  font-size: 40px;
-  font-weight: 800;
-  color: var(--white);
-  letter-spacing: -0.04em;
-  line-height: 1;
-  margin-bottom: 8px;
-  display: block;
-}
-.trust-card-num em { font-style:normal; color: var(--teal); }
-.trust-card p { font-size:13px; color: rgba(255,255,255,0.55); line-height:1.5; }
-.advisors-row {
-  display: flex;
-  gap: 16px;
-  margin-top: 40px;
-  flex-wrap: wrap;
-}
-.advisor-chip {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 40px;
-  padding: 8px 16px 8px 8px;
-}
-.advisor-avatar {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: var(--teal);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--black);
-  flex-shrink: 0;
-}
-.advisor-info p { font-size:12px; font-weight:600; color: var(--white); line-height:1.2; }
-.advisor-info span { font-size:11px; color: rgba(255,255,255,0.45); }
-
-/* PRICING SIGNAL */
-.pricing-section { background: var(--white); border-top: 1px solid var(--border-light); }
-.pricing-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
-.pricing-card {
-  border-radius: 16px;
-  padding: 40px 36px;
-  border: 1px solid var(--border-light);
-}
-.pricing-card.featured {
-  background: var(--dark);
-  border-color: transparent;
-}
-.pricing-card.plain { background: var(--off-white); }
-.pricing-tag {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--teal);
-  margin-bottom: 12px;
-  display: block;
-}
-.pricing-card h3 {
-  font-size: 26px;
-  font-weight: 800;
-  letter-spacing: -0.025em;
-  margin-bottom: 12px;
-  line-height: 1.15;
-}
-.pricing-card.featured h3 { color: var(--white); }
-.pricing-card.plain h3 { color: var(--black); }
-.pricing-card p {
+.value-cell p {
   font-size: 14px;
-  line-height: 1.7;
-  margin-bottom: 28px;
-}
-.pricing-card.featured p { color: rgba(255,255,255,0.5); }
-.pricing-card.plain p { color: var(--gray-text); }
-.pricing-features { list-style:none; display:flex; flex-direction:column; gap:10px; margin-bottom:32px; }
-.pricing-features li {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 14px;
-}
-.pricing-card.featured .pricing-features li { color: rgba(255,255,255,0.75); }
-.pricing-card.plain .pricing-features li { color: var(--gray-text); }
-.check-icon { color: var(--teal); font-size:16px; flex-shrink:0; margin-top:1px; }
-.pricing-btn-primary {
-  display: block;
-  background: var(--teal);
-  color: var(--black);
-  border: none;
-  padding: 14px 28px;
-  border-radius: 8px;
-  font-family: var(--font);
-  font-size: 14px;
-  font-weight: 700;
-  cursor: pointer;
-  text-decoration: none;
-  text-align: center;
-  transition: background 0.2s, transform 0.15s;
-}
-.pricing-btn-primary:hover { background: var(--teal-dark); transform: translateY(-1px); }
-.pricing-btn-secondary {
-  display: block;
-  background: transparent;
-  color: var(--black);
-  border: 1.5px solid var(--border-light);
-  padding: 14px 28px;
-  border-radius: 8px;
-  font-family: var(--font);
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  text-decoration: none;
-  text-align: center;
-  transition: border-color 0.2s;
-}
-.pricing-btn-secondary:hover { border-color: #AAAAAA; }
-
-/* FAQ */
-.faq-b2b { background: var(--off-white); border-top: 1px solid var(--border-light); }
-.faq-b2b h2 { color: var(--black); }
-.faq-list-b2b { display:flex; flex-direction:column; max-width:720px; }
-.faq-item-b2b { border-bottom: 1px solid var(--border-light); }
-.faq-q {
-  width: 100%;
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-  padding: 22px 0;
-  font-family: var(--font);
-  font-size: 15px;
-  font-weight: 500;
-  color: var(--black);
-  text-align: left;
-  transition: color 0.2s;
-}
-.faq-q:hover { color: var(--teal); }
-.faq-q.active { color: var(--teal); }
-.faq-icon-b2b {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  border: 1.5px solid currentColor;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  transition: transform 0.25s;
-}
-.faq-q.active .faq-icon-b2b { transform: rotate(45deg); }
-.faq-a {
-  font-size: 14px;
-  color: var(--gray-text);
+  color: rgba(255,255,255,0.45);
   line-height: 1.75;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease, padding 0.3s ease;
 }
-.faq-a.open { max-height: 200px; padding-bottom: 22px; }
 
-/* BOOK A CALL CTA */
-.cta-section {
-  background: var(--dark);
-  position: relative;
-  overflow: hidden;
-}
+/* CTA */
+.cta-section { background: var(--black); border-top:1px solid var(--border-dark); position:relative; overflow:hidden; }
 .cta-section::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse 60% 50% at 50% 70%, rgba(29,203,168,0.08) 0%, transparent 70%);
-  pointer-events: none;
+  content:'';
+  position:absolute;
+  inset:0;
+  background: radial-gradient(ellipse 60% 50% at 50% 60%, rgba(29,203,168,0.07) 0%, transparent 70%);
+  pointer-events:none;
 }
 .cta-inner {
-  max-width: 720px;
+  max-width: 680px;
   margin: 0 auto;
-  padding: 120px 48px;
+  padding: 110px 48px;
   text-align: center;
   position: relative;
   z-index: 1;
 }
-.cta-inner .section-label { display:block; margin-bottom:18px; }
 .cta-inner h2 {
-  font-size: clamp(36px, 5vw, 60px);
+  font-size: clamp(32px, 4.5vw, 52px);
   font-weight: 800;
   color: var(--white);
   letter-spacing: -0.03em;
-  line-height: 1.04;
+  line-height: 1.06;
   margin-bottom: 18px;
 }
 .cta-inner h2 em { font-style:normal; color: var(--teal); }
 .cta-inner p {
   font-size: 16px;
   color: rgba(255,255,255,0.45);
-  line-height: 1.65;
-  margin-bottom: 44px;
+  line-height: 1.7;
+  margin-bottom: 36px;
 }
-.cta-btn-large {
-  display: inline-block;
-  background: var(--teal);
+.cta-buttons { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+.btn-white {
+  background: var(--white);
   color: var(--black);
   border: none;
-  padding: 18px 48px;
+  padding: 16px 36px;
   border-radius: 8px;
   font-family: var(--font);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   cursor: pointer;
   text-decoration: none;
+  display: inline-block;
   transition: background 0.2s, transform 0.15s;
-  margin-bottom: 16px;
 }
-.cta-btn-large:hover { background: var(--teal-dark); transform: translateY(-2px); }
-.cta-note {
-  font-size: 13px;
-  color: rgba(255,255,255,0.25);
-  display: block;
-  margin-top: 12px;
+.btn-white:hover { background:#E8E8E8; transform:translateY(-2px); }
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 16px 36px;
+  border-radius: 8px;
+  font-family: var(--font);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: border-color 0.2s;
 }
+.btn-outline:hover { border-color: rgba(255,255,255,0.5); }
 
 /* FOOTER */
-footer {
-  background: var(--black);
-  border-top: 1px solid rgba(255,255,255,0.05);
-  padding: 40px 48px;
-}
-.footer-bottom-b2b {
+footer { background: var(--black); border-top:1px solid var(--border-dark); padding:36px 48px; }
+.footer-inner {
   max-width: 1160px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 14px;
 }
 .footer-logo { display:flex; align-items:center; gap:10px; text-decoration:none; }
-.footer-logo img { height:22px; width:auto; }
-.footer-logo span {
-  font-size: 18px;
-  font-weight: 800;
-  color: var(--white);
-  letter-spacing: -0.04em;
-}
-.footer-links-b2b { display:flex; gap:24px; }
-.footer-links-b2b a {
+.footer-logo img { height:24px; width:auto; opacity:0.85; }
+.footer-logo span { font-size:18px; font-weight:800; color:var(--white); letter-spacing:-0.04em; }
+.footer-links { display:flex; gap:22px; flex-wrap:wrap; }
+.footer-links a {
   font-size: 13px;
   color: rgba(255,255,255,0.35);
   text-decoration: none;
   transition: color 0.2s;
 }
-.footer-links-b2b a:hover { color: var(--white); }
-.footer-copy-b2b { font-size:12px; color: rgba(255,255,255,0.2); }
+.footer-links a:hover { color: var(--white); }
+.footer-copy { font-size:12px; color:rgba(255,255,255,0.2); }
 
-/* FADE UP */
+/* FADE */
 .fade-up { opacity:0; transform:translateY(24px); transition:opacity 0.6s ease, transform 0.6s ease; }
 .fade-up.visible { opacity:1; transform:translateY(0); }
 .fade-up-delay-1 { transition-delay:0.1s; }
 .fade-up-delay-2 { transition-delay:0.2s; }
-.fade-up-delay-3 { transition-delay:0.3s; }
 
-/* RESPONSIVE */
 @media (max-width: 900px) {
   nav { padding:0 20px; }
   .nav-left { display:none; }
-  .hero { padding:80px 24px 60px; align-items:center; text-align:center; }
-  .hero-content { max-width:100%; }
-  .hero-overlay { background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.65) 100%); }
-  .hero-content { align-items:center; display:flex; flex-direction:column; }
-  .hero-cta-group { flex-direction:column; width:100%; }
-  .section-inner { padding:72px 24px; }
-  .pain-grid { grid-template-columns:1fr; }
-  .steps-horizontal { grid-template-columns:1fr; }
-  .step-arrow { display:none; }
-  .trust-grid { grid-template-columns:repeat(2,1fr); }
-  .pricing-grid { grid-template-columns:1fr; }
+  .nav-right li:not(:last-child) { display:none; }
+  .page-hero { padding:100px 24px 80px; min-height:auto; }
+  .section-inner { padding:64px 24px; }
+  .story-grid { grid-template-columns:1fr; gap:40px; }
+  .story-visual { position:static; aspect-ratio:16/10; }
+  .team-grid { grid-template-columns:1fr; gap:16px; }
+  .values-grid { grid-template-columns:1fr; }
   .cta-inner { padding:80px 24px; }
-  footer { padding:32px 24px; }
-  .footer-bottom-b2b { flex-direction:column; align-items:flex-start; }
+  footer { padding:28px 24px; }
+  .footer-inner { flex-direction:column; align-items:flex-start; }
 }
 </style>
 </head>
@@ -665,455 +451,214 @@ footer {
 <!-- NAV -->
 <nav>
   <ul class="nav-left">
-    <li><a href="#pain">the problem</a></li>
-    <li><a href="#dashboard">the dashboard</a></li>
-    <li><a href="#faq">faq</a></li>
     <li><a href="/">for athletes</a></li>
-    <li><a href="/about">about</a></li>
+    <li><a href="/b2b">for businesses</a></li>
+    <li><a href="/#how-it-works">how it works</a></li>
   </ul>
   <div class="nav-logo-center">
     <a href="/">
       <img src="images/syp-logo.png" alt="syp">
+      <span class="nav-logo-text">syp</span>
     </a>
   </div>
   <ul class="nav-right">
     <li><a href="mailto:mathis@syphydration.com">contact</a></li>
-    <li><a href="https://cal.com/mathis-haugen-xfanml/intro-call" target="_blank" class="nav-cta">book a call</a></li>
+    <li><a href="/#waitlist" class="nav-cta">join waitlist</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <video preload="metadata" autoplay muted loop playsinline poster="images/trusted-bg.jpg">
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <video autoplay muted loop playsinline preload="metadata" poster="images/about-story.jpg">
     <source src="images/b2b-hero.mp4" type="video/mp4">
   </video>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <span class="hero-eyebrow">syp for programs</span>
-    <h1>your athletes are dehydrated.<br><em>you just can't see it.</em></h1>
-    <p class="hero-sub">syp gives athletic trainers and coaches real-time hydration data across their entire roster. no behavior change. no new bottles. just the truth.</p>
-    <div class="hero-cta-group">
-      <a href="https://cal.com/mathis-haugen-xfanml/intro-call" target="_blank" class="btn-primary">book a pilot call</a>
-      <a href="#dashboard" class="btn-secondary">see the dashboard</a>
-    </div>
-    <p class="hero-trust"><span>5 D1 programs</span> committed for Fall 2026 pilot</p>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-inner">
+    <span class="page-label">about</span>
+    <h1>we're building the hydration layer<br><em>athletes never had.</em></h1>
+    <p class="page-hero-sub">syp measures what athletes actually drink, in real time, on the bottle they already use. no estimates. no self-reporting. no behavior change.</p>
   </div>
-</section>
+</div>
 
-<!-- PAIN POINTS -->
-<section class="pain-section" id="pain">
+<!-- STORY -->
+<section class="story-section">
   <div class="section-inner">
-    <span class="section-label">the problem</span>
-    <h2 class="section-h2">you're making decisions<br>with <em>incomplete data.</em></h2>
-    <p class="section-sub">every other performance metric is tracked. hydration is still a guess.</p>
-    <div class="pain-grid">
-      <div class="pain-card fade-up">
-        <div class="pain-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 5v6m0 4h.01"/>
-          </svg>
+    <div class="story-grid">
+      <div class="story-text">
+        <span class="founded-badge">founded April 9, 2025</span>
+        <span class="section-label">the story</span>
+        <h2 class="section-h2">three people.<br>one locker room.</h2>
+
+        <p>Nicolas Scargle arrived at the University of South Florida in January 2021, recruited to play for the Men's Soccer team.</p>
+
+        <p>Rima El Brouzi came the same year, and joined the same team as a student manager.</p>
+
+        <p>I got recruited a year later, in January 2022.</p>
+
+        <p>By that spring the three of us were in the same building every day. Nicolas became my roommate. He stayed my roommate for all four years.</p>
+
+        <p>Then in the fall of 2022, my freshman season ended with a groin injury.</p>
+
+        <p>It took a while to explain. The answer wasn't a bad tackle or a training error. It was <strong>chronic dehydration that had been building quietly for months</strong> — and nobody caught it, because there was no way to see it.</p>
+
+        <p>The staff weren't wrong. They had the tools everyone else had. Sweat-rate estimates. Body-weight checks. Athletes logging water in an app after practice. All of it either guesswork or self-reported, which in a live training environment means it isn't reliable.</p>
+
+        <div class="story-pullquote">
+          <p>Every other performance metric was tracked to the decimal. Hydration was a guess.</p>
         </div>
-        <h3>no real-time intake data</h3>
-        <p>you track sleep, nutrition, training load, and recovery. but how much water each athlete actually drinks stays a guess until something goes wrong.</p>
-        <span class="pain-stat">70% of collegiate athletes arrive at practice dehydrated</span>
+
+        <p>I started building syp in 2024 as a school project. By then Nicolas was team captain and I was assistant captain. Rima was still managing the team while finishing a computer science degree and doing AI research on the side.</p>
+
+        <p>We incorporated on <strong>April 9, 2025</strong>. Rima and I are both international students, which meant we needed an American partner to open the company properly. Nicolas was the obvious answer — the person we both already trusted, who had lived the same four years in the same building.</p>
+
+        <p>He has since graduated and moved to West Virginia to keep playing. Rima is still on the sideline at USF.</p>
+
+        <p>Since then we've built working prototypes, secured a manufacturing partnership, filed for patent protection, launched an IRB-approved research study with USF Athletics, and signed <strong>five D1 programs</strong> for our Fall 2026 pilot.</p>
+
+        <p>We're still early. Pre-revenue, pre-ship, and we say that plainly. But we didn't meet at a hackathon or a networking event. We met on a soccer field, and we're building this from the same place the problem showed up.</p>
       </div>
-      <div class="pain-card fade-up fade-up-delay-1">
-        <div class="pain-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-          </svg>
-        </div>
-        <h3>heat illness carries real exposure</h3>
-        <p>exertional heat illness remains one of the leading causes of preventable death in collegiate athletics. programs carry the liability, and documentation of preventative monitoring matters when incidents occur.</p>
-        <span class="pain-stat">syp creates a verifiable record of hydration monitoring</span>
-      </div>
-      <div class="pain-card fade-up fade-up-delay-2">
-        <div class="pain-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-            <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
-          </svg>
-        </div>
-        <h3>manual tracking doesn't work</h3>
-        <p>asking athletes to log their water intake requires behavior change, trust, and compliance — all three of which are near zero in a live training environment.</p>
-        <span class="pain-stat">syp requires zero behavior change from athletes</span>
+      <div class="story-visual">
+        <!-- IMAGE FILE: images/about-story.jpg -->
+        <!-- Suggested: the night-game soccer photo, or a training/field shot -->
+        <img src="images/about-story.jpg" alt="Mathis on the field at USF" loading="lazy" decoding="async">
       </div>
     </div>
   </div>
 </section>
 
-<!-- DASHBOARD -->
-<section class="dashboard-section" id="dashboard">
+<!-- TEAM -->
+<section class="team-section" id="team">
   <div class="section-inner">
-    <span class="section-label" style="color:var(--teal);">the dashboard</span>
-    <h2 class="section-h2" style="color:var(--white);">your entire roster.<br><em>one screen.</em></h2>
-    <p class="section-sub" style="color:rgba(255,255,255,0.5); margin-bottom:40px;">real-time hydration status for every athlete. color-coded alerts before problems become incidents.</p>
-    <div class="dashboard-wrap fade-up">
+    <span class="section-label">the team</span>
+    <h2 class="section-h2">built by people who<br><em>lived the problem.</em></h2>
 
-      <!-- DASHBOARD MOCKUP -->
-      <div style="font-family:var(--font);">
-        <div style="display:flex; align-items:center; justify-content:space-between; padding:12px 20px; background:#111; border-bottom:1px solid rgba(255,255,255,0.07);">
-          <div style="display:flex; align-items:center; gap:10px;">
-            <div style="width:26px; height:26px; background:#1DCBA8; border-radius:6px; display:flex; align-items:center; justify-content:center;">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 2c-4 6-6 9-6 12a6 6 0 0012 0c0-3-2-6-6-12z"/></svg>
-            </div>
-            <span style="font-size:13px; font-weight:500; color:#fff;">syp</span>
-            <span style="font-size:11px; color:rgba(255,255,255,0.4);">/</span>
-            <span style="font-size:13px; color:rgba(255,255,255,0.5);">women's lacrosse</span>
-          </div>
-          <div style="display:flex; align-items:center; gap:12px;">
-            <span style="font-size:11px; color:rgba(255,255,255,0.4);">practice · tuesday 2:30 PM</span>
-            <span style="display:flex; align-items:center; gap:5px; font-size:11px; color:#1DCBA8;"><span style="width:6px; height:6px; background:#1DCBA8; border-radius:50%; display:inline-block;"></span>live</span>
-          </div>
+    <div class="team-grid">
+
+      <!-- MATHIS -->
+      <div class="team-card fade-up">
+        <div class="team-img-wrap">
+          <!-- IMAGE FILE: images/team-mathis.jpeg -->
+          <img src="images/team-mathis.jpeg" alt="Mathis Fürst Haugen" loading="lazy" decoding="async">
         </div>
-        <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(255,255,255,0.05);">
-          <div style="background:#111; padding:14px 18px;"><p style="font-size:11px; color:rgba(255,255,255,0.4); margin:0 0 3px; text-transform:uppercase; letter-spacing:.05em;">roster</p><p style="font-size:24px; font-weight:600; color:#fff; margin:0;">39</p></div>
-          <div style="background:#111; padding:14px 18px;"><p style="font-size:11px; color:rgba(255,255,255,0.4); margin:0 0 3px; text-transform:uppercase; letter-spacing:.05em;">hydrated</p><p style="font-size:24px; font-weight:600; color:#1DCBA8; margin:0;" id="b-good">—</p></div>
-          <div style="background:#111; padding:14px 18px;"><p style="font-size:11px; color:rgba(255,255,255,0.4); margin:0 0 3px; text-transform:uppercase; letter-spacing:.05em;">monitor</p><p style="font-size:24px; font-weight:600; color:#E8A84A; margin:0;" id="b-mon">—</p></div>
-          <div style="background:#111; padding:14px 18px;"><p style="font-size:11px; color:rgba(255,255,255,0.4); margin:0 0 3px; text-transform:uppercase; letter-spacing:.05em;">at risk</p><p style="font-size:24px; font-weight:600; color:#E24B4A; margin:0;" id="b-risk">—</p></div>
-        </div>
-        <div style="display:grid; grid-template-columns:1fr 240px; gap:1px; background:rgba(255,255,255,0.05);">
-          <div style="background:#111; padding:16px 20px;">
-            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;">
-              <span style="font-size:13px; font-weight:500; color:#fff;">athlete roster <span style="font-size:11px; color:rgba(255,255,255,0.35); font-weight:400;" id="b-label"></span></span>
-              <div style="display:flex; gap:5px;">
-                <button onclick="bFilter('all')" id="b-all" style="font-size:11px; padding:3px 10px; border-radius:20px; border:1px solid rgba(255,255,255,0.1); cursor:pointer; background:#1DCBA8; color:#000; font-family:var(--font);">all</button>
-                <button onclick="bFilter('risk')" id="b-r" style="font-size:11px; padding:3px 10px; border-radius:20px; border:1px solid rgba(255,255,255,0.1); cursor:pointer; background:transparent; color:rgba(255,255,255,0.5); font-family:var(--font);">at risk</button>
-                <button onclick="bFilter('monitor')" id="b-m" style="font-size:11px; padding:3px 10px; border-radius:20px; border:1px solid rgba(255,255,255,0.1); cursor:pointer; background:transparent; color:rgba(255,255,255,0.5); font-family:var(--font);">monitor</button>
-              </div>
-            </div>
-            <div style="display:grid; grid-template-columns:1.8fr 1fr 1fr 1fr 80px; padding-bottom:8px; border-bottom:1px solid rgba(255,255,255,0.06); margin-bottom:2px;">
-              <span style="font-size:10px; color:rgba(255,255,255,0.35); text-transform:uppercase; letter-spacing:.07em;"># · athlete</span>
-              <span style="font-size:10px; color:rgba(255,255,255,0.35); text-transform:uppercase; letter-spacing:.07em;">intake</span>
-              <span style="font-size:10px; color:rgba(255,255,255,0.35); text-transform:uppercase; letter-spacing:.07em;">target</span>
-              <span style="font-size:10px; color:rgba(255,255,255,0.35); text-transform:uppercase; letter-spacing:.07em;">last sip</span>
-              <span style="font-size:10px; color:rgba(255,255,255,0.35); text-transform:uppercase; letter-spacing:.07em;">status</span>
-            </div>
-            <div id="b-roster" style="max-height:280px; overflow-y:auto;"></div>
-          </div>
-          <div style="background:#111; padding:16px 18px; display:flex; flex-direction:column; gap:14px;">
-            <div>
-              <p style="font-size:12px; font-weight:500; color:#fff; margin:0 0 8px;">alerts</p>
-              <div id="b-alerts"></div>
-            </div>
-            <div style="border-top:1px solid rgba(255,255,255,0.06); padding-top:12px;">
-              <p style="font-size:12px; font-weight:500; color:#fff; margin:0 0 10px;">quick actions</p>
-              <div style="display:flex; flex-direction:column; gap:6px;">
-                <button style="font-size:11px; padding:7px 12px; border-radius:8px; border:1px solid rgba(255,255,255,0.08); background:rgba(255,255,255,0.04); color:rgba(255,255,255,0.7); cursor:pointer; text-align:left; font-family:var(--font);">send hydration reminder</button>
-                <button style="font-size:11px; padding:7px 12px; border-radius:8px; border:1px solid rgba(255,255,255,0.08); background:rgba(255,255,255,0.04); color:rgba(255,255,255,0.7); cursor:pointer; text-align:left; font-family:var(--font);">export session report</button>
-                <button style="font-size:11px; padding:7px 12px; border-radius:8px; border:1px solid rgba(255,255,255,0.08); background:rgba(255,255,255,0.04); color:#E24B4A; cursor:pointer; text-align:left; font-family:var(--font);">flag for medical review</button>
-              </div>
-            </div>
-          </div>
+        <div class="team-body">
+          <p class="team-name">Mathis Fürst Haugen</p>
+          <span class="team-role">CEO &amp; Co-Founder</span>
+          <p class="team-bio">Norwegian-born. Recruited to USF Men's Soccer in January 2022, assistant captain by 2024, studying Environmental Engineering the whole way through. The injury that ended his freshman season is the reason syp exists. He leads hardware development, fundraising, and commercial partnerships, and has represented syp at the Florida Venture Forum and Web Summit in Lisbon. He didn't just build syp. He needed it.</p>
+          <a href="https://linkedin.com/in/mathis-haugen" target="_blank" rel="noopener noreferrer" class="team-linkedin">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            linkedin
+          </a>
         </div>
       </div>
+
+      <!-- RIMA -->
+      <div class="team-card fade-up fade-up-delay-1">
+        <div class="team-img-wrap">
+          <!-- IMAGE FILE: images/team-rima.jpg -->
+          <img src="images/team-rima.jpg" alt="Rima El Brouzi" loading="lazy" decoding="async">
+        </div>
+        <div class="team-body">
+          <p class="team-name">Rima El Brouzi</p>
+          <span class="team-role">CTO &amp; Co-Founder</span>
+          <p class="team-bio">Moroccan-born computer scientist. Arrived at USF in 2021 and joined Men's Soccer as a student manager, where she watched the hydration problem play out from the sideline for four years. She is completing her Master's in Computer Science with a concentration in AI and medical engineering, has conducted research at USF's Machine Learning and Human Reasoning Lab, and interned as a machine learning engineer at Fater AI in Paris. She leads all software, AI research, and the data infrastructure behind syp.</p>
+          <a href="https://linkedin.com/in/rimaelbrouzi/" target="_blank" rel="noopener noreferrer" class="team-linkedin">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            linkedin
+          </a>
+        </div>
+      </div>
+
+      <!-- NICOLAS -->
+      <div class="team-card fade-up fade-up-delay-2">
+        <div class="team-img-wrap">
+          <!-- IMAGE FILE: images/team-nicolas.png -->
+          <img src="images/team-nicolas.png" alt="Nicolas Scargle" loading="lazy" decoding="async">
+        </div>
+        <div class="team-body">
+          <p class="team-name">Nicolas Scargle</p>
+          <span class="team-role">Managing Partner</span>
+          <!-- BIO PLACEHOLDER — replace with Nicolas's approved bio -->
+          <p class="team-bio">Recruited to USF Men's Soccer in January 2021, team captain by 2024, and Mathis's roommate for all four years. When syp incorporated in April 2025, he was the partner both founders already trusted. He now leads manufacturing, go-to-market, and commercial growth, owns the founding athlete program, and drives pilot conversations with Division I programs. He has since graduated and plays at West Virginia.</p>
+          <a href="https://www.linkedin.com/in/nicolas-scargle/" target="_blank" rel="noopener noreferrer" class="team-linkedin">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            linkedin
+          </a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- HOW IT WORKS FOR PROGRAMS -->
-<section class="how-programs">
+<!-- VALUES -->
+<section class="values-section">
   <div class="section-inner">
-    <span class="section-label">how it works for programs</span>
-    <h2 class="section-h2">up and running<br><em>in one practice.</em></h2>
-    <p class="section-sub">no IT setup. no app downloads for coaches. no behavior change for athletes.</p>
-    <div class="steps-horizontal fade-up">
-      <div class="step-h" style="position:relative;">
-        <span class="step-h-num">01</span>
-        <h3>order devices for your roster</h3>
-        <p>syp ships bulk device packages sized to your roster. pricing scales with program size.</p>
-        <div class="step-arrow">
-          <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5h6M5 2l3 3-3 3"/></svg>
-        </div>
+    <span class="section-label">what we believe</span>
+    <h2 class="section-h2">four things that<br><em>shape how we build.</em></h2>
+
+    <div class="values-grid">
+      <div class="value-cell">
+        <span class="value-num">01</span>
+        <h3>show up. evolve. become.</h3>
+        <p>progress isn't loud, it's lived. we honor the hidden work — the early starts, the extra reps, the discipline to refine when no one is watching. mastery is rhythm, not rush.</p>
       </div>
-      <div class="step-h" style="position:relative;">
-        <span class="step-h-num">02</span>
-        <h3>distribute to athletes</h3>
-        <p>athletes clip syp onto their existing bottle. no new bottles, no apps to download, no routine to build.</p>
-        <div class="step-arrow">
-          <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5h6M5 2l3 3-3 3"/></svg>
-        </div>
+      <div class="value-cell">
+        <span class="value-num">02</span>
+        <h3>disrupt with grace. honor the truth.</h3>
+        <p>refined disruption, not loud disruption. we build what doesn't yet exist and reject "good enough" as an insult. no ego, no hype, no shortcuts.</p>
       </div>
-      <div class="step-h" style="position:relative;">
-        <span class="step-h-num">03</span>
-        <h3>monitor live from your dashboard</h3>
-        <p>open the coach dashboard on any device. see every athlete's hydration status in real time during practice or games.</p>
-        <div class="step-arrow">
-          <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 5h6M5 2l3 3-3 3"/></svg>
-        </div>
+      <div class="value-cell">
+        <span class="value-num">03</span>
+        <h3>build with intention. measure with precision.</h3>
+        <p>every detail is a promise. we question everything — sensors, algorithms, data, claims. syp is not another tracker. it listens to the body's whispers before they become screams.</p>
       </div>
-      <div class="step-h">
-        <span class="step-h-num">04</span>
-        <h3>intervene before it becomes an incident</h3>
-        <p>alerts fire before athletes hit dangerous thresholds. you act early. you document everything.</p>
+      <div class="value-cell">
+        <span class="value-num">04</span>
+        <h3>move as one. win with alignment.</h3>
+        <p>teams are not families. they are alliances of belief, clarity, and shared battles. leadership is earned through calm intensity, reliability, and impact — not titles.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TRUSTED BY PROGRAMS -->
-<section class="trusted-programs">
-  <div class="trusted-programs-bg"></div>
-  <div class="trusted-programs-overlay"></div>
-  <div class="trusted-programs-inner">
-    <span class="section-label">trusted by programs</span>
-    <h2 class="section-h2" style="max-width:600px;">built for the people<br><em>responsible for athlete health.</em></h2>
-    <div class="trust-grid">
-      <div class="trust-card fade-up">
-        <span class="trust-card-num">5<em> D1</em></span>
-        <p>programs committed for Fall 2026 pilot</p>
-      </div>
-      <div class="trust-card fade-up fade-up-delay-1">
-        <span class="trust-card-num">400<em>+</em></span>
-        <p>athletes on the waitlist, zero paid marketing</p>
-      </div>
-      <div class="trust-card fade-up fade-up-delay-2">
-        <span class="trust-card-num">IRB<em>✓</em></span>
-        <p>USF Athletics research study, approved and underway</p>
-      </div>
-      <div class="trust-card fade-up fade-up-delay-3">
-        <span class="trust-card-num">Pat<em>.</em></span>
-        <p>pending — universal attachment and load cell architecture</p>
-      </div>
-    </div>
-    <div class="advisors-row">
-      <div class="advisor-chip">
-        <div class="advisor-avatar">BB</div>
-        <div class="advisor-info">
-          <p>Coach Bob Butehorn</p>
-          <span>40+ years NCAA coaching</span>
-        </div>
-      </div>
-      <div class="advisor-chip">
-        <div class="advisor-avatar">BW</div>
-        <div class="advisor-info">
-          <p>Dr. Brandon Willingham</p>
-          <span>Exercise Science, USF</span>
-        </div>
-      </div>
-      <div class="advisor-chip">
-        <div class="advisor-avatar">DA</div>
-        <div class="advisor-info">
-          <p>David Abrams</p>
-          <span>SaaS founder, Demio exit</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRICING SIGNAL -->
-<section class="pricing-section">
-  <div class="section-inner">
-    <span class="section-label">pricing</span>
-    <h2 class="section-h2">priced at the<br><em>program level.</em></h2>
-    <p class="section-sub">syp is sold at the program level. pricing scales with roster size. book a call to get a quote built for your program.</p>
-    <div class="pricing-grid">
-      <div class="pricing-card featured fade-up">
-        <span class="pricing-tag">program pilot</span>
-        <h3>Fall 2026 pilot program</h3>
-        <p>limited spots available for Fall 2026. pilot programs get direct access to the syp team, custom onboarding, and early pricing locked in for year one.</p>
-        <ul class="pricing-features">
-          <li><span class="check-icon">✓</span>devices for your full roster</li>
-          <li><span class="check-icon">✓</span>real-time coach dashboard</li>
-          <li><span class="check-icon">✓</span>athlete app included</li>
-          <li><span class="check-icon">✓</span>dedicated onboarding support</li>
-          <li><span class="check-icon">✓</span>USF IRB research partnership</li>
-          <li><span class="check-icon">✓</span>early pricing locked in</li>
-        </ul>
-        <a href="https://cal.com/mathis-haugen-xfanml/intro-call" target="_blank" class="pricing-btn-primary">book a pilot call</a>
-      </div>
-      <div class="pricing-card plain fade-up fade-up-delay-1">
-        <span class="pricing-tag">standard program</span>
-        <h3>full program access</h3>
-        <p>annual subscription billed at the program level. covers your entire roster with hardware, software, and support included.</p>
-        <ul class="pricing-features">
-          <li><span class="check-icon" style="color:var(--teal);">✓</span>$180 per athlete per year</li>
-          <li><span class="check-icon" style="color:var(--teal);">✓</span>avg 200 athletes = $36K/year</li>
-          <li><span class="check-icon" style="color:var(--teal);">✓</span>hardware stays with program</li>
-          <li><span class="check-icon" style="color:var(--teal);">✓</span>1-3 year contracts available</li>
-          <li><span class="check-icon" style="color:var(--teal);">✓</span>below $50K procurement threshold</li>
-          <li><span class="check-icon" style="color:var(--teal);">✓</span>volume discounts for multi-sport</li>
-        </ul>
-        <a href="https://cal.com/mathis-haugen-xfanml/intro-call" target="_blank" class="pricing-btn-secondary">get a custom quote</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="faq-b2b" id="faq">
-  <div class="section-inner">
-    <span class="section-label">faq</span>
-    <h2 class="section-h2" style="margin-bottom:40px;">common questions<br>from <em>programs.</em></h2>
-    <div class="faq-list-b2b">
-      <div class="faq-item-b2b">
-        <button class="faq-q" onclick="toggleB2bFaq(this)">
-          does syp conflict with our Gatorade or Powerade sponsorship?
-          <span class="faq-icon-b2b"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="10"><path d="M6 1v10M1 6h10"/></svg></span>
-        </button>
-        <div class="faq-a">syp attaches to any bottle — including Gatorade and Powerade squeeze bottles. it doesn't replace your sponsored bottles or branding. athletes drink from whatever bottle your sponsorship requires and syp measures from the bottom.</div>
-      </div>
-      <div class="faq-item-b2b">
-        <button class="faq-q" onclick="toggleB2bFaq(this)">
-          what does onboarding look like?
-          <span class="faq-icon-b2b"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="10"><path d="M6 1v10M1 6h10"/></svg></span>
-        </button>
-        <div class="faq-a">we handle everything. devices ship to your facility. we do a 30-minute virtual onboarding with your athletic trainer or coach. athletes clip the device onto their bottle and it works from day one. no IT setup required.</div>
-      </div>
-      <div class="faq-item-b2b">
-        <button class="faq-q" onclick="toggleB2bFaq(this)">
-          who owns the athlete data?
-          <span class="faq-icon-b2b"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="10"><path d="M6 1v10M1 6h10"/></svg></span>
-        </button>
-        <div class="faq-a">the program owns the data. athletes opt in and control visibility. syp uses anonymized, aggregated data for research purposes only — never sold, never shared with third parties without explicit consent.</div>
-      </div>
-      <div class="faq-item-b2b">
-        <button class="faq-q" onclick="toggleB2bFaq(this)">
-          how long is the pilot program?
-          <span class="faq-icon-b2b"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="10"><path d="M6 1v10M1 6h10"/></svg></span>
-        </button>
-        <div class="faq-a">fall 2026 pilots run for one full season. at the end of the pilot you get a full data report, performance correlations, and a recommendation for your program. no commitment required beyond the pilot.</div>
-      </div>
-      <div class="faq-item-b2b">
-        <button class="faq-q" onclick="toggleB2bFaq(this)">
-          what bottles does it work with?
-          <span class="faq-icon-b2b"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="10"><path d="M6 1v10M1 6h10"/></svg></span>
-        </button>
-        <div class="faq-a">syp works with any bottle within our diameter range — covering owala, stanley, nalgene, and most gatorade and powerade squeeze bottles. universal fit for half-gallon jugs is in development.</div>
-      </div>
-      <div class="faq-item-b2b">
-        <button class="faq-q" onclick="toggleB2bFaq(this)">
-          does it meet NCAA wellness monitoring requirements?
-          <span class="faq-icon-b2b"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="10"><path d="M6 1v10M1 6h10"/></svg></span>
-        </button>
-        <div class="faq-a">syp is designed to support D1 wellness monitoring compliance. it is a passive device — no on-device coaching or AI — which keeps it within approved performance technology guidelines. we recommend reviewing with your compliance office during the pilot.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BOOK A CALL CTA -->
-<section class="cta-section" id="book">
+<!-- CTA -->
+<section class="cta-section">
   <div class="cta-inner">
-    <span class="section-label">get started</span>
-    <h2>ready to see it<br>for your <em>program?</em></h2>
-    <p>book a 20-minute intro call. we'll walk you through the dashboard, answer every question, and put together a quote for your roster size.</p>
-    <a href="https://cal.com/mathis-haugen-xfanml/intro-call" target="_blank" class="cta-btn-large">book a pilot call</a>
-    <span class="cta-note">20 minutes. no commitment. mathis picks up every call himself.</span>
+    <span class="section-label">get involved</span>
+    <h2>we're just <em>getting started.</em></h2>
+    <p>whether you're an athlete, a program, or someone who wants to help build this — we'd like to hear from you.</p>
+    <div class="cta-buttons">
+      <a href="/#waitlist" class="btn-white">join the waitlist</a>
+      <a href="/b2b" class="btn-outline">for programs</a>
+    </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-bottom-b2b">
+  <div class="footer-inner">
     <a href="/" class="footer-logo">
       <img src="images/syp-logo.png" alt="syp">
       <span>syp</span>
     </a>
-    <div class="footer-links-b2b">
+    <div class="footer-links">
       <a href="/">for athletes</a>
+      <a href="/b2b">for businesses</a>
       <a href="/about">about</a>
-      <a href="#dashboard">dashboard</a>
-      <a href="#faq">faq</a>
       <a href="mailto:mathis@syphydration.com">contact</a>
       <a href="mailto:mathis@syphydration.com">investors</a>
       <a href="/privacy-policy">privacy policy</a>
       <a href="/terms">terms</a>
     </div>
-    <p class="footer-copy-b2b">© 2026 syp. hauzi llc.</p>
+    <p class="footer-copy">© 2026 syp. hauzi llc.</p>
   </div>
 </footer>
 
 <script>
-// FAQ
-function toggleB2bFaq(btn) {
-  const answer = btn.nextElementSibling;
-  const isOpen = answer.classList.contains('open');
-  document.querySelectorAll('.faq-a').forEach(a => a.classList.remove('open'));
-  document.querySelectorAll('.faq-q').forEach(b => b.classList.remove('active'));
-  if (!isOpen) { answer.classList.add('open'); btn.classList.add('active'); }
-}
-
-// DASHBOARD DATA
-const firstNames = ['Kali','Alex','Sierra','Brianna','Jade','Maya','Tori','Camille','Layla','Nia','Paige','Dani','Reese','Morgan','Avery','Kennedy','Haley','Jordan','Taylor','Casey','Riley','Peyton','Quinn','Brooke','Kayla','Lexi','Mia','Sydney','Abby','Chloe','Emma','Olivia','Sophia','Zoe','Natalie','Savannah','Lauren','Alyssa','Kylie'];
-const lastNames = ['Cleary','Whitecliffe','Morgan','Torres','Walsh','Rivera','Hayes','Dubois','Foster','Brooks','Stevens','Lopez','Carter','Mitchell','Nguyen','Baker','Gonzalez','Nelson','Kim','Patel','Evans','Turner','Collins','Stewart','Morris','Rogers','Reed','Cook','Bell','Murphy','Bailey','Howard','Ward','Peterson','Price','Gray','Hughes','Flores','Washington'];
-const positions = ['Attack','Attack','Attack','Attack','Attack','Attack','Attack','Midfield','Midfield','Midfield','Midfield','Midfield','Midfield','Midfield','Midfield','Defense','Defense','Defense','Defense','Defense','Defense','Defense','Defense','Defense','Defense','Goalie','Goalie','Goalie'];
-
-function getStatus(i, t) { const r = i/t; return r>=0.75?'good':r>=0.45?'monitor':'risk'; }
-function randLast(s) {
-  if(s==='risk') return Math.floor(Math.random()*30+35)+' min';
-  if(s==='monitor') return Math.floor(Math.random()*15+15)+' min';
-  return Math.floor(Math.random()*12+2)+' min';
-}
-
-const players = firstNames.map((fn,i) => {
-  const target = +(1.9+Math.random()*0.4).toFixed(1);
-  const r = Math.random();
-  let intake;
-  if(r<0.62) intake = +(target*(0.75+Math.random()*0.35)).toFixed(1);
-  else if(r<0.82) intake = +(target*(0.45+Math.random()*0.29)).toFixed(1);
-  else intake = +(target*(0.15+Math.random()*0.29)).toFixed(1);
-  intake = Math.min(intake, target);
-  const status = getStatus(intake, target);
-  return { num:'#'+(i+1), name:fn+' '+lastNames[i], pos:positions[Math.min(i,positions.length-1)]||'Midfield', intake, target, status, last:randLast(status) };
-});
-
-const sc = {good:'#1DCBA8',monitor:'#E8A84A',risk:'#E24B4A'};
-const sl = {good:'hydrated',monitor:'monitor',risk:'at risk'};
-let bFilterVal = 'all';
-
-function updateBStats() {
-  document.getElementById('b-good').textContent = players.filter(p=>p.status==='good').length;
-  document.getElementById('b-mon').textContent = players.filter(p=>p.status==='monitor').length;
-  document.getElementById('b-risk').textContent = players.filter(p=>p.status==='risk').length;
-}
-
-function renderBRoster() {
-  const list = bFilterVal==='all' ? players : players.filter(p=>p.status===bFilterVal);
-  document.getElementById('b-label').textContent = bFilterVal==='all'?'· 39 athletes':'· '+list.length+' athletes';
-  document.getElementById('b-roster').innerHTML = list.map(p => {
-    const pct = Math.min(Math.round((p.intake/p.target)*100),100);
-    return `<div style="display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr 80px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05);align-items:center;">
-      <div><p style="font-size:12px;font-weight:500;color:#fff;margin:0;">${p.num} ${p.name}</p><p style="font-size:10px;color:rgba(255,255,255,0.4);margin:0;">${p.pos}</p></div>
-      <div><p style="font-size:12px;color:#fff;margin:0 0 3px;">${p.intake.toFixed(1)}L</p><div style="height:3px;background:rgba(255,255,255,0.08);border-radius:2px;width:55px;"><div style="width:${pct}%;height:100%;background:${sc[p.status]};border-radius:2px;"></div></div></div>
-      <p style="font-size:12px;color:rgba(255,255,255,0.4);margin:0;">${p.target.toFixed(1)}L</p>
-      <p style="font-size:12px;color:${p.status==='risk'?'#E24B4A':'rgba(255,255,255,0.4)'};margin:0;">${p.last}</p>
-      <span style="font-size:10px;padding:3px 7px;border-radius:20px;background:${sc[p.status]}18;color:${sc[p.status]};font-weight:500;">${sl[p.status]}</span>
-    </div>`;
-  }).join('');
-}
-
-function bFilter(f) {
-  bFilterVal = f;
-  [['all','b-all'],['risk','b-r'],['monitor','b-m']].forEach(([k,id]) => {
-    const b = document.getElementById(id);
-    b.style.background = k===f?'#1DCBA8':'transparent';
-    b.style.color = k===f?'#000':'rgba(255,255,255,0.5)';
-  });
-  renderBRoster();
-}
-
-function renderBAlerts() {
-  const atRisk = players.filter(p=>p.status==='risk').slice(0,3);
-  const atMon = players.filter(p=>p.status==='monitor').slice(0,2);
-  const all = [...atRisk.map(p=>({...p,level:'risk',msg:'no intake · '+p.last})),...atMon.map(p=>({...p,level:'monitor',msg:'below target · '+Math.round((p.intake/p.target)*100)+'%'}))];
-  document.getElementById('b-alerts').innerHTML = all.map(a =>
-    `<div style="display:flex;align-items:flex-start;gap:7px;padding:7px 9px;border-radius:8px;background:${a.level==='risk'?'#E24B4A14':'#E8A84A14'};margin-bottom:5px;">
-      <span style="font-size:13px;color:${a.level==='risk'?'#E24B4A':'#E8A84A'};flex-shrink:0;margin-top:1px;">⚠</span>
-      <div><p style="font-size:11px;font-weight:500;color:#fff;margin:0;">${a.name}</p><p style="font-size:10px;color:rgba(255,255,255,0.4);margin:0;">${a.msg}</p></div>
-    </div>`
-  ).join('');
-}
-
-updateBStats();
-renderBRoster();
-renderBAlerts();
-
-// FADE UP
 const fadeEls = document.querySelectorAll('.fade-up');
 const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);} });
-}, { threshold:0.1 });
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.1 });
 fadeEls.forEach(el => observer.observe(el));
 </script>
 </body>
