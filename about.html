@@ -539,7 +539,7 @@ footer { background: var(--black); border-top:1px solid var(--border-dark); padd
 
 <!-- PAGE HERO -->
 <div class="page-hero">
-  <video autoplay muted loop playsinline preload="metadata" poster="images/story-mathis.jpg">
+  <video autoplay muted loop playsinline preload="metadata" poster="images/story-nicolas.jpg">
     <source src="images/b2b-hero.mp4" type="video/mp4">
   </video>
   <div class="page-hero-overlay"></div>
@@ -589,9 +589,9 @@ footer { background: var(--black); border-top:1px solid var(--border-dark); padd
       </div>
       <div class="story-visual" id="storyVisual">
         <!-- IMAGE FILES: images/story-mathis.jpg, story-rima.jpg, story-nicolas.jpg -->
-        <img class="story-frame active" data-i="0" src="images/story-mathis.jpg" alt="Mathis on the field at USF" loading="lazy" decoding="async">
-        <img class="story-frame" data-i="1" src="images/story-rima.jpg" alt="Rima on the sideline at USF" loading="lazy" decoding="async">
-        <img class="story-frame" data-i="2" src="images/story-nicolas.jpg" alt="Nicolas on the field at USF" loading="lazy" decoding="async">
+        <img class="story-frame active" data-i="0" src="images/story-nicolas.jpg" alt="Nicolas on the field at USF" loading="lazy" decoding="async">
+        <img class="story-frame" data-i="1" src="images/story-mathis.jpg" alt="Mathis on the field at USF" loading="lazy" decoding="async">
+        <img class="story-frame" data-i="2" src="images/story-rima.jpeg" alt="Rima on the sideline at USF" loading="lazy" decoding="async">
         <div class="story-caption">
           <span class="story-caption-name" id="storyCaptionName">Mathis F&uuml;rst Haugen</span>
           <span class="story-caption-role" id="storyCaptionRole">USF Men's Soccer &middot; recruited January 2022</span>
@@ -651,8 +651,8 @@ footer { background: var(--black); border-top:1px solid var(--border-dark); padd
       <!-- NICOLAS -->
       <div class="team-card fade-up fade-up-delay-2">
         <div class="team-img-wrap">
-          <!-- IMAGE FILE: images/team-nicolas.jpg -->
-          <img src="images/team-nicolas.jpg" alt="Nicolas Scargle" loading="lazy" decoding="async">
+          <!-- IMAGE FILE: images/team-nicolas.png -->
+          <img src="images/team-nicolas.png" alt="Nicolas Scargle" loading="lazy" decoding="async">
         </div>
         <div class="team-body">
           <p class="team-name">Nicolas Scargle</p>
@@ -745,9 +745,9 @@ footer { background: var(--black); border-top:1px solid var(--border-dark); padd
   const roleEl = document.getElementById('storyCaptionRole');
   const story = document.querySelector('.story-grid');
   const meta = [
+    ['Nicolas Scargle', "USF Men's Soccer \u00b7 recruited January 2021"],
     ['Mathis F\u00fcrst Haugen', "USF Men's Soccer \u00b7 recruited January 2022"],
-    ['Rima El Brouzi', "USF Men's Soccer \u00b7 student manager since 2021"],
-    ['Nicolas Scargle', "USF Men's Soccer \u00b7 recruited January 2021"]
+    ['Rima El Brouzi', "USF Men's Soccer \u00b7 student manager since 2021"]
   ];
   let current = 0;
 
