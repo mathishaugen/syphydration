@@ -31,13 +31,6 @@
     });
   }, true);
 
-  // Footer email capture intent (see CLAUDE.md: this form has no backend yet)
-  document.addEventListener('submit', function (e) {
-    if (e.target.matches && e.target.matches('.footer-email-form')) {
-      gtag('event', 'footer_email_signup_attempt', { page_path: location.pathname });
-    }
-  }, true);
-
   // Scroll depth
   var thresholds = [25, 50, 75, 90];
   var fired = {};

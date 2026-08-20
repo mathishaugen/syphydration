@@ -1363,6 +1363,9 @@ footer {
   transition: border-color 0.2s;
 }
 .footer-email-wrap:focus-within { border-color: rgba(255,255,255,0.3); }
+.footer-join-link { text-decoration: none; cursor: pointer; }
+.footer-join-link:hover { border-color: rgba(255,255,255,0.3); }
+.footer-join-link .footer-email-input { color: rgba(255,255,255,0.85); }
 .footer-email-input {
   flex: 1;
   background: none;
@@ -2127,16 +2130,14 @@ footer {
     <div class="footer-left">
       <h2 class="footer-headline">Join the Hydration<br>Revolution</h2>
       <p class="footer-sub">sign up and take the first step toward better performance.</p>
-      <form class="footer-email-form" onsubmit="handleFooterEmail(event)">
-        <div class="footer-email-wrap">
-          <input class="footer-email-input" type="email" placeholder="E-mail" required>
-          <button type="submit" class="footer-email-btn">
-            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
-              <path d="M4 10h12M10 4l6 6-6 6"/>
-            </svg>
-          </button>
-        </div>
-      </form>
+      <a href="#waitlist" class="footer-email-wrap footer-join-link">
+        <span class="footer-email-input">join the waitlist</span>
+        <span class="footer-email-btn">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+            <path d="M4 10h12M10 4l6 6-6 6"/>
+          </svg>
+        </span>
+      </a>
     </div>
     <div class="footer-links">
       <div class="footer-col">
@@ -2240,15 +2241,6 @@ function handleWaitlist(e) {
   btn.disabled = true;
 }
 
-// FOOTER EMAIL FORM
-function handleFooterEmail(e) {
-  e.preventDefault();
-  const btn = e.target.querySelector('.footer-email-btn');
-  const input = e.target.querySelector('.footer-email-input');
-  input.value = '';
-  input.placeholder = "you're on the list.";
-  btn.style.color = 'var(--teal)';
-}
 </script>
 <script src="analytics.js"></script>
 </body>
