@@ -531,6 +531,57 @@ h2.section-h2 em {
   letter-spacing: 0.04em;
 }
 
+/* MID-PAGE WAITLIST CTA */
+.mid-waitlist-cta {
+  background: var(--black);
+  border-top: 1px solid var(--border-dark);
+  border-bottom: 1px solid var(--border-dark);
+  padding: 56px 24px;
+  text-align: center;
+}
+.mid-waitlist-text {
+  font-size: 15px;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 20px;
+}
+.mid-waitlist-cta .hero-cta {
+  margin-bottom: 0;
+}
+
+/* STICKY MOBILE CTA */
+.sticky-cta {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 190;
+  padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+  background: rgba(10,10,10,0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid var(--border-dark);
+  transform: translateY(100%);
+  transition: transform 0.25s ease;
+}
+.sticky-cta.visible { transform: translateY(0); }
+.sticky-cta a {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: var(--white);
+  color: var(--black);
+  padding: 14px;
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+}
+@media (max-width: 900px) {
+  .sticky-cta { display: block; }
+}
+
 /* WHY IT MATTERS */
 .why-matters {
   background: var(--dark);
@@ -1704,6 +1755,12 @@ footer {
   </div>
 </section>
 
+<!-- MID-PAGE WAITLIST CTA -->
+<section class="mid-waitlist-cta">
+  <p class="mid-waitlist-text">400+ athletes already tracking their hydration.</p>
+  <a href="#waitlist" class="hero-cta">join the waitlist</a>
+</section>
+
 <!-- WHAT SETS US APART -->
 <section class="sets-apart" id="how-it-works">
   <div class="section-inner">
@@ -2124,6 +2181,11 @@ footer {
   </div>
 </section>
 
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-cta" id="stickyCta">
+  <a href="#waitlist">join the waitlist</a>
+</div>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-top">
@@ -2240,6 +2302,34 @@ function handleWaitlist(e) {
   btn.style.background = 'var(--teal-dark)';
   btn.disabled = true;
 }
+
+// STICKY MOBILE CTA — shown once past the hero, hidden while the real
+// waitlist section is on screen so it never overlaps the Tally form.
+(function () {
+  const stickyBar = document.getElementById('stickyCta');
+  const hero = document.querySelector('.hero');
+  const waitlistSection = document.getElementById('waitlist');
+  if (!stickyBar || !hero) return;
+
+  let pastHero = false;
+  let onWaitlist = false;
+
+  function sync() {
+    stickyBar.classList.toggle('visible', pastHero && !onWaitlist);
+  }
+
+  new IntersectionObserver(
+    (entries) => { pastHero = !entries[0].isIntersecting; sync(); },
+    { threshold: 0 }
+  ).observe(hero);
+
+  if (waitlistSection) {
+    new IntersectionObserver(
+      (entries) => { onWaitlist = entries[0].isIntersecting; sync(); },
+      { threshold: 0.15 }
+    ).observe(waitlistSection);
+  }
+})();
 
 </script>
 <script src="video-autoplay-fix.js"></script>

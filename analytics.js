@@ -19,6 +19,7 @@
 
     var section = el.closest('section');
     var location_ =
+      el.closest('#stickyCta') ? 'sticky_cta' :
       el.closest('nav') ? 'nav' :
       el.closest('footer') ? 'footer' :
       section ? (section.id || section.className.split(' ')[0]) : 'other';
