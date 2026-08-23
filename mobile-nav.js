@@ -9,11 +9,14 @@
     '.nav-hamburger{display:none;background:none;border:none;padding:6px;' +
     'color:rgba(255,255,255,0.85);cursor:pointer;align-items:center;' +
     'justify-content:center;z-index:201;}' +
-    '.mobile-nav-panel{display:none;position:absolute;top:100%;left:0;' +
+    '.mobile-nav-panel{position:absolute;top:100%;left:0;' +
     'right:0;background:rgba(10,10,10,0.98);backdrop-filter:blur(20px);' +
     '-webkit-backdrop-filter:blur(20px);' +
-    'border-bottom:1px solid rgba(255,255,255,0.08);z-index:199;}' +
-    '.mobile-nav-panel.open{display:block;}' +
+    'border-bottom:1px solid rgba(255,255,255,0.08);z-index:199;' +
+    'opacity:0;transform:scale(0.96) translateY(-4px);transform-origin:top left;' +
+    'pointer-events:none;' +
+    'transition:opacity 200ms var(--ease-out,ease-out),transform 200ms var(--ease-out,ease-out);}' +
+    '.mobile-nav-panel.open{opacity:1;transform:scale(1) translateY(0);pointer-events:auto;}' +
     '.mobile-nav-list{display:flex;flex-direction:column;list-style:none;' +
     'margin:0;padding:8px 24px 20px;}' +
     '.mobile-nav-list li{border-bottom:1px solid rgba(255,255,255,0.06);}' +
@@ -30,6 +33,9 @@
        and the CTA short of the right edge. Reserve column 1 for the
        hamburger (now a real grid item) so logo/CTA land correctly. */
     'nav{grid-template-columns:auto auto 1fr !important;}' +
+    '}' +
+    '@media (prefers-reduced-motion: reduce){' +
+    '.mobile-nav-panel{transform:none !important;transition:opacity 150ms ease !important;}' +
     '}';
   document.head.appendChild(style);
 

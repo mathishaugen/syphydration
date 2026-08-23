@@ -49,6 +49,20 @@
   --border-dark: rgba(255,255,255,0.08);
   --border-light: rgba(0,0,0,0.08);
   --font: 'Inter', sans-serif;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-up, .fade-up.visible {
+    transform: none !important;
+    transition: opacity 0.2s ease !important;
+  }
+  .pain-card:hover, .btn-primary:hover, .btn-secondary:hover,
+  .pricing-btn-primary:hover, .cta-btn-large:hover, .nav-cta:hover,
+  .btn-primary:active, .pricing-btn-primary:active, .cta-btn-large:active, .nav-cta:active {
+    transform: none !important;
+  }
 }
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; }
@@ -127,6 +141,7 @@ nav {
   transition: background 0.2s, transform 0.15s;
 }
 .nav-cta:hover { background: var(--teal-dark); transform: translateY(-1px); }
+.nav-cta:active { transform: scale(0.97); }
 
 /* HERO */
 .hero {
@@ -200,6 +215,7 @@ nav {
   transition: background 0.2s, transform 0.15s;
 }
 .btn-primary:hover { background: var(--teal-dark); transform: translateY(-2px); }
+.btn-primary:active { transform: scale(0.97); }
 .btn-secondary {
   background: transparent;
   color: var(--white);
@@ -212,9 +228,10 @@ nav {
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s, transform 160ms var(--ease-out);
 }
 .btn-secondary:hover { border-color: rgba(255,255,255,0.6); }
+.btn-secondary:active { transform: scale(0.97); }
 .hero-trust {
   font-size: 13px;
   color: rgba(255,255,255,0.4);
@@ -258,7 +275,9 @@ h2.section-h2 em { font-style:italic; color: var(--teal); }
   border: 1px solid var(--border-light);
   transition: transform 0.2s;
 }
-.pain-card:hover { transform: translateY(-3px); }
+@media (hover: hover) and (pointer: fine) {
+  .pain-card:hover { transform: translateY(-3px); }
+}
 .pain-icon {
   width: 44px;
   height: 44px;
@@ -367,7 +386,7 @@ h2.section-h2 em { font-style:italic; color: var(--teal); }
 .trusted-programs-bg {
   position: absolute;
   inset: 0;
-  background-image: url('images/trusted-bg.jpg');
+  background-image: url('images/trusted-bg-poster.jpg');
   background-size: cover;
   background-position: center;
   z-index: 0;
@@ -502,6 +521,7 @@ h2.section-h2 em { font-style:italic; color: var(--teal); }
   transition: background 0.2s, transform 0.15s;
 }
 .pricing-btn-primary:hover { background: var(--teal-dark); transform: translateY(-1px); }
+.pricing-btn-primary:active { transform: scale(0.97); }
 .pricing-btn-secondary {
   display: block;
   background: transparent;
@@ -515,9 +535,10 @@ h2.section-h2 em { font-style:italic; color: var(--teal); }
   cursor: pointer;
   text-decoration: none;
   text-align: center;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s, transform 160ms var(--ease-out);
 }
 .pricing-btn-secondary:hover { border-color: #AAAAAA; }
+.pricing-btn-secondary:active { transform: scale(0.97); }
 
 /* FAQ */
 .faq-b2b { background: var(--off-white); border-top: 1px solid var(--border-light); }
@@ -556,14 +577,19 @@ h2.section-h2 em { font-style:italic; color: var(--teal); }
 }
 .faq-q.active .faq-icon-b2b { transform: rotate(45deg); }
 .faq-a {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows 300ms var(--ease-out), opacity 300ms var(--ease-out);
+}
+.faq-a > div {
   font-size: 14px;
   color: var(--gray-text);
   line-height: 1.75;
-  max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease, padding 0.3s ease;
 }
-.faq-a.open { max-height: 200px; padding-bottom: 22px; }
+.faq-a.open { grid-template-rows: 1fr; opacity: 1; }
+.faq-a.open > div { overflow: visible; padding-bottom: 22px; }
 
 /* BOOK A CALL CTA */
 .cta-section {
@@ -618,6 +644,7 @@ h2.section-h2 em { font-style:italic; color: var(--teal); }
   margin-bottom: 16px;
 }
 .cta-btn-large:hover { background: var(--teal-dark); transform: translateY(-2px); }
+.cta-btn-large:active { transform: scale(0.97); }
 .cta-note {
   font-size: 13px;
   color: rgba(255,255,255,0.25);
@@ -978,42 +1005,42 @@ footer {
           does syp conflict with our Gatorade or Powerade sponsorship?
           <span class="faq-icon-b2b"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="10"><path d="M6 1v10M1 6h10"/></svg></span>
         </button>
-        <div class="faq-a">syp attaches to any bottle — including Gatorade and Powerade squeeze bottles. it doesn't replace your sponsored bottles or branding. athletes drink from whatever bottle your sponsorship requires and syp measures from the bottom.</div>
+        <div class="faq-a"><div>syp attaches to any bottle — including Gatorade and Powerade squeeze bottles. it doesn't replace your sponsored bottles or branding. athletes drink from whatever bottle your sponsorship requires and syp measures from the bottom.</div></div>
       </div>
       <div class="faq-item-b2b">
         <button class="faq-q" onclick="toggleB2bFaq(this)">
           what does onboarding look like?
           <span class="faq-icon-b2b"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="10"><path d="M6 1v10M1 6h10"/></svg></span>
         </button>
-        <div class="faq-a">we handle everything. devices ship to your facility. we do a 30-minute virtual onboarding with your athletic trainer or coach. athletes clip the device onto their bottle and it works from day one. no IT setup required.</div>
+        <div class="faq-a"><div>we handle everything. devices ship to your facility. we do a 30-minute virtual onboarding with your athletic trainer or coach. athletes clip the device onto their bottle and it works from day one. no IT setup required.</div></div>
       </div>
       <div class="faq-item-b2b">
         <button class="faq-q" onclick="toggleB2bFaq(this)">
           who owns the athlete data?
           <span class="faq-icon-b2b"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="10"><path d="M6 1v10M1 6h10"/></svg></span>
         </button>
-        <div class="faq-a">the program owns the data. athletes opt in and control visibility. syp uses anonymized, aggregated data for research purposes only — never sold, never shared with third parties without explicit consent.</div>
+        <div class="faq-a"><div>the program owns the data. athletes opt in and control visibility. syp uses anonymized, aggregated data for research purposes only — never sold, never shared with third parties without explicit consent.</div></div>
       </div>
       <div class="faq-item-b2b">
         <button class="faq-q" onclick="toggleB2bFaq(this)">
           how long is the pilot program?
           <span class="faq-icon-b2b"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="10"><path d="M6 1v10M1 6h10"/></svg></span>
         </button>
-        <div class="faq-a">fall 2026 pilots run for one full season. at the end of the pilot you get a full data report, performance correlations, and a recommendation for your program. no commitment required beyond the pilot.</div>
+        <div class="faq-a"><div>fall 2026 pilots run for one full season. at the end of the pilot you get a full data report, performance correlations, and a recommendation for your program. no commitment required beyond the pilot.</div></div>
       </div>
       <div class="faq-item-b2b">
         <button class="faq-q" onclick="toggleB2bFaq(this)">
           what bottles does it work with?
           <span class="faq-icon-b2b"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="10"><path d="M6 1v10M1 6h10"/></svg></span>
         </button>
-        <div class="faq-a">syp works with any bottle within our diameter range — covering owala, stanley, nalgene, and most gatorade and powerade squeeze bottles. universal fit for half-gallon jugs is in development.</div>
+        <div class="faq-a"><div>syp works with any bottle within our diameter range — covering owala, stanley, nalgene, and most gatorade and powerade squeeze bottles. universal fit for half-gallon jugs is in development.</div></div>
       </div>
       <div class="faq-item-b2b">
         <button class="faq-q" onclick="toggleB2bFaq(this)">
           does it meet NCAA wellness monitoring requirements?
           <span class="faq-icon-b2b"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="10"><path d="M6 1v10M1 6h10"/></svg></span>
         </button>
-        <div class="faq-a">syp is designed to support D1 wellness monitoring. it is a passive device — no on-device coaching or AI — which we believe keeps it clear of active-monitoring restrictions. we recommend confirming with your compliance office during the pilot.</div>
+        <div class="faq-a"><div>syp is designed to support D1 wellness monitoring. it is a passive device — no on-device coaching or AI — which we believe keeps it clear of active-monitoring restrictions. we recommend confirming with your compliance office during the pilot.</div></div>
       </div>
     </div>
   </div>

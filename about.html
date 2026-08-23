@@ -45,6 +45,19 @@
   --border-dark: rgba(255,255,255,0.08);
   --border-light: rgba(0,0,0,0.08);
   --font: 'Inter', sans-serif;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-up, .fade-up.visible {
+    transform: none !important;
+    transition: opacity 0.2s ease !important;
+  }
+  .team-card:hover, .btn-white:hover, .btn-outline:hover,
+  .nav-cta:hover, .btn-white:active, .nav-cta:active {
+    transform: none !important;
+  }
 }
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; }
@@ -114,6 +127,7 @@ nav {
   transition: background 0.2s, transform 0.15s;
 }
 .nav-cta:hover { background:#E8E8E8; transform:translateY(-1px); }
+.nav-cta:active { transform: scale(0.97); }
 
 /* PAGE HERO */
 .page-hero {
@@ -317,7 +331,9 @@ h2.section-h2 em { font-style:normal; color: var(--teal); }
   display: flex;
   flex-direction: column;
 }
-.team-card:hover { border-color: rgba(29,203,168,0.25); transform: translateY(-4px); }
+@media (hover: hover) and (pointer: fine) {
+  .team-card:hover { border-color: rgba(29,203,168,0.25); transform: translateY(-4px); }
+}
 .team-img-wrap {
   width: 100%;
   aspect-ratio: 4/5;
@@ -332,7 +348,9 @@ h2.section-h2 em { font-style:normal; color: var(--teal); }
   object-position: center 25%;
   transition: transform 0.4s;
 }
-.team-card:hover .team-img-wrap img { transform: scale(1.03); }
+@media (hover: hover) and (pointer: fine) {
+  .team-card:hover .team-img-wrap img { transform: scale(1.03); }
+}
 .team-body { padding: 26px 24px 28px; flex:1; display:flex; flex-direction:column; }
 .team-name {
   font-size: 20px;
@@ -461,6 +479,7 @@ h2.section-h2 em { font-style:normal; color: var(--teal); }
   transition: background 0.2s, transform 0.15s;
 }
 .btn-white:hover { background:#E8E8E8; transform:translateY(-2px); }
+.btn-white:active { transform: scale(0.97); }
 .btn-outline {
   background: transparent;
   color: var(--white);
@@ -473,8 +492,9 @@ h2.section-h2 em { font-style:normal; color: var(--teal); }
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s, transform 160ms var(--ease-out);
 }
+.btn-outline:active { transform: scale(0.97); }
 .btn-outline:hover { border-color: rgba(255,255,255,0.5); }
 
 /* FOOTER */

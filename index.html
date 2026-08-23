@@ -49,6 +49,22 @@
   --border-light: rgba(0,0,0,0.08);
   --font-display: 'Inter', sans-serif;
   --font-body: 'Inter', sans-serif;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Keep the fade (aids comprehension) but drop movement/scale/lift entirely */
+  .fade-up, .fade-up.visible {
+    transform: none !important;
+    transition: opacity 0.2s ease !important;
+  }
+  .matter-card:hover, .athlete-card:hover, .testimonial-card:hover,
+  .step-card:hover, .team-card:hover, .pain-card:hover,
+  .hero-cta:hover, .nav-cart-btn:hover, .waitlist-submit:hover,
+  .hero-cta:active, .nav-cart-btn:active, .waitlist-submit:active {
+    transform: none !important;
+  }
 }
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -218,6 +234,7 @@ nav {
   letter-spacing: 0.01em;
 }
 .nav-right .nav-cart-btn:hover { background: #E8E8E8; transform: translateY(-1px); }
+.nav-right .nav-cart-btn:active { transform: scale(0.97); }
 .nav-cart-icon {
   width: 15px;
   height: 15px;
@@ -301,6 +318,7 @@ nav {
   letter-spacing: 0.01em;
 }
 .hero-cta:hover { background: #E8E8E8; transform: translateY(-2px); }
+.hero-cta:active { transform: scale(0.97); }
 .hero-trust {
   font-size: 13px;
   color: rgba(255,255,255,0.45);
@@ -489,6 +507,7 @@ h2.section-h2 em {
   letter-spacing: 0.01em;
 }
 .check-hydration-btn:hover { background: #222; transform: translateY(-1px); }
+.check-hydration-btn:active { transform: scale(0.97); }
 .check-hydration-btn svg { width: 16px; height: 16px; }
 .problem-visual {
   position: relative;
@@ -571,7 +590,7 @@ h2.section-h2 em {
   -webkit-backdrop-filter: blur(16px);
   border-top: 1px solid var(--border-dark);
   transform: translateY(100%);
-  transition: transform 0.25s ease;
+  transition: transform 250ms var(--ease-out);
 }
 .sticky-cta.visible { transform: translateY(0); }
 .sticky-cta a {
@@ -586,7 +605,9 @@ h2.section-h2 em {
   font-size: 15px;
   font-weight: 700;
   text-decoration: none;
+  transition: transform 160ms var(--ease-out);
 }
+.sticky-cta a:active { transform: scale(0.97); }
 @media (max-width: 900px) {
   .sticky-cta { display: block; }
 }
@@ -610,7 +631,9 @@ h2.section-h2 em {
   overflow: hidden;
   transition: border-color 0.3s, transform 0.2s;
 }
-.matter-card:hover { border-color: rgba(29,203,168,0.25); transform: translateY(-3px); }
+@media (hover: hover) and (pointer: fine) {
+  .matter-card:hover { border-color: rgba(29,203,168,0.25); transform: translateY(-3px); }
+}
 .matter-card-img {
   width: 100%;
   aspect-ratio: 16/9;
@@ -958,7 +981,9 @@ h2.section-h2 em {
   border: 1px solid var(--border-light);
   transition: transform 0.2s, box-shadow 0.2s;
 }
-.step-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.07); }
+@media (hover: hover) and (pointer: fine) {
+  .step-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.07); }
+}
 .step-visual {
   width: 100%;
   aspect-ratio: 4/3;
@@ -1042,7 +1067,9 @@ h2.section-h2 em {
   gap: 20px;
   transition: transform 0.2s, box-shadow 0.2s;
 }
-.testimonial-card:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(0,0,0,0.06); }
+@media (hover: hover) and (pointer: fine) {
+  .testimonial-card:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(0,0,0,0.06); }
+}
 .testimonial-card.featured {
   grid-column: span 2;
   flex-direction: row;
@@ -1124,7 +1151,9 @@ h2.section-h2 em {
   transition: border-color 0.3s, transform 0.2s;
   text-decoration: none;
 }
-.athlete-card:hover { border-color: rgba(29,203,168,0.3); transform: translateY(-4px); }
+@media (hover: hover) and (pointer: fine) {
+  .athlete-card:hover { border-color: rgba(29,203,168,0.3); transform: translateY(-4px); }
+}
 .athlete-img-wrap {
   width: 100%;
   aspect-ratio: 4/3;
@@ -1139,7 +1168,9 @@ h2.section-h2 em {
   transition: transform 0.4s;
   /* IMAGE: athlete-[firstname].jpg — action photo of founding athlete */
 }
-.athlete-card:hover .athlete-img-wrap img { transform: scale(1.04); }
+@media (hover: hover) and (pointer: fine) {
+  .athlete-card:hover .athlete-img-wrap img { transform: scale(1.04); }
+}
 .athlete-img-placeholder {
   width: 100%;
   height: 100%;
@@ -1163,7 +1194,9 @@ h2.section-h2 em {
   opacity: 0;
   transition: opacity 0.2s;
 }
-.athlete-card:hover .athlete-play-overlay { opacity: 1; }
+@media (hover: hover) and (pointer: fine) {
+  .athlete-card:hover .athlete-play-overlay { opacity: 1; }
+}
 .athlete-play-circle {
   width: 52px;
   height: 52px;
@@ -1240,15 +1273,23 @@ h2.section-h2 em {
 }
 .faq-question.active .faq-icon { transform: rotate(45deg); }
 .faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows 300ms var(--ease-out), opacity 300ms var(--ease-out);
+}
+.faq-answer > div {
   font-size: 14px;
   color: var(--gray-text);
   line-height: 1.75;
-  max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease, padding 0.3s ease;
 }
 .faq-answer.open {
-  max-height: 200px;
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+.faq-answer.open > div {
+  overflow: visible;
   padding-bottom: 22px;
 }
 .faq-right {
@@ -1289,10 +1330,11 @@ h2.section-h2 em {
   font-weight: 600;
   cursor: pointer;
   text-decoration: none;
-  transition: background 0.2s;
+  transition: background 0.2s, transform 160ms var(--ease-out);
   letter-spacing: 0.01em;
 }
 .faq-cta-btn:hover { background: #E8E8E8; }
+.faq-cta-btn:active { transform: scale(0.97); }
 
 /* WAITLIST CTA */
 .waitlist-cta {
@@ -1375,6 +1417,7 @@ h2.section-h2 em {
   letter-spacing: 0.01em;
 }
 .waitlist-submit:hover { background: var(--teal-dark); transform: translateY(-1px); }
+.waitlist-submit:active { transform: scale(0.97); }
 .waitlist-note {
   font-size: 12px;
   color: rgba(255,255,255,0.25);
@@ -1420,8 +1463,9 @@ footer {
   border-radius: 8px;
   overflow: hidden;
   max-width: 340px;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s, transform 160ms var(--ease-out);
 }
+.footer-join-link:active { transform: scale(0.98); }
 .footer-email-wrap:focus-within { border-color: rgba(255,255,255,0.3); }
 .footer-join-link { text-decoration: none; cursor: pointer; }
 .footer-join-link:hover { border-color: rgba(255,255,255,0.3); }
@@ -2099,9 +2143,9 @@ footer {
                 </svg>
               </span>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer"><div>
               our first production run ships to D1 pilot programs in fall 2026. founding-member waitlist orders follow in early 2027. waitlist members get a confirmed ship date by email before any public release.
-            </div>
+            </div></div>
           </div>
           <div class="faq-item">
             <button class="faq-question" onclick="toggleFaq(this)">
@@ -2112,9 +2156,9 @@ footer {
                 </svg>
               </span>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer"><div>
               yes. syp clips onto any bottle within our diameter range — covering owala, stanley, nalgene, and most gatorade squeeze bottles. a universal-fit expansion to half-gallon jugs is in development.
-            </div>
+            </div></div>
           </div>
           <div class="faq-item">
             <button class="faq-question" onclick="toggleFaq(this)">
@@ -2125,9 +2169,9 @@ footer {
                 </svg>
               </span>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer"><div>
               WHOOP estimates hydration from sweat — not actual intake. smart bottles require you to replace your bottle and often conflict with team sponsorships. syp works with what you already have and measures what you actually drink.
-            </div>
+            </div></div>
           </div>
           <div class="faq-item">
             <button class="faq-question" onclick="toggleFaq(this)">
@@ -2138,9 +2182,9 @@ footer {
                 </svg>
               </span>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer"><div>
               your intake data is yours. teams only see data for athletes who opt in and authorize program-level visibility.
-            </div>
+            </div></div>
           </div>
           <div class="faq-item">
             <button class="faq-question" onclick="toggleFaq(this)">
@@ -2151,9 +2195,9 @@ footer {
                 </svg>
               </span>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer"><div>
               one charge lasts 1 to 2 days of active use. we recommend charging overnight so you're always ready for training.
-            </div>
+            </div></div>
           </div>
         </div>
       </div>
