@@ -940,6 +940,44 @@ h2.section-h2 em {
   font-style: normal;
   color: var(--teal);
 }
+.trusted-stat-number--live {
+  font-size: clamp(60px, 7.5vw, 96px);
+  color: var(--teal);
+}
+.live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 10px;
+}
+.live-dot {
+  position: relative;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--teal);
+  flex-shrink: 0;
+}
+.live-dot::after {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  border: 1px solid var(--teal);
+  animation: live-pulse 2s var(--ease-in-out) infinite;
+}
+@keyframes live-pulse {
+  0% { transform: scale(0.4); opacity: 0.9; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .live-dot::after { animation: none; opacity: 0.4; transform: scale(1.4); }
+}
 .trusted-stat-desc {
   font-size: 14px;
   color: rgba(255,255,255,0.6);
@@ -1699,7 +1737,7 @@ footer {
     <p class="hero-eyebrow">the wearable for your hydration.</p>
     <h1>any bottle.<br>real tracking.<br>better habits.</h1>
     <a href="#waitlist" class="hero-cta">join the waitlist</a>
-    <p class="hero-trust"><span data-waitlist-count>400</span>+ people on the waitlist.</p>
+    <p class="hero-trust"><span data-waitlist-count>400</span> people on the waitlist.</p>
   </div>
 </section>
 
@@ -1810,7 +1848,7 @@ footer {
 
 <!-- MID-PAGE WAITLIST CTA -->
 <section class="mid-waitlist-cta">
-  <p class="mid-waitlist-text"><span data-waitlist-count>400</span>+ athletes already tracking their hydration.</p>
+  <p class="mid-waitlist-text"><span data-waitlist-count>400</span> athletes already tracking their hydration.</p>
   <a href="#waitlist" class="hero-cta">join the waitlist</a>
 </section>
 
@@ -1871,8 +1909,9 @@ footer {
     <h2 class="trusted-stats-headline">trusted by athletes.<br>backed by research.</h2>
     <hr class="trusted-stats-divider">
     <div class="trusted-stats-grid">
-      <div class="trusted-stat-cell fade-up">
-        <span class="trusted-stat-number"><span data-waitlist-count>400</span><em>+</em></span>
+      <div class="trusted-stat-cell trusted-stat-cell--live fade-up">
+        <span class="live-badge"><span class="live-dot"></span>live count</span>
+        <span class="trusted-stat-number trusted-stat-number--live"><span data-waitlist-count>400</span></span>
         <p class="trusted-stat-desc">Athletes on the waitlist, zero paid marketing</p>
       </div>
       <div class="trusted-stat-cell fade-up fade-up-delay-1">
