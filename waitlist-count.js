@@ -8,9 +8,11 @@
 // scrolls down still sees the number visibly move for that instance,
 // rather than finding it already sitting at the final value.
 (function () {
-  var DURATION = 1400;
-  // Strong ease-out, matches --ease-out used elsewhere on the site.
-  function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+  var DURATION = 3200;
+  // Quintic ease-out (steeper than the site's standard --ease-out cubic):
+  // fast out of the gate, then a long, deliberate crawl through the last
+  // few numbers so it visibly settles rather than snapping to the total.
+  function easeOut(t) { return 1 - Math.pow(1 - t, 5); }
 
   function countUp(el, from, to) {
     if (from === to) { el.textContent = to; return; }
@@ -20,7 +22,10 @@
       var progress = Math.min((ts - start) / DURATION, 1);
       var value = Math.round(from + (to - from) * easeOut(progress));
       el.textContent = value;
-      if (progress < 1) requestAnimationFrame(step);
+      // Stop as soon as the rounded value settles on the target, rather
+      // than continuing to burn frames until the full nominal duration
+      // elapses (rounding reaches the target before progress hits 1).
+      if (progress < 1 && value !== to) requestAnimationFrame(step);
       else el.textContent = to;
     }
     requestAnimationFrame(step);
