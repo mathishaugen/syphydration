@@ -1046,39 +1046,6 @@ h2.section-h2 em {
   line-height: 1.65;
 }
 
-/* THE APP */
-.app-preview {
-  background: var(--dark);
-  border-top: 1px solid var(--border-dark);
-}
-.app-preview h2 { color: var(--white); }
-.app-preview .section-sub { color: rgba(255,255,255,0.5); max-width: 480px; }
-.app-preview-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-top: 48px;
-}
-.app-preview-card {
-  border-radius: 20px;
-  overflow: hidden;
-  background: var(--black);
-  transition: transform 0.3s var(--ease-out);
-}
-@media (hover: hover) and (pointer: fine) {
-  .app-preview-card:hover { transform: translateY(-6px); }
-}
-.app-preview-card img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-.app-preview-note {
-  margin-top: 28px;
-  font-size: 12px;
-  color: rgba(255,255,255,0.3);
-}
-
 /* WHAT OUR ATHLETES ARE SAYING */
 .testimonials {
   background: var(--gray-bg);
@@ -1646,7 +1613,6 @@ footer {
 
   /* HOW IT WORKS */
   .steps-grid { grid-template-columns: 1fr; gap: 16px; }
-  .app-preview-grid { grid-template-columns: 1fr; max-width: 280px; margin-left: auto; margin-right: auto; }
   .how-header { margin-bottom: 36px; }
 
   /* TESTIMONIALS */
@@ -1963,27 +1929,6 @@ footer {
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- THE APP -->
-<section class="app-preview">
-  <div class="section-inner">
-    <span class="section-label">the app</span>
-    <h2 class="section-h2">your hydration data,<br><em>always with you.</em></h2>
-    <p class="section-sub">no logging. no manual entry. just open the app and know — today's progress, what's driving your score, and how the week's trending.</p>
-    <div class="app-preview-grid">
-      <div class="app-preview-card fade-up">
-        <img loading="lazy" decoding="async" src="images/app-home-status.png" alt="syp app — today's hydration status">
-      </div>
-      <div class="app-preview-card fade-up fade-up-delay-1">
-        <img loading="lazy" decoding="async" src="images/app-insights-score.png" alt="syp app — hydration score insights">
-      </div>
-      <div class="app-preview-card fade-up fade-up-delay-2">
-        <img loading="lazy" decoding="async" src="images/app-history-week.png" alt="syp app — weekly history view">
-      </div>
-    </div>
-    <p class="app-preview-note">app renderings shown — interface and features are in active development.</p>
   </div>
 </section>
 
