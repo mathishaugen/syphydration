@@ -3,9 +3,10 @@
 // keeps the Notion token off the client). Fails silently — if the fetch
 // errors, the static number already in the HTML just stays as-is.
 //
-// On success, counts up from the current (static) value to the real one
-// instead of an instant swap, so the number visibly demonstrates that
-// it's live data, not a hardcoded string.
+// Each element counts up (not an instant swap) the moment it actually
+// scrolls into view, not just once on page load — so a visitor who
+// scrolls down still sees the number visibly move for that instance,
+// rather than finding it already sitting at the final value.
 (function () {
   var DURATION = 1400;
   // Strong ease-out, matches --ease-out used elsewhere on the site.
@@ -25,14 +26,40 @@
     requestAnimationFrame(step);
   }
 
+  var elements = Array.prototype.slice.call(document.querySelectorAll('[data-waitlist-count]'));
+  if (!elements.length) return;
+
+  var targetCount = null;
+  var pending = [];
+
+  function animateEl(el) {
+    if (el.dataset.counted) return;
+    el.dataset.counted = '1';
+    var from = parseInt(el.textContent, 10) || 0;
+    countUp(el, from, targetCount);
+  }
+
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        obs.unobserve(entry.target);
+        if (targetCount !== null) animateEl(entry.target);
+        else pending.push(entry.target);
+      });
+    }, { threshold: 0.3 });
+    elements.forEach(function (el) { obs.observe(el); });
+  } else {
+    pending = elements;
+  }
+
   fetch('/.netlify/functions/waitlist-count')
     .then(function (res) { return res.ok ? res.json() : Promise.reject(res.status); })
     .then(function (data) {
       if (!data || typeof data.count !== 'number') return;
-      document.querySelectorAll('[data-waitlist-count]').forEach(function (el) {
-        var from = parseInt(el.textContent, 10) || 0;
-        countUp(el, from, data.count);
-      });
+      targetCount = data.count;
+      pending.forEach(animateEl);
+      pending = [];
     })
     .catch(function () { /* keep static fallback */ });
 })();
