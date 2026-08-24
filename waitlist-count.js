@@ -40,8 +40,9 @@
   function animateEl(el) {
     if (el.dataset.counted) return;
     el.dataset.counted = '1';
-    var from = parseInt(el.textContent, 10) || 0;
-    countUp(el, from, targetCount);
+    // Always animate from 0, not from whatever static number is already
+    // in the HTML - the full 0 -> real-count sweep is the point.
+    countUp(el, 0, targetCount);
   }
 
   if ('IntersectionObserver' in window) {
