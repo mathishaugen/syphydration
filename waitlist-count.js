@@ -8,7 +8,7 @@
 // scrolls down still sees the number visibly move for that instance,
 // rather than finding it already sitting at the final value.
 (function () {
-  var DURATION = 3200;
+  var DURATION = 4400;
   // Quintic ease-out (steeper than the site's standard --ease-out cubic):
   // fast out of the gate, then a long, deliberate crawl through the last
   // few numbers so it visibly settles rather than snapping to the total.
