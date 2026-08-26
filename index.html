@@ -1852,8 +1852,100 @@ footer {
   <a href="#waitlist" class="hero-cta">join the waitlist</a>
 </section>
 
+<!-- FAQ -->
+<!-- Moved up from just above the footer (2026-08-26): heatmap data showed
+     these questions are among the most-engaged elements on the page, but
+     avg. scroll depth is only ~55% — most visitors never reached them
+     down at the bottom. Surfacing them earlier, right after the reader's
+     first waitlist ask, puts the answers in front of people while they're
+     still deciding instead of after they've likely already left. -->
+<section class="faq-section" id="faq">
+  <div class="section-inner">
+    <div class="faq-grid">
+      <div>
+        <span class="section-label" style="color:var(--teal);">faq</span>
+        <h2 class="section-h2" style="margin-bottom:40px;">frequently asked<br><em>questions.</em></h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              when can I actually get one?
+              <span class="faq-icon">
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="10">
+                  <path d="M6 1v10M1 6h10"/>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer"><div>
+              our first production run ships to D1 pilot programs in fall 2026. founding-member waitlist orders follow in early 2027. waitlist members get a confirmed ship date by email before any public release.
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              does it work with my bottle?
+              <span class="faq-icon">
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="10">
+                  <path d="M6 1v10M1 6h10"/>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer"><div>
+              yes. syp clips onto any bottle within our diameter range — covering owala, stanley, nalgene, and most gatorade squeeze bottles. a universal-fit expansion to half-gallon jugs is in development.
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              how is this different from WHOOP or a smart bottle?
+              <span class="faq-icon">
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="10">
+                  <path d="M6 1v10M1 6h10"/>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer"><div>
+              WHOOP estimates hydration from sweat — not actual intake. smart bottles require you to replace your bottle and often conflict with team sponsorships. syp works with what you already have and measures what you actually drink.
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              is my data private?
+              <span class="faq-icon">
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="10">
+                  <path d="M6 1v10M1 6h10"/>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer"><div>
+              your intake data is yours. teams only see data for athletes who opt in and authorize program-level visibility.
+            </div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              how often does it need to be charged?
+              <span class="faq-icon">
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="10">
+                  <path d="M6 1v10M1 6h10"/>
+                </svg>
+              </span>
+            </button>
+            <div class="faq-answer"><div>
+              one charge lasts 1 to 2 days of active use. we recommend charging overnight so you're always ready for training.
+            </div></div>
+          </div>
+        </div>
+      </div>
+      <div class="faq-right">
+        <div class="faq-cta-card">
+          <h3>still have<br><em>questions?</em></h3>
+          <p>reach out directly. we read every message.</p>
+          <a href="mailto:mathis@syphydration.com" class="faq-cta-btn">get in touch</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- WHAT SETS US APART -->
-<section class="sets-apart" id="how-it-works">
+<section class="sets-apart" id="sets-apart">
   <div class="section-inner">
     <span class="section-label">what sets us apart</span>
     <h2 class="section-h2">syp works with the bottle<br>you <em>already have.</em></h2>
@@ -2161,92 +2253,6 @@ footer {
           <p class="athlete-sport">D1 <span>Lacrosse · USF</span></p>
         </div>
       </a>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="faq-section" id="faq">
-  <div class="section-inner">
-    <div class="faq-grid">
-      <div>
-        <span class="section-label" style="color:var(--teal);">faq</span>
-        <h2 class="section-h2" style="margin-bottom:40px;">frequently asked<br><em>questions.</em></h2>
-        <div class="faq-list">
-          <div class="faq-item">
-            <button class="faq-question" onclick="toggleFaq(this)">
-              when can I actually get one?
-              <span class="faq-icon">
-                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="10">
-                  <path d="M6 1v10M1 6h10"/>
-                </svg>
-              </span>
-            </button>
-            <div class="faq-answer"><div>
-              our first production run ships to D1 pilot programs in fall 2026. founding-member waitlist orders follow in early 2027. waitlist members get a confirmed ship date by email before any public release.
-            </div></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" onclick="toggleFaq(this)">
-              does it work with my bottle?
-              <span class="faq-icon">
-                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="10">
-                  <path d="M6 1v10M1 6h10"/>
-                </svg>
-              </span>
-            </button>
-            <div class="faq-answer"><div>
-              yes. syp clips onto any bottle within our diameter range — covering owala, stanley, nalgene, and most gatorade squeeze bottles. a universal-fit expansion to half-gallon jugs is in development.
-            </div></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" onclick="toggleFaq(this)">
-              how is this different from WHOOP or a smart bottle?
-              <span class="faq-icon">
-                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="10">
-                  <path d="M6 1v10M1 6h10"/>
-                </svg>
-              </span>
-            </button>
-            <div class="faq-answer"><div>
-              WHOOP estimates hydration from sweat — not actual intake. smart bottles require you to replace your bottle and often conflict with team sponsorships. syp works with what you already have and measures what you actually drink.
-            </div></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" onclick="toggleFaq(this)">
-              is my data private?
-              <span class="faq-icon">
-                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="10">
-                  <path d="M6 1v10M1 6h10"/>
-                </svg>
-              </span>
-            </button>
-            <div class="faq-answer"><div>
-              your intake data is yours. teams only see data for athletes who opt in and authorize program-level visibility.
-            </div></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question" onclick="toggleFaq(this)">
-              how often does it need to be charged?
-              <span class="faq-icon">
-                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" width="10" height="10">
-                  <path d="M6 1v10M1 6h10"/>
-                </svg>
-              </span>
-            </button>
-            <div class="faq-answer"><div>
-              one charge lasts 1 to 2 days of active use. we recommend charging overnight so you're always ready for training.
-            </div></div>
-          </div>
-        </div>
-      </div>
-      <div class="faq-right">
-        <div class="faq-cta-card">
-          <h3>still have<br><em>questions?</em></h3>
-          <p>reach out directly. we read every message.</p>
-          <a href="mailto:mathis@syphydration.com" class="faq-cta-btn">get in touch</a>
-        </div>
-      </div>
     </div>
   </div>
 </section>

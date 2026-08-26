@@ -1,3 +1,9 @@
+# Canonicalize the raw file path — GA4 was splitting sessions between
+# / and /index.html as separate landing pages (10 sessions on
+# /index.html this week, 0% new users, 1-7s engagement: an old link
+# somewhere still points at the literal file instead of the root).
+/index.html            /        301
+
 # Legacy Shopify-era URLs
 /pages/about-drypp    /        301
 /pages/about-syp      /about   301

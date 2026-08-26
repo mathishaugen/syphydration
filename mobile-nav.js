@@ -4,11 +4,18 @@
 // This clones that page's own nav-left links into a hamburger-triggered
 // dropdown, so there's a single source of truth for the link list per page.
 (function () {
+  // Idempotency guard: if this script somehow runs twice on a page, don't
+  // build a second hamburger/panel stacked on top of the first — a stray
+  // duplicate would silently absorb taps meant for the working one.
+  if (document.querySelector('.nav-hamburger')) return;
+
   var style = document.createElement('style');
   style.textContent =
-    '.nav-hamburger{display:none;background:none;border:none;padding:6px;' +
+    '.nav-hamburger{display:none;background:none;border:none;' +
+    'width:44px;height:44px;padding:0;' +
     'color:rgba(255,255,255,0.85);cursor:pointer;align-items:center;' +
-    'justify-content:center;z-index:201;}' +
+    'justify-content:center;z-index:201;-webkit-tap-highlight-color:transparent;}' +
+    '.nav-hamburger svg{pointer-events:none;}' +
     '.mobile-nav-panel{position:absolute;top:100%;left:0;' +
     'right:0;background:rgba(10,10,10,0.98);backdrop-filter:blur(20px);' +
     '-webkit-backdrop-filter:blur(20px);' +
@@ -44,6 +51,7 @@
     if (!navLeft || !navLeft.children.length) return;
 
     var btn = document.createElement('button');
+    btn.type = 'button';
     btn.className = 'nav-hamburger';
     btn.setAttribute('aria-label', 'menu');
     btn.setAttribute('aria-expanded', 'false');
